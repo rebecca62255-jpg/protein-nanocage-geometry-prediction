@@ -1,5 +1,5 @@
 """
-Model 1: ESM2 embedding + MLP 預測 T-number
+Model 1: ESM2 embedding + MLP prediction of T-number
 
 Input:
     1280-dimensional ESM2 embedding
@@ -16,6 +16,7 @@ Evaluation:
 
 import csv
 import random
+from pathlib import Path
 from collections import Counter
 
 import numpy as np
@@ -55,25 +56,21 @@ if torch.cuda.is_available():
 # 2. File paths
 # ============================================================
 
-FEATURE_MATRIX = (
-    "/nobackup/rmgl20/dissertation/scripts/feature_matrix.csv"
-)
+ROOT = Path(__file__).resolve().parents[1]
 
-MODEL_PATH = (
-    "/nobackup/rmgl20/dissertation/scripts/best_model1.pt"
-)
+FEATURE_MATRIX = ROOT / "data" / "feature_matrix.csv"
+MODEL_PATH = ROOT / "outputs" / "best_model1.pt"
+FIGURE_PATH = ROOT / "figures" / "model1_confusion_matrix.png"
 
-FIGURE_PATH = (
-    "/nobackup/rmgl20/dissertation/scripts/"
-    "model1_confusion_matrix.png"
-)
+MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
+FIGURE_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
 # ============================================================
 # 3. Load dataset
 # ============================================================
 
-print("讀取資料...")
+print("Loading data...")
 
 X_train, y_train = [], []
 X_val, y_val = [], []
@@ -131,7 +128,7 @@ rare = {
     if count < 10
 }
 
-print(f"合併為 other 的類別: {rare}")
+print(f"Classes merged into 'other': {rare}")
 
 
 def merge_rare(labels):
