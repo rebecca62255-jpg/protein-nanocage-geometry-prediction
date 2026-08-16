@@ -1,0 +1,11 @@
+Model 2: Outer Diameter Regression using ESM2 Embeddings and T-number
+
+Test MAE: 139.47 Å
+Test R²: 0.2959
+
+Evaluation:
+- Mean Absolute Error (MAE)
+- R²
+
+See:
+figures/model2_predicted_vs_actual.png

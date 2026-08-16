@@ -1,0 +1,19 @@
+Model 3: T-number Classification
+
+XGBoost baseline
+Representation: ESM2 embedding + chain count
+Test samples: 50
+Test Accuracy: 80.00%
+Macro F1: 0.6019
+
+Chain-level GAT
+Representation: Chain-level graph
+Test samples: 50
+Test Accuracy: 78.00%
+Macro F1: 0.6065
+
+Residue-level GAT
+Representation: Residue-level graph
+Test samples: 56
+Test Accuracy: 80.00%
+Macro F1: 0.56

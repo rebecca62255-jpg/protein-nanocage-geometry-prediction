@@ -1,0 +1,13 @@
+Model 1: T-number Classification using ESM2 Embeddings and MLP
+
+Test Accuracy: 0.77
+Macro F1: 0.5522
+
+Evaluation:
+- Accuracy
+- Macro F1
+- Classification report
+- Confusion matrix
+
+See:
+figures/model1_confusion_matrix.png
