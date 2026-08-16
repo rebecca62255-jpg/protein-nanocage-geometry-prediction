@@ -1,13 +1,27 @@
 """
 Model 3: Chain-level GAT without edge features
-節點 = protein chains
-節點特徵 = ESM2 embedding（1280維）
-邊 = 兩條 chain 之間若存在 Cα-Cα 距離 < 8 Å 的殘基對，就建立 edge
+
+Nodes:
+    Protein chains
+
+Node features:
+    1280-dimensional ESM2 embedding
+
+Edges:
+    An edge is created between two chains if at least one pair
+    of residues has a Cα-Cα distance below 8 Å.
+
+Note:
+    All chain nodes within the same graph are assigned the same
+    representative-chain ESM2 embedding.
 """
 
 import json
-import numpy as np
 import random
+from pathlib import Path
+from collections import Counter
+
+import numpy as np
 import torch
 import torch.nn as nn
 
@@ -16,34 +30,54 @@ from torch_geometric.loader import DataLoader
 from torch_geometric.nn import GATConv, global_mean_pool
 
 from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import accuracy_score, f1_score, classification_report
-from collections import Counter
+from sklearn.metrics import (
+    accuracy_score,
+    f1_score,
+    classification_report
+)
 
 
-# -------------------------
-# Reproducibility
-# -------------------------
-random.seed(42)
-np.random.seed(42)
-torch.manual_seed(42)
+# ============================================================
+# 1. Reproducibility
+# ============================================================
+
+SEED = 42
+
+random.seed(SEED)
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+
+if torch.cuda.is_available():
+    torch.cuda.manual_seed(SEED)
+    torch.cuda.manual_seed_all(SEED)
 
 
-GRAPH_FILE = "/nobackup/rmgl20/dissertation/scripts/graph_dataset.json"
-MODEL_FILE = "/nobackup/rmgl20/dissertation/scripts/best_model3_no_edge.pt"
+# ============================================================
+# 2. File paths
+# ============================================================
+
+ROOT = Path(__file__).resolve().parents[1]
+
+GRAPH_FILE = ROOT / "data" / "graph_dataset.json"
+MODEL_FILE = ROOT / "outputs" / "best_model3_no_edge.pt"
+
+MODEL_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 
-# -------------------------
-# Load graph dataset
-# -------------------------
-print("讀取圖資料集...")
+# ============================================================
+# 3. Load graph dataset
+# ============================================================
+
+print("Loading graph dataset...")
 
 with open(GRAPH_FILE) as f:
     graphs = json.load(f)
 
 
-# -------------------------
-# Merge rare classes
-# -------------------------
+# ============================================================
+# 4. Merge rare T-number classes
+# ============================================================
+
 train_labels = [
     g["t_number"]
     for g in graphs
@@ -57,7 +91,7 @@ rare = {
     if count < 5
 }
 
-print(f"合併為 other 的類別: {rare}")
+print(f"Classes merged into 'other': {rare}")
 
 
 def merge_rare(label):
@@ -71,24 +105,29 @@ all_labels = [
 ]
 
 le = LabelEncoder()
-le.fit([merge_rare(l) for l in all_labels])
+
+le.fit([
+    merge_rare(label)
+    for label in all_labels
+])
 
 n_classes = len(le.classes_)
 
-print(f"類別數: {n_classes}")
-print(f"類別: {list(le.classes_)}")
+print(f"Number of classes: {n_classes}")
+print(f"Classes: {list(le.classes_)}")
 
 
-# -------------------------
-# Convert JSON graphs to PyG Data
-# -------------------------
+# ============================================================
+# 5. Convert JSON graphs to PyTorch Geometric Data objects
+# ============================================================
+
 def make_data(g):
 
     label = merge_rare(g["t_number"])
     y = le.transform([label])[0]
 
-    # 同一個 graph 中所有 chain nodes
-    # 使用同一個代表鏈的 1280 維 ESM2 embedding
+    # All chain nodes in the same graph are assigned
+    # the same representative-chain ESM2 embedding.
     x = torch.tensor(
         [g["node_features"]] * g["n_nodes"],
         dtype=torch.float32
@@ -99,6 +138,7 @@ def make_data(g):
             g["edges"],
             dtype=torch.long
         ).t().contiguous()
+
     else:
         edge_index = torch.zeros(
             (2, 0),
@@ -108,13 +148,17 @@ def make_data(g):
     return Data(
         x=x,
         edge_index=edge_index,
-        y=torch.tensor(y, dtype=torch.long)
+        y=torch.tensor(
+            y,
+            dtype=torch.long
+        )
     )
 
 
-# -------------------------
-# Train / Validation / Test
-# -------------------------
+# ============================================================
+# 6. Train / validation / test split
+# ============================================================
+
 train_data = []
 val_data = []
 test_data = []
@@ -151,18 +195,21 @@ train_loader = DataLoader(
 
 val_loader = DataLoader(
     val_data,
-    batch_size=16
+    batch_size=16,
+    shuffle=False
 )
 
 test_loader = DataLoader(
     test_data,
-    batch_size=16
+    batch_size=16,
+    shuffle=False
 )
 
 
-# -------------------------
-# GAT Model
-# -------------------------
+# ============================================================
+# 7. GAT model
+# ============================================================
+
 class GAT(nn.Module):
 
     def __init__(
@@ -227,9 +274,10 @@ class GAT(nn.Module):
         return self.classifier(x)
 
 
-# -------------------------
-# Training setup
-# -------------------------
+# ============================================================
+# 8. Training setup
+# ============================================================
+
 device = torch.device(
     "cuda"
     if torch.cuda.is_available()
@@ -240,9 +288,9 @@ print(f"Using {device}")
 
 
 model = GAT(
-    1280,
-    256,
-    n_classes
+    in_dim=1280,
+    hidden_dim=256,
+    n_classes=n_classes
 ).to(device)
 
 
@@ -256,10 +304,11 @@ optimizer = torch.optim.Adam(
 criterion = nn.CrossEntropyLoss()
 
 
-# -------------------------
-# Training
-# -------------------------
-best_val_acc = 0
+# ============================================================
+# 9. Training
+# ============================================================
+
+best_val_acc = 0.0
 
 for epoch in range(100):
 
@@ -287,7 +336,10 @@ for epoch in range(100):
         optimizer.step()
 
 
+    # ------------------------
     # Validation
+    # ------------------------
+
     model.eval()
 
     correct = 0
@@ -330,17 +382,21 @@ for epoch in range(100):
     if (epoch + 1) % 20 == 0:
 
         print(
-            f"Epoch {epoch+1}/100 | "
+            f"Epoch {epoch + 1}/100 | "
             f"Val Acc: {val_acc:.4f} | "
             f"Best: {best_val_acc:.4f}"
         )
 
 
-# -------------------------
-# Test
-# -------------------------
+# ============================================================
+# 10. Test evaluation
+# ============================================================
+
 model.load_state_dict(
-    torch.load(MODEL_FILE)
+    torch.load(
+        MODEL_FILE,
+        map_location=device
+    )
 )
 
 model.eval()
@@ -386,14 +442,20 @@ macro_f1 = f1_score(
 )
 
 
+print("\n===== Test Results =====")
+
 print(
-    f"\nTest Accuracy: {acc:.4f}"
+    f"Test Accuracy: {acc:.4f}"
 )
 
 print(
     f"Macro F1: {macro_f1:.4f}"
 )
 
+
+# ============================================================
+# 11. Classification report
+# ============================================================
 
 labels_in_test = sorted(
     set(all_labels_enc)
@@ -412,6 +474,7 @@ print(
         all_labels_enc,
         all_preds,
         labels=labels_in_test,
-        target_names=target_names
+        target_names=target_names,
+        zero_division=0
     )
 )
