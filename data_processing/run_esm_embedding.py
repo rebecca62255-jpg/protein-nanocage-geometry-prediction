@@ -1,61 +1,182 @@
 """
-用 ESM2 對每條序列跑 embedding，做 mean pooling 後存成 HDF5
-輸入：sequences_nr.fasta（821條序列）
-輸出：esm_embeddings.h5
+Generate ESM2 embeddings for protein sequences.
+
+Each sequence is passed through ESM2 and the residue-level
+representations are mean-pooled to produce one 1280-dimensional
+embedding per sequence.
+
+Input:
+    data/sequences_nr.fasta
+
+Output:
+    data/esm_embeddings.h5
 """
+
+from pathlib import Path
 
 import torch
 import esm
 import h5py
 from Bio import SeqIO
 
-FASTA_PATH = "/nobackup/rmgl20/dissertation/scripts/sequences_nr.fasta"
-OUTPUT_H5 = "/nobackup/rmgl20/dissertation/scripts/esm_embeddings.h5"
 
-# 載入模型
+# ============================================================
+# 1. File paths
+# ============================================================
+
+ROOT = Path(__file__).resolve().parents[1]
+
+FASTA_PATH = ROOT / "data" / "sequences_nr.fasta"
+OUTPUT_H5 = ROOT / "data" / "esm_embeddings.h5"
+
+
+# ============================================================
+# 2. Load ESM2 model
+# ============================================================
+
 print("Loading ESM2 model...")
-model, alphabet = esm.pretrained.esm2_t33_650M_UR50D()
+
+model, alphabet = (
+    esm.pretrained.esm2_t33_650M_UR50D()
+)
+
 model.eval()
 
-if torch.cuda.is_available():
-    model = model.cuda()
-    print("Using GPU")
-else:
-    print("Using CPU")
+
+device = torch.device(
+    "cuda"
+    if torch.cuda.is_available()
+    else "cpu"
+)
+
+model = model.to(device)
+
+print(f"Using {device}")
+
 
 batch_converter = alphabet.get_batch_converter()
 
-# 讀取序列
-records = list(SeqIO.parse(FASTA_PATH, "fasta"))
-print(f"Found {len(records)} sequences")
 
-with h5py.File(OUTPUT_H5, "w") as h5f:
+# ============================================================
+# 3. Load protein sequences
+# ============================================================
+
+records = list(
+    SeqIO.parse(
+        str(FASTA_PATH),
+        "fasta"
+    )
+)
+
+print(
+    f"Found {len(records)} sequences"
+)
+
+
+# ============================================================
+# 4. Generate ESM2 embeddings
+# ============================================================
+
+OUTPUT_H5.parent.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+with h5py.File(
+    OUTPUT_H5,
+    "w"
+) as h5f:
+
     for i, record in enumerate(records):
+
         seq_id = record.id
         seq = str(record.seq)
 
-        # 截斷過長序列（ESM2 最大 1022）
+
+        # ----------------------------------------------------
+        # Truncate sequences longer than ESM2 input limit
+        # ----------------------------------------------------
+
         if len(seq) > 1022:
             seq = seq[:1022]
 
-        data = [(seq_id, seq)]
-        batch_labels, batch_strs, batch_tokens = batch_converter(data)
 
-        if torch.cuda.is_available():
-            batch_tokens = batch_tokens.cuda()
+        # ----------------------------------------------------
+        # Convert sequence to ESM2 tokens
+        # ----------------------------------------------------
+
+        data = [
+            (seq_id, seq)
+        ]
+
+        (
+            batch_labels,
+            batch_strs,
+            batch_tokens
+        ) = batch_converter(data)
+
+
+        batch_tokens = batch_tokens.to(device)
+
+
+        # ----------------------------------------------------
+        # Extract layer-33 representations
+        # ----------------------------------------------------
 
         with torch.no_grad():
-            results = model(batch_tokens, repr_layers=[33])
 
-        # 取第33層的 embedding，去掉 BOS/EOS token
-        token_embeddings = results["representations"][33][0, 1:len(seq)+1]
+            results = model(
+                batch_tokens,
+                repr_layers=[33]
+            )
 
-        # mean pooling → (1280,)
-        mean_embedding = token_embeddings.mean(dim=0).cpu().numpy()
 
-        h5f.create_dataset(seq_id, data=mean_embedding)
+        # Remove BOS/EOS tokens.
+        # Shape: (sequence_length, 1280)
+        token_embeddings = (
+            results["representations"][33]
+            [0, 1:len(seq) + 1]
+        )
 
-        if (i + 1) % 50 == 0 or (i + 1) == len(records):
-            print(f"[{i+1}/{len(records)}] {seq_id} done")
 
-print(f"完成！embeddings 存在 {OUTPUT_H5}")
+        # ----------------------------------------------------
+        # Mean pooling
+        # ----------------------------------------------------
+
+        # Produce one 1280-dimensional embedding
+        # for each protein sequence.
+        mean_embedding = (
+            token_embeddings
+            .mean(dim=0)
+            .cpu()
+            .numpy()
+        )
+
+
+        # ----------------------------------------------------
+        # Save embedding
+        # ----------------------------------------------------
+
+        h5f.create_dataset(
+            seq_id,
+            data=mean_embedding
+        )
+
+
+        if (
+            (i + 1) % 50 == 0
+            or
+            (i + 1) == len(records)
+        ):
+
+            print(
+                f"[{i + 1}/{len(records)}] "
+                f"{seq_id} done"
+            )
+
+
+print(
+    f"Finished. Embeddings saved to:\n"
+    f"{OUTPUT_H5}"
+)
