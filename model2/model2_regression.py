@@ -17,6 +17,7 @@ Evaluation:
 
 import csv
 import random
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -47,25 +48,21 @@ if torch.cuda.is_available():
 # 2. File paths
 # ============================================================
 
-FEATURE_MATRIX = (
-    "/nobackup/rmgl20/dissertation/scripts/feature_matrix.csv"
-)
+ROOT = Path(__file__).resolve().parents[1]
 
-MODEL_PATH = (
-    "/nobackup/rmgl20/dissertation/scripts/best_model2.pt"
-)
+FEATURE_MATRIX = ROOT / "data" / "feature_matrix.csv"
+MODEL_PATH = ROOT / "outputs" / "best_model2.pt"
+FIGURE_PATH = ROOT / "figures" / "model2_predicted_vs_actual.png"
 
-FIGURE_PATH = (
-    "/nobackup/rmgl20/dissertation/scripts/"
-    "model2_predicted_vs_actual.png"
-)
+MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
+FIGURE_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
 # ============================================================
 # 3. Collect T-number classes for encoding
 # ============================================================
 
-print("讀取資料...")
+print("Loading data...")
 
 all_t = []
 
