@@ -1,39 +1,55 @@
 """
-Model 3 XGBoost baseline:
-使用與 chain-level GAT 相同的資料切分，
-僅使用 1280-dimensional ESM2 embedding 預測 T-number，
-不使用 chain count、graph connectivity 或其他 structural features，
-作為 chain-level GAT 的 non-graph baseline。
+Model 3 XGBoost baseline
+
+This model uses the same dataset split as the chain-level GAT,
+but only uses the 1,280-dimensional ESM2 embedding as input.
+
+It does not use:
+    - chain count
+    - graph connectivity
+    - edge features
+    - other structural features
+
+The model therefore serves as a non-graph baseline for comparison
+with the chain-level GAT.
 """
 
 import json
-import numpy as np
+from pathlib import Path
 from collections import Counter
 
+import numpy as np
+
 from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import accuracy_score, f1_score, classification_report
+from sklearn.metrics import (
+    accuracy_score,
+    f1_score,
+    classification_report
+)
 from xgboost import XGBClassifier
 
 
 # ============================================================
-# File path
+# 1. File path
 # ============================================================
 
-GRAPH_FILE = "/nobackup/rmgl20/dissertation/scripts/graph_dataset.json"
+ROOT = Path(__file__).resolve().parents[1]
+
+GRAPH_FILE = ROOT / "data" / "graph_dataset.json"
 
 
 # ============================================================
-# Load graph dataset
+# 2. Load graph dataset
 # ============================================================
 
-print("讀取圖資料集...")
+print("Loading graph dataset...")
 
 with open(GRAPH_FILE) as f:
     graphs = json.load(f)
 
 
 # ============================================================
-# Merge rare T-number classes
+# 3. Merge rare T-number classes
 # ============================================================
 
 train_labels = [
@@ -44,14 +60,16 @@ train_labels = [
 
 train_counts = Counter(train_labels)
 
-# 與 chain-level GAT 保持一致：
-# training set 中樣本數 < 5 的 T-number 合併為 other
+# To match the chain-level GAT setup,
+# T-number classes with fewer than 5 training samples
+# are grouped into the "other" category.
+
 rare = {
     t for t, count in train_counts.items()
     if count < 5
 }
 
-print(f"合併為 other 的類別: {rare}")
+print(f"Classes merged into 'other': {rare}")
 
 
 def merge_rare(label):
@@ -59,7 +77,7 @@ def merge_rare(label):
 
 
 # ============================================================
-# Label encoding
+# 4. Label encoding
 # ============================================================
 
 all_labels = [
@@ -77,12 +95,12 @@ le.fit([
 
 n_classes = len(le.classes_)
 
-print(f"類別數: {n_classes}")
-print(f"類別: {list(le.classes_)}")
+print(f"Number of classes: {n_classes}")
+print(f"Classes: {list(le.classes_)}")
 
 
 # ============================================================
-# Prepare train / validation / test data
+# 5. Prepare train / validation / test data
 # ============================================================
 
 X_train, y_train = [], []
@@ -97,19 +115,17 @@ for g in graphs:
 
     # --------------------------------------------------------
     # Input feature:
-    # 只使用代表鏈的 1280-dimensional ESM2 embedding
-    # 不加入 n_chains
+    # representative-chain 1280-dimensional ESM2 embedding only
     # --------------------------------------------------------
 
     emb = g["node_features"]
     feat = emb
 
-    # Target
+    # Target label
     label = merge_rare(g["t_number"])
     y = le.transform([label])[0]
 
-
-    # Use exactly the same split stored in graph_dataset.json
+    # Use the split stored in graph_dataset.json
     if g["split"] == "train":
         X_train.append(feat)
         y_train.append(y)
@@ -124,12 +140,23 @@ for g in graphs:
 
 
 # ============================================================
-# Convert to NumPy arrays
+# 6. Convert to NumPy arrays
 # ============================================================
 
-X_train = np.array(X_train, dtype=np.float32)
-X_val = np.array(X_val, dtype=np.float32)
-X_test = np.array(X_test, dtype=np.float32)
+X_train = np.array(
+    X_train,
+    dtype=np.float32
+)
+
+X_val = np.array(
+    X_val,
+    dtype=np.float32
+)
+
+X_test = np.array(
+    X_test,
+    dtype=np.float32
+)
 
 y_train = np.array(y_train)
 y_val = np.array(y_val)
@@ -142,11 +169,13 @@ print(
     f"Test: {len(X_test)}"
 )
 
-print(f"Feature dimension: {X_train.shape[1]}")
+print(
+    f"Feature dimension: {X_train.shape[1]}"
+)
 
 
 # ============================================================
-# XGBoost classifier
+# 7. XGBoost classifier
 # ============================================================
 
 model = XGBClassifier(
@@ -161,10 +190,10 @@ model = XGBClassifier(
 
 
 # ============================================================
-# Training
+# 8. Training
 # ============================================================
 
-print("\n開始訓練 XGBoost...")
+print("\nTraining XGBoost...")
 
 model.fit(
     X_train,
@@ -175,7 +204,7 @@ model.fit(
 
 
 # ============================================================
-# Test evaluation
+# 9. Test evaluation
 # ============================================================
 
 preds = model.predict(X_test)
@@ -194,12 +223,17 @@ macro_f1 = f1_score(
 
 print("\n===== Test Results =====")
 
-print(f"Test Accuracy: {acc:.4f}")
-print(f"Macro F1: {macro_f1:.4f}")
+print(
+    f"Test Accuracy: {acc:.4f}"
+)
+
+print(
+    f"Macro F1: {macro_f1:.4f}"
+)
 
 
 # ============================================================
-# Classification report
+# 10. Classification report
 # ============================================================
 
 labels_in_test = sorted(
