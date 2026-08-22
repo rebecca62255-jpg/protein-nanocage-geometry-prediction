@@ -1,0 +1,70 @@
+讀取圖資料集...
+合併為 other 的類別: {'pT27', '19d', '7d', '2', '27'}
+類別數: 11, 類別: [np.str_('1'), np.str_('13'), np.str_('16'), np.str_('169'), np.str_('3'), np.str_('4'), np.str_('7l'), np.str_('9'), np.str_('other'), np.str_('pT25'), np.str_('pT3')]
+Train: 590, Val: 126, Test: 128
+Using mps
+Epoch 1/100 | Val Acc: 0.5159 | Val Macro F1: 0.2147 | Best Macro F1: 0.2147 | Time: 7.3s
+Epoch 2/100 | Val Acc: 0.6349 | Val Macro F1: 0.3169 | Best Macro F1: 0.3169 | Time: 5.7s
+Epoch 3/100 | Val Acc: 0.6746 | Val Macro F1: 0.3724 | Best Macro F1: 0.3724 | Time: 6.0s
+Epoch 4/100 | Val Acc: 0.6190 | Val Macro F1: 0.3997 | Best Macro F1: 0.3997 | Time: 6.4s
+Epoch 5/100 | Val Acc: 0.6190 | Val Macro F1: 0.4167 | Best Macro F1: 0.4167 | Time: 7.3s
+Epoch 6/100 | Val Acc: 0.7381 | Val Macro F1: 0.4698 | Best Macro F1: 0.4698 | Time: 6.3s
+Epoch 7/100 | Val Acc: 0.7381 | Val Macro F1: 0.4633 | Best Macro F1: 0.4698 | Time: 6.7s
+Epoch 8/100 | Val Acc: 0.7143 | Val Macro F1: 0.4670 | Best Macro F1: 0.4698 | Time: 8.3s
+Epoch 9/100 | Val Acc: 0.7460 | Val Macro F1: 0.5369 | Best Macro F1: 0.5369 | Time: 9.2s
+Epoch 10/100 | Val Acc: 0.7381 | Val Macro F1: 0.5753 | Best Macro F1: 0.5753 | Time: 8.3s
+Epoch 11/100 | Val Acc: 0.7540 | Val Macro F1: 0.5815 | Best Macro F1: 0.5815 | Time: 37.3s
+Epoch 12/100 | Val Acc: 0.7143 | Val Macro F1: 0.5819 | Best Macro F1: 0.5819 | Time: 17.2s
+Epoch 13/100 | Val Acc: 0.7143 | Val Macro F1: 0.5189 | Best Macro F1: 0.5819 | Time: 8.7s
+Epoch 14/100 | Val Acc: 0.7540 | Val Macro F1: 0.5769 | Best Macro F1: 0.5819 | Time: 9.3s
+Epoch 15/100 | Val Acc: 0.7540 | Val Macro F1: 0.5292 | Best Macro F1: 0.5819 | Time: 10.8s
+Epoch 16/100 | Val Acc: 0.7460 | Val Macro F1: 0.6043 | Best Macro F1: 0.6043 | Time: 10.9s
+Epoch 17/100 | Val Acc: 0.7381 | Val Macro F1: 0.5683 | Best Macro F1: 0.6043 | Time: 11.0s
+Epoch 18/100 | Val Acc: 0.7619 | Val Macro F1: 0.5818 | Best Macro F1: 0.6043 | Time: 10.9s
+Epoch 19/100 | Val Acc: 0.7143 | Val Macro F1: 0.5669 | Best Macro F1: 0.6043 | Time: 11.8s
+Epoch 20/100 | Val Acc: 0.7540 | Val Macro F1: 0.5898 | Best Macro F1: 0.6043 | Time: 12.5s
+Epoch 21/100 | Val Acc: 0.7937 | Val Macro F1: 0.6208 | Best Macro F1: 0.6208 | Time: 13.7s
+Epoch 22/100 | Val Acc: 0.7460 | Val Macro F1: 0.5681 | Best Macro F1: 0.6208 | Time: 15.9s
+Epoch 23/100 | Val Acc: 0.7460 | Val Macro F1: 0.6145 | Best Macro F1: 0.6208 | Time: 13.4s
+Epoch 24/100 | Val Acc: 0.7540 | Val Macro F1: 0.5937 | Best Macro F1: 0.6208 | Time: 16.1s
+Epoch 25/100 | Val Acc: 0.7698 | Val Macro F1: 0.6181 | Best Macro F1: 0.6208 | Time: 17.4s
+Epoch 26/100 | Val Acc: 0.7619 | Val Macro F1: 0.6142 | Best Macro F1: 0.6208 | Time: 18.7s
+Epoch 27/100 | Val Acc: 0.7540 | Val Macro F1: 0.6007 | Best Macro F1: 0.6208 | Time: 18.9s
+Epoch 28/100 | Val Acc: 0.7698 | Val Macro F1: 0.5930 | Best Macro F1: 0.6208 | Time: 19.1s
+Epoch 29/100 | Val Acc: 0.7698 | Val Macro F1: 0.6022 | Best Macro F1: 0.6208 | Time: 19.4s
+Epoch 30/100 | Val Acc: 0.7222 | Val Macro F1: 0.5936 | Best Macro F1: 0.6208 | Time: 18.1s
+Epoch 31/100 | Val Acc: 0.6667 | Val Macro F1: 0.5148 | Best Macro F1: 0.6208 | Time: 19.6s
+Epoch 32/100 | Val Acc: 0.7302 | Val Macro F1: 0.5539 | Best Macro F1: 0.6208 | Time: 22.1s
+Epoch 33/100 | Val Acc: 0.7778 | Val Macro F1: 0.6197 | Best Macro F1: 0.6208 | Time: 21.4s
+Epoch 34/100 | Val Acc: 0.6825 | Val Macro F1: 0.4761 | Best Macro F1: 0.6208 | Time: 22.9s
+Epoch 35/100 | Val Acc: 0.7143 | Val Macro F1: 0.5349 | Best Macro F1: 0.6208 | Time: 23.6s
+Epoch 36/100 | Val Acc: 0.6825 | Val Macro F1: 0.4886 | Best Macro F1: 0.6208 | Time: 27.1s
+Early stopping at epoch 36 (no improvement for 15 epochs)
+
+===== Selected GAT =====
+Best Epoch: 21
+Validation Accuracy: 0.7937
+Validation Macro F1: 0.6208
+
+===== Final Test Results =====
+Test Accuracy: 0.7891
+Macro F1: 0.5262
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.75      0.86      0.80        21
+          13       0.00      0.00      0.00         2
+         169       0.00      0.00      0.00         2
+           3       1.00      0.67      0.80        18
+           4       0.00      0.00      0.00         4
+          7l       0.67      0.80      0.73         5
+           9       0.71      0.62      0.67         8
+       other       0.75      0.75      0.75         4
+        pT25       0.71      0.56      0.62         9
+         pT3       0.82      0.98      0.89        55
+
+   micro avg       0.80      0.79      0.79       128
+   macro avg       0.54      0.52      0.53       128
+weighted avg       0.76      0.79      0.76       128
+

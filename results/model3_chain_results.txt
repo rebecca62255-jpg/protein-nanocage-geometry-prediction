@@ -1,0 +1,67 @@
+Loading graph dataset...
+Classes merged into 'other': {'19d', 'pT27', 'pT25', '13', '16', '2', '7d'}
+Number of classes: 7
+Classes: [np.str_('1'), np.str_('3'), np.str_('4'), np.str_('7l'), np.str_('9'), np.str_('other'), np.str_('pT3')]
+Train: 257, Val: 50, Test: 51
+Using mps
+Epoch 1/100 | Val Acc: 0.6600 | Val Macro F1: 0.3971 | Best Macro F1: 0.3971 | Time: 2.6s
+Epoch 2/100 | Val Acc: 0.7200 | Val Macro F1: 0.4225 | Best Macro F1: 0.4225 | Time: 0.9s
+Epoch 3/100 | Val Acc: 0.7200 | Val Macro F1: 0.4259 | Best Macro F1: 0.4259 | Time: 0.8s
+Epoch 4/100 | Val Acc: 0.7600 | Val Macro F1: 0.4993 | Best Macro F1: 0.4993 | Time: 0.9s
+Epoch 5/100 | Val Acc: 0.7400 | Val Macro F1: 0.5414 | Best Macro F1: 0.5414 | Time: 0.8s
+Epoch 6/100 | Val Acc: 0.7600 | Val Macro F1: 0.5196 | Best Macro F1: 0.5414 | Time: 0.5s
+Epoch 7/100 | Val Acc: 0.7800 | Val Macro F1: 0.6083 | Best Macro F1: 0.6083 | Time: 0.8s
+Epoch 8/100 | Val Acc: 0.7800 | Val Macro F1: 0.5750 | Best Macro F1: 0.6083 | Time: 0.5s
+Epoch 9/100 | Val Acc: 0.7600 | Val Macro F1: 0.5495 | Best Macro F1: 0.6083 | Time: 0.5s
+Epoch 10/100 | Val Acc: 0.7600 | Val Macro F1: 0.5780 | Best Macro F1: 0.6083 | Time: 0.8s
+Epoch 11/100 | Val Acc: 0.7800 | Val Macro F1: 0.5750 | Best Macro F1: 0.6083 | Time: 0.5s
+Epoch 12/100 | Val Acc: 0.7800 | Val Macro F1: 0.7437 | Best Macro F1: 0.7437 | Time: 0.5s
+Epoch 13/100 | Val Acc: 0.7800 | Val Macro F1: 0.6614 | Best Macro F1: 0.7437 | Time: 0.5s
+Epoch 14/100 | Val Acc: 0.7600 | Val Macro F1: 0.5599 | Best Macro F1: 0.7437 | Time: 0.5s
+Epoch 15/100 | Val Acc: 0.8000 | Val Macro F1: 0.7156 | Best Macro F1: 0.7437 | Time: 0.5s
+Epoch 16/100 | Val Acc: 0.7800 | Val Macro F1: 0.7138 | Best Macro F1: 0.7437 | Time: 0.5s
+Epoch 17/100 | Val Acc: 0.7800 | Val Macro F1: 0.7045 | Best Macro F1: 0.7437 | Time: 0.6s
+Epoch 18/100 | Val Acc: 0.6400 | Val Macro F1: 0.4897 | Best Macro F1: 0.7437 | Time: 0.5s
+Epoch 19/100 | Val Acc: 0.8000 | Val Macro F1: 0.6813 | Best Macro F1: 0.7437 | Time: 0.6s
+Epoch 20/100 | Val Acc: 0.8000 | Val Macro F1: 0.7755 | Best Macro F1: 0.7755 | Time: 0.5s
+Epoch 21/100 | Val Acc: 0.7800 | Val Macro F1: 0.6790 | Best Macro F1: 0.7755 | Time: 0.5s
+Epoch 22/100 | Val Acc: 0.7800 | Val Macro F1: 0.6640 | Best Macro F1: 0.7755 | Time: 0.5s
+Epoch 23/100 | Val Acc: 0.7800 | Val Macro F1: 0.7032 | Best Macro F1: 0.7755 | Time: 0.6s
+Epoch 24/100 | Val Acc: 0.8000 | Val Macro F1: 0.7499 | Best Macro F1: 0.7755 | Time: 0.6s
+Epoch 25/100 | Val Acc: 0.7800 | Val Macro F1: 0.7058 | Best Macro F1: 0.7755 | Time: 0.4s
+Epoch 26/100 | Val Acc: 0.7800 | Val Macro F1: 0.7032 | Best Macro F1: 0.7755 | Time: 0.7s
+Epoch 27/100 | Val Acc: 0.7000 | Val Macro F1: 0.6410 | Best Macro F1: 0.7755 | Time: 0.6s
+Epoch 28/100 | Val Acc: 0.7000 | Val Macro F1: 0.5634 | Best Macro F1: 0.7755 | Time: 0.5s
+Epoch 29/100 | Val Acc: 0.7800 | Val Macro F1: 0.6640 | Best Macro F1: 0.7755 | Time: 0.6s
+Epoch 30/100 | Val Acc: 0.7200 | Val Macro F1: 0.5248 | Best Macro F1: 0.7755 | Time: 0.5s
+Epoch 31/100 | Val Acc: 0.8000 | Val Macro F1: 0.7592 | Best Macro F1: 0.7755 | Time: 0.6s
+Epoch 32/100 | Val Acc: 0.7800 | Val Macro F1: 0.7055 | Best Macro F1: 0.7755 | Time: 0.8s
+Epoch 33/100 | Val Acc: 0.7600 | Val Macro F1: 0.5847 | Best Macro F1: 0.7755 | Time: 0.6s
+Epoch 34/100 | Val Acc: 0.7800 | Val Macro F1: 0.7032 | Best Macro F1: 0.7755 | Time: 0.6s
+Epoch 35/100 | Val Acc: 0.7400 | Val Macro F1: 0.6777 | Best Macro F1: 0.7755 | Time: 0.6s
+Early stopping at epoch 35 (no improvement for 15 epochs)
+
+===== Selected Chain-level GAT =====
+Best Epoch: 20
+Validation Accuracy: 0.8000
+Validation Macro F1: 0.7755
+
+===== Final Test Results =====
+Test Accuracy: 0.8235
+Macro F1: 0.6611
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       1.00      0.67      0.80         3
+           3       0.83      0.91      0.87        11
+           4       0.67      1.00      0.80         2
+          7l       0.40      1.00      0.57         2
+           9       0.00      0.00      0.00         3
+       other       0.60      0.75      0.67         4
+         pT3       0.96      0.88      0.92        26
+
+    accuracy                           0.82        51
+   macro avg       0.64      0.74      0.66        51
+weighted avg       0.82      0.82      0.81        51
+

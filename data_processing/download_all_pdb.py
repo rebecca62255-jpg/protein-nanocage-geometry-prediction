@@ -12,6 +12,7 @@ Output:
 import csv
 import time
 import urllib.request
+import urllib.error
 from pathlib import Path
 
 
@@ -97,6 +98,8 @@ for entry in entries:
 
     for ext in ["pdb", "cif"]:
 
+        print(f"Trying {pdb_id}.{ext} ...")
+
         url = (
             f"https://files.rcsb.org/download/"
             f"{pdb_id}.{ext}"
@@ -109,11 +112,30 @@ for entry in entries:
 
 
         try:
+            success = False
 
-            urllib.request.urlretrieve(
-                url,
-                out_path
-            )
+            for attempt in range(3):
+                try:
+                    with urllib.request.urlopen(url, timeout=15) as response:
+                        out_path.write_bytes(response.read())
+                    success = True
+                    break
+
+                except urllib.error.HTTPError:
+                    break
+
+                except Exception as e:
+                    if attempt == 2:
+                        print(
+                            f"  ERROR {pdb_id}.{ext}: {e}"
+                        )
+                    else:
+                        time.sleep(1)
+
+            if not success:
+                if out_path.exists():
+                    out_path.unlink()
+                continue
 
             done += 1
             downloaded = True

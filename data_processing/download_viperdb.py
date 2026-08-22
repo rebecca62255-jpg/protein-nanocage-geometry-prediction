@@ -11,7 +11,9 @@ import urllib.request
 from pathlib import Path
 
 BASE_URL = "https://viperdb.org/services"
-OUTPUT_PATH = Path(__file__).parent / "viperdb_entries.csv"
+ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = ROOT / "data"
+OUTPUT_PATH = DATA_DIR / "viperdb_entries.csv"
 DELAY = 0.1  # seconds between requests to be polite
 
 _ssl_ctx = ssl.create_default_context()
@@ -58,12 +60,14 @@ def get_chain_ids(pdb_id: str) -> str:
 
 
 def main():
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
     print("Fetching entry list from VIPERdb...")
     entries = get_all_entries()
     total = len(entries)
     print(f"Found {total} entries. Downloading details...\n")
 
-    fieldnames = ["pdb_id", "name", "t_number", "outer_diameter_A", "num_subunits", "chain_ids"]
+    fieldnames = ["pdb_id", "name", "t_number", "outer_diameter", "num_subunits", "chain_ids"]
 
     with OUTPUT_PATH.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -89,7 +93,7 @@ def main():
                 "pdb_id": pdb_id,
                 "name": name,
                 "t_number": t_number,
-                "outer_diameter_A": outer_diameter,
+                "outer_diameter": outer_diameter,
                 "num_subunits": num_subunits,
                 "chain_ids": chain_ids,
             })

@@ -18,6 +18,7 @@ Note:
 
 import json
 import random
+import time
 from pathlib import Path
 from collections import Counter
 
@@ -88,7 +89,7 @@ train_counts = Counter(train_labels)
 
 rare = {
     t for t, count in train_counts.items()
-    if count < 5
+    if count < 10
 }
 
 print(f"Classes merged into 'other': {rare}")
@@ -98,17 +99,11 @@ def merge_rare(label):
     return "other" if label in rare else label
 
 
-all_labels = [
-    g["t_number"]
-    for g in graphs
-    if g["t_number"]
-]
-
 le = LabelEncoder()
 
 le.fit([
     merge_rare(label)
-    for label in all_labels
+    for label in train_labels
 ])
 
 n_classes = len(le.classes_)
@@ -278,11 +273,17 @@ class GAT(nn.Module):
 # 8. Training setup
 # ============================================================
 
-device = torch.device(
-    "cuda"
-    if torch.cuda.is_available()
-    else "cpu"
-)
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+
+elif (
+    hasattr(torch.backends, "mps")
+    and torch.backends.mps.is_available()
+):
+    device = torch.device("mps")
+
+else:
+    device = torch.device("cpu")
 
 print(f"Using {device}")
 
@@ -308,9 +309,18 @@ criterion = nn.CrossEntropyLoss()
 # 9. Training
 # ============================================================
 
+best_val_f1 = 0.0
 best_val_acc = 0.0
+best_epoch = 0
 
-for epoch in range(100):
+MAX_EPOCHS = 100
+PATIENCE = 15
+epochs_without_improvement = 0
+
+
+for epoch in range(MAX_EPOCHS):
+
+    epoch_start = time.time()
 
     model.train()
 
@@ -332,7 +342,6 @@ for epoch in range(100):
         )
 
         loss.backward()
-
         optimizer.step()
 
 
@@ -342,8 +351,8 @@ for epoch in range(100):
 
     model.eval()
 
-    correct = 0
-    total = 0
+    val_preds = []
+    val_labels = []
 
     with torch.no_grad():
 
@@ -359,33 +368,91 @@ for epoch in range(100):
 
             preds = out.argmax(dim=1)
 
-            correct += (
-                preds == batch.y
-            ).sum().item()
+            val_preds.extend(
+                preds.cpu().numpy()
+            )
 
-            total += len(batch.y)
+            val_labels.extend(
+                batch.y.cpu().numpy()
+            )
 
 
-    val_acc = correct / total
+    val_acc = accuracy_score(
+        val_labels,
+        val_preds
+    )
+
+    labels_in_val = sorted(
+        set(val_labels)
+    )
+
+    val_f1 = f1_score(
+        val_labels,
+        val_preds,
+        labels=labels_in_val,
+        average="macro",
+        zero_division=0
+    )
 
 
-    if val_acc > best_val_acc:
+    improved = (
+        val_f1 > best_val_f1
+        or (
+            val_f1 == best_val_f1
+            and val_acc > best_val_acc
+        )
+    )
 
+
+    if improved:
+
+        best_val_f1 = val_f1
         best_val_acc = val_acc
+        best_epoch = epoch + 1
+        epochs_without_improvement = 0
 
         torch.save(
             model.state_dict(),
             MODEL_FILE
         )
 
+    else:
 
-    if (epoch + 1) % 20 == 0:
+        epochs_without_improvement += 1
+
+
+    epoch_seconds = (
+        time.time()
+        - epoch_start
+    )
+
+
+    print(
+        f"Epoch {epoch + 1}/{MAX_EPOCHS} | "
+        f"Val Acc: {val_acc:.4f} | "
+        f"Val Macro F1: {val_f1:.4f} | "
+        f"Best Macro F1: {best_val_f1:.4f} | "
+        f"Time: {epoch_seconds:.1f}s"
+    )
+
+
+    if epochs_without_improvement >= PATIENCE:
 
         print(
-            f"Epoch {epoch + 1}/100 | "
-            f"Val Acc: {val_acc:.4f} | "
-            f"Best: {best_val_acc:.4f}"
+            f"Early stopping at epoch "
+            f"{epoch + 1} "
+            f"(no improvement for "
+            f"{PATIENCE} epochs)"
         )
+
+        break
+
+
+print()
+print("===== Selected Chain-level GAT =====")
+print(f"Best Epoch: {best_epoch}")
+print(f"Validation Accuracy: {best_val_acc:.4f}")
+print(f"Validation Macro F1: {best_val_f1:.4f}")
 
 
 # ============================================================
@@ -435,14 +502,20 @@ acc = accuracy_score(
     all_preds
 )
 
+labels_in_test = sorted(
+    set(all_labels_enc)
+)
+
 macro_f1 = f1_score(
     all_labels_enc,
     all_preds,
-    average="macro"
+    labels=labels_in_test,
+    average="macro",
+    zero_division=0
 )
 
 
-print("\n===== Test Results =====")
+print("\n===== Final Test Results =====")
 
 print(
     f"Test Accuracy: {acc:.4f}"
@@ -456,10 +529,6 @@ print(
 # ============================================================
 # 11. Classification report
 # ============================================================
-
-labels_in_test = sorted(
-    set(all_labels_enc)
-)
 
 target_names = [
     le.classes_[i]

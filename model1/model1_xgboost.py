@@ -113,11 +113,7 @@ y_test = merge_rare(y_test)
 
 le = LabelEncoder()
 
-le.fit(
-    y_train +
-    y_val +
-    y_test
-)
+le.fit(y_train)
 
 y_train_enc = le.transform(y_train)
 y_val_enc = le.transform(y_val)
@@ -187,10 +183,16 @@ acc = accuracy_score(
     preds
 )
 
+labels_in_test = sorted(
+    set(y_test_enc)
+)
+
 macro_f1 = f1_score(
     y_test_enc,
     preds,
-    average="macro"
+    labels=labels_in_test,
+    average="macro",
+    zero_division=0
 )
 
 
@@ -208,10 +210,6 @@ print(
 # ============================================================
 # 9. Classification report
 # ============================================================
-
-labels_in_test = sorted(
-    set(y_test_enc)
-)
 
 target_names = [
     le.classes_[i]

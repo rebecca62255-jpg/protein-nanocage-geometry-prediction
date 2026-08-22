@@ -1,11 +1,29 @@
-Model 2: Outer Diameter Regression using ESM2 Embeddings and T-number
+Loading data...
+Train: 590, Val: 126, Test: 128
+T-number categories learned from train: 15
+Categories: [np.str_('1'), np.str_('13'), np.str_('16'), np.str_('169'), np.str_('19d'), np.str_('2'), np.str_('27'), np.str_('3'), np.str_('4'), np.str_('7d'), np.str_('7l'), np.str_('9'), np.str_('pT25'), np.str_('pT27'), np.str_('pT3')]
+Final input dimension: 1295
+Using mps
+Epoch 1/100 | Val MAE: 468.11 Å | Best: 468.11 Å
+Epoch 10/100 | Val MAE: 164.22 Å | Best: 160.84 Å
+Epoch 20/100 | Val MAE: 156.27 Å | Best: 150.73 Å
+Epoch 30/100 | Val MAE: 142.48 Å | Best: 142.48 Å
+Epoch 40/100 | Val MAE: 122.25 Å | Best: 122.25 Å
+Epoch 50/100 | Val MAE: 102.66 Å | Best: 102.66 Å
+Epoch 60/100 | Val MAE: 85.67 Å | Best: 85.67 Å
+Epoch 70/100 | Val MAE: 76.93 Å | Best: 76.93 Å
+Epoch 80/100 | Val MAE: 71.92 Å | Best: 71.92 Å
+Epoch 90/100 | Val MAE: 71.44 Å | Best: 70.05 Å
+Epoch 100/100 | Val MAE: 70.24 Å | Best: 66.26 Å
+Best epoch: 97
+Best validation MAE: 66.26 Å
 
-Test MAE: 139.47 Å
-Test R²: 0.2959
+===== Final Test Results =====
+Test MAE: 64.44 Å
+Test R²: 0.8713
 
-Evaluation:
-- Mean Absolute Error (MAE)
-- R²
+Predicted vs actual plot saved to:
+/Users/rebecca/Desktop/github/figures/model2_predicted_vs_actual.png
 
-See:
-figures/model2_predicted_vs_actual.png
+Best model saved to:
+/Users/rebecca/Desktop/github/outputs/best_model2.pt

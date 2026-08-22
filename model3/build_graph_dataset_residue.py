@@ -2,14 +2,22 @@
 Build the residue-level graph dataset for Model 3.
 
 Nodes:
-    Individual amino acid residues from the representative chain
+    Individual amino acid residues from each representative chain.
 
 Node features:
-    1280-dimensional per-residue ESM2 embeddings
+    1280-dimensional per-residue ESM2 embeddings.
 
 Edges:
-    Residue pairs within the same chain whose Cα-Cα distance
-    is below 8 Å
+    Directed edges between residues whose Cα-Cα distance is
+    below 8 Å.
+
+Inputs:
+    data/feature_matrix.csv
+    data/pdb_files_all/
+    data/esm_residue_embs/
+
+Output:
+    data/graph_dataset_residue.json
 """
 
 import csv
@@ -17,11 +25,11 @@ import json
 from pathlib import Path
 
 import numpy as np
-from Bio import PDB
+from Bio.PDB import PDBParser, MMCIFParser
 
 
 # ============================================================
-# 1. File paths
+# 1. File paths and settings
 # ============================================================
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,125 +44,238 @@ MAX_SEQ_LEN = 512
 
 
 # ============================================================
-# 2. Load feature matrix
+# 2. Standard amino acids
 # ============================================================
 
-print("Loading feature matrix...")
+STANDARD_AA = {
+    "ALA",
+    "ARG",
+    "ASN",
+    "ASP",
+    "CYS",
+    "GLN",
+    "GLU",
+    "GLY",
+    "HIS",
+    "ILE",
+    "LEU",
+    "LYS",
+    "MET",
+    "PHE",
+    "PRO",
+    "SER",
+    "THR",
+    "TRP",
+    "TYR",
+    "VAL",
+}
 
-pdb_info = {}
 
-with open(FEATURE_MATRIX) as f:
+# ============================================================
+# 3. Load feature matrix
+# ============================================================
+
+print(
+    "Loading feature matrix..."
+)
+
+entries = []
+
+
+with FEATURE_MATRIX.open(
+    encoding="utf-8"
+) as f:
+
     reader = csv.DictReader(f)
+
+
+    required_columns = {
+        "seq_id",
+        "pdb_id",
+        "t_number",
+        "outer_diameter",
+        "split",
+    }
+
+
+    if reader.fieldnames is None:
+
+        raise ValueError(
+            "feature_matrix.csv has no header."
+        )
+
+
+    missing_columns = (
+        required_columns
+        - set(reader.fieldnames)
+    )
+
+
+    if missing_columns:
+
+        raise ValueError(
+            "Missing required columns: "
+            + ", ".join(
+                sorted(
+                    missing_columns
+                )
+            )
+        )
+
 
     for row in reader:
 
-        pdb_id = row["pdb_id"].strip()
-        seq_id = row["seq_id"].strip()
+        entries.append(
+            {
+                "seq_id":
+                    row[
+                        "seq_id"
+                    ].strip(),
 
-        if pdb_id not in pdb_info:
+                "pdb_id":
+                    row[
+                        "pdb_id"
+                    ]
+                    .strip()
+                    .lower(),
 
-            pdb_info[pdb_id] = {
-                "seq_id": seq_id,
-                "t_number": row["t_number"].strip(),
-                "outer_diameter_A": row["outer_diameter_A"].strip(),
-                "split": row["split"].strip()
+                "t_number":
+                    row[
+                        "t_number"
+                    ].strip(),
+
+                "outer_diameter":
+                    row[
+                        "outer_diameter"
+                    ].strip(),
+
+                "split":
+                    row[
+                        "split"
+                    ].strip(),
             }
+        )
+
+
+print(
+    f"Found {len(entries)} "
+    f"representative sequences"
+)
 
 
 # ============================================================
-# 3. PDB parser
+# 4. Structure parsers
 # ============================================================
 
-parser = PDB.PDBParser(
+pdb_parser = PDBParser(
     QUIET=True
 )
 
+cif_parser = MMCIFParser(
+    QUIET=True
+)
+
+
+# ============================================================
+# 5. Extract C-alpha coordinates
+# ============================================================
 
 def get_chain_ca_coords(
     chain,
     max_len=MAX_SEQ_LEN
 ):
-    """
-    Extract Cα coordinates from standard residues
-    in a single protein chain.
-    """
 
     coords = []
 
+
     for residue in chain:
 
+        # Standard protein residues only
         if residue.get_id()[0] != " ":
             continue
 
-        if "CA" not in residue:
+
+        if (
+            residue
+            .get_resname()
+            .strip()
+            not in STANDARD_AA
+        ):
+
             continue
 
+
+        if "CA" not in residue:
+
+            continue
+
+
         coords.append(
-            residue["CA"]
+            residue[
+                "CA"
+            ]
             .get_vector()
             .get_array()
         )
 
-    return np.array(
-        coords[:max_len]
+
+        if (
+            len(coords)
+            >= max_len
+        ):
+
+            break
+
+
+    return np.asarray(
+        coords,
+        dtype=np.float32
     )
 
 
 # ============================================================
-# 4. Build residue-level graph dataset
+# 6. Build graphs
 # ============================================================
 
-print("Building residue-level graph dataset...")
+print(
+    "Building residue-level graph dataset..."
+)
+
 
 graphs = []
-skipped = 0
+
+failed = []
 
 
-for pdb_id, info in pdb_info.items():
+for i, info in enumerate(
+    entries,
+    1
+):
 
-    if not info["t_number"]:
-        skipped += 1
-        continue
+    seq_id = info[
+        "seq_id"
+    ]
 
-
-    seq_id = info["seq_id"]
+    pdb_id = info[
+        "pdb_id"
+    ]
 
 
     # --------------------------------------------------------
-    # Locate per-residue ESM2 embedding
+    # Check labels
     # --------------------------------------------------------
 
-    emb_path = (
-        EMB_DIR /
-        f"{seq_id}.npy"
-    )
+    if not info[
+        "t_number"
+    ]:
 
-    if not emb_path.exists():
-
-        emb_path = (
-            EMB_DIR /
-            f"{seq_id.lower()}.npy"
+        failed.append(
+            (
+                seq_id,
+                "missing T-number"
+            )
         )
 
-
-    if not emb_path.exists():
-        skipped += 1
-        continue
-
-
-    # --------------------------------------------------------
-    # Load node features
-    # --------------------------------------------------------
-
-    node_features = np.load(
-        emb_path
-    )
-
-    n_nodes = node_features.shape[0]
-
-
-    if n_nodes < 5:
-        skipped += 1
         continue
 
 
@@ -163,18 +284,86 @@ for pdb_id, info in pdb_info.items():
     # --------------------------------------------------------
 
     try:
-        chain_id = seq_id.split(
-            "_",
-            1
-        )[1]
+
+        chain_id = (
+            seq_id
+            .split(
+                "_",
+                1
+            )[1]
+        )
 
     except IndexError:
-        skipped += 1
+
+        failed.append(
+            (
+                seq_id,
+                "invalid sequence ID"
+            )
+        )
+
         continue
 
 
     # --------------------------------------------------------
-    # Locate PDB structure
+    # Load per-residue ESM2 embedding
+    # --------------------------------------------------------
+
+    emb_path = (
+        EMB_DIR /
+        f"{seq_id}.npy"
+    )
+
+
+    if not emb_path.exists():
+
+        failed.append(
+            (
+                seq_id,
+                "residue embedding not found"
+            )
+        )
+
+        continue
+
+
+    try:
+
+        node_features = np.load(
+            emb_path
+        )
+
+    except Exception as e:
+
+        failed.append(
+            (
+                seq_id,
+                f"embedding load error: {e}"
+            )
+        )
+
+        continue
+
+
+    if (
+        node_features.ndim != 2
+        or
+        node_features.shape[1] != 1280
+    ):
+
+        failed.append(
+            (
+                seq_id,
+                f"invalid embedding shape "
+                f"{node_features.shape}"
+            )
+        )
+
+        continue
+
+
+    # --------------------------------------------------------
+    # Locate and load structure
     # --------------------------------------------------------
 
     pdb_path = (
@@ -182,72 +371,138 @@ for pdb_id, info in pdb_info.items():
         f"{pdb_id}.pdb"
     )
 
+    cif_path = (
+        PDB_DIR /
+        f"{pdb_id}.cif"
+    )
 
-    if not pdb_path.exists():
-        skipped += 1
-        continue
-
-
-    # --------------------------------------------------------
-    # Extract chain
-    # --------------------------------------------------------
 
     try:
 
-        structure = parser.get_structure(
-            pdb_id,
-            str(pdb_path)
+        if pdb_path.exists():
+
+            structure = (
+                pdb_parser
+                .get_structure(
+                    pdb_id,
+                    str(pdb_path)
+                )
+            )
+
+        elif cif_path.exists():
+
+            structure = (
+                cif_parser
+                .get_structure(
+                    pdb_id,
+                    str(cif_path)
+                )
+            )
+
+        else:
+
+            failed.append(
+                (
+                    seq_id,
+                    "structure file not found"
+                )
+            )
+
+            continue
+
+
+        chain = structure[0][
+            chain_id
+        ]
+
+
+    except Exception as e:
+
+        failed.append(
+            (
+                seq_id,
+                f"structure/chain error: {e}"
+            )
         )
 
-        chain = structure[0][chain_id]
-
-    except Exception:
-
-        skipped += 1
         continue
 
 
     # --------------------------------------------------------
-    # Extract Cα coordinates
+    # Extract C-alpha coordinates
     # --------------------------------------------------------
 
-    ca_coords = get_chain_ca_coords(
-        chain
+    ca_coords = (
+        get_chain_ca_coords(
+            chain
+        )
     )
 
 
     # --------------------------------------------------------
-    # Align embedding length and structural coordinates
+    # Align node features and coordinates
     # --------------------------------------------------------
 
-    if len(ca_coords) != n_nodes:
+    n_embedding = (
+        node_features.shape[0]
+    )
 
-        n_nodes = min(
-            len(ca_coords),
-            n_nodes
-        )
+    n_coords = len(
+        ca_coords
+    )
 
-        ca_coords = ca_coords[:n_nodes]
 
-        node_features = (
-            node_features[:n_nodes]
-        )
+    n_nodes = min(
+        n_embedding,
+        n_coords
+    )
 
 
     if n_nodes < 5:
-        skipped += 1
+
+        failed.append(
+            (
+                seq_id,
+                f"too few aligned residues "
+                f"(embedding={n_embedding}, "
+                f"coords={n_coords})"
+            )
+        )
+
         continue
 
 
+    node_features = (
+        node_features[
+            :n_nodes
+        ]
+    )
+
+    ca_coords = (
+        ca_coords[
+            :n_nodes
+        ]
+    )
+
+
     # --------------------------------------------------------
-    # Build residue-residue edges
+    # Build residue-residue contact edges
     # --------------------------------------------------------
 
     diff = (
-        ca_coords[:, None, :]
+        ca_coords[
+            :,
+            None,
+            :
+        ]
         -
-        ca_coords[None, :, :]
+        ca_coords[
+            None,
+            :,
+            :
+        ]
     )
+
 
     dist = np.linalg.norm(
         diff,
@@ -256,15 +511,25 @@ for pdb_id, info in pdb_info.items():
 
 
     idx_i, idx_j = np.where(
-        (dist < CONTACT_THRESHOLD)
+        (
+            dist
+            < CONTACT_THRESHOLD
+        )
         &
-        (dist > 0)
+        (
+            dist
+            > 0
+        )
     )
 
 
     edges = [
-        [int(i), int(j)]
-        for i, j in zip(
+        [
+            int(a),
+            int(b)
+        ]
+        for a, b
+        in zip(
             idx_i,
             idx_j
         )
@@ -275,37 +540,94 @@ for pdb_id, info in pdb_info.items():
     # Store graph
     # --------------------------------------------------------
 
-    graphs.append({
+    graphs.append(
+        {
+            "seq_id":
+                seq_id,
 
-        "pdb_id": pdb_id,
+            "pdb_id":
+                pdb_id,
 
-        "n_nodes": n_nodes,
+            "n_nodes":
+                int(
+                    n_nodes
+                ),
 
-        "node_features":
-            node_features.tolist(),
+            "node_features":
+                node_features
+                .astype(
+                    np.float32
+                )
+                .tolist(),
 
-        "edges": edges,
+            "edges":
+                edges,
 
-        "t_number":
-            info["t_number"],
+            "t_number":
+                info[
+                    "t_number"
+                ],
 
-        "outer_diameter_A":
-            info["outer_diameter_A"],
+            "outer_diameter":
+                info[
+                    "outer_diameter"
+                ],
 
-        "split":
-            info["split"]
-    })
+            "split":
+                info[
+                    "split"
+                ],
+        }
+    )
+
+
+    # --------------------------------------------------------
+    # Progress
+    # --------------------------------------------------------
+
+    if (
+        i % 50 == 0
+        or
+        i == len(entries)
+    ):
+
+        print(
+            f"[{i}/{len(entries)}] "
+            f"graphs: {len(graphs)} | "
+            f"failed: {len(failed)}"
+        )
 
 
 # ============================================================
-# 5. Save dataset
+# 7. Validate split counts
 # ============================================================
 
-print(
-    f"Completed: {len(graphs)} graphs, "
-    f"skipped {skipped} entries"
-)
+split_counts = {
+    "train": 0,
+    "validation": 0,
+    "test": 0,
+}
 
+
+for graph in graphs:
+
+    split_name = graph[
+        "split"
+    ]
+
+    if (
+        split_name
+        in split_counts
+    ):
+
+        split_counts[
+            split_name
+        ] += 1
+
+
+# ============================================================
+# 8. Save dataset
+# ============================================================
 
 OUTPUT.parent.mkdir(
     parents=True,
@@ -313,9 +635,9 @@ OUTPUT.parent.mkdir(
 )
 
 
-with open(
-    OUTPUT,
-    "w"
+with OUTPUT.open(
+    "w",
+    encoding="utf-8"
 ) as f:
 
     json.dump(
@@ -324,7 +646,57 @@ with open(
     )
 
 
+# ============================================================
+# 9. Summary
+# ============================================================
+
+print()
 print(
-    f"Saved residue-level graph dataset to:\n"
-    f"{OUTPUT}"
+    f"Completed: "
+    f"{len(graphs)} graphs"
+)
+
+print(
+    f"Failed/skipped: "
+    f"{len(failed)}"
+)
+
+print(
+    f"Train: "
+    f"{split_counts['train']}"
+)
+
+print(
+    f"Validation: "
+    f"{split_counts['validation']}"
+)
+
+print(
+    f"Test: "
+    f"{split_counts['test']}"
+)
+
+
+if failed:
+
+    print()
+    print(
+        "First failed examples:"
+    )
+
+    for item in failed[:10]:
+
+        print(
+            " ",
+            item
+        )
+
+
+print()
+print(
+    "Saved residue-level graph dataset to:"
+)
+
+print(
+    OUTPUT
 )

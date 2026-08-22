@@ -1,17 +1,39 @@
 """
-Model 3 XGBoost baseline
+Model 3: XGBoost baseline for T-number classification
 
-This model uses the same dataset split as the chain-level GAT,
-but only uses the 1,280-dimensional ESM2 embedding as input.
+Input:
+    1,280-dimensional representative-chain ESM2 embedding
 
-It does not use:
+Output:
+    T-number classification
+
+Dataset:
+    Uses the same chain-level subset and train/validation/test split
+    as the chain-level GAT.
+
+Preprocessing:
+    T-number classes with fewer than 10 samples in the training
+    set are merged into an "other" category. Label encoding is
+    fitted using the training set only.
+
+Model:
+    XGBoost classifier using only the ESM2 embedding as input.
+
+The model does not use:
     - chain count
     - graph connectivity
     - edge features
     - other structural features
 
-The model therefore serves as a non-graph baseline for comparison
-with the chain-level GAT.
+Purpose:
+    This model serves as a non-graph baseline for evaluating whether
+    chain-level graph connectivity provides additional predictive
+    information beyond the ESM2 sequence representation.
+
+Evaluation:
+    Accuracy
+    Macro F1
+    Classification report
 """
 
 import json
@@ -61,12 +83,12 @@ train_labels = [
 train_counts = Counter(train_labels)
 
 # To match the chain-level GAT setup,
-# T-number classes with fewer than 5 training samples
+# T-number classes with fewer than 10 training samples
 # are grouped into the "other" category.
 
 rare = {
     t for t, count in train_counts.items()
-    if count < 5
+    if count < 10
 }
 
 print(f"Classes merged into 'other': {rare}")
@@ -80,17 +102,11 @@ def merge_rare(label):
 # 4. Label encoding
 # ============================================================
 
-all_labels = [
-    g["t_number"]
-    for g in graphs
-    if g["t_number"]
-]
-
 le = LabelEncoder()
 
 le.fit([
     merge_rare(label)
-    for label in all_labels
+    for label in train_labels
 ])
 
 n_classes = len(le.classes_)
@@ -214,10 +230,16 @@ acc = accuracy_score(
     preds
 )
 
+labels_in_test = sorted(
+    set(y_test)
+)
+
 macro_f1 = f1_score(
     y_test,
     preds,
-    average="macro"
+    labels=labels_in_test,
+    average="macro",
+    zero_division=0
 )
 
 
@@ -235,10 +257,6 @@ print(
 # ============================================================
 # 10. Classification report
 # ============================================================
-
-labels_in_test = sorted(
-    set(y_test)
-)
 
 target_names = [
     le.classes_[i]

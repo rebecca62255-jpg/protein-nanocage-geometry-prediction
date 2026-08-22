@@ -1,13 +1,73 @@
-Model 1: T-number Classification using ESM2 Embeddings and MLP
+Loading data...
+Train: 590, Val: 126, Test: 128
+Classes merged into 'other': {'7d', 'pT27', '27', '2', '19d'}
+Number of classes: 11
+Classes: [np.str_('1'), np.str_('13'), np.str_('16'), np.str_('169'), np.str_('3'), np.str_('4'), np.str_('7l'), np.str_('9'), np.str_('other'), np.str_('pT25'), np.str_('pT3')]
+Using mps
 
-Test Accuracy: 0.77
-Macro F1: 0.5522
+===== MLP Hyperparameter Search =====
 
-Evaluation:
-- Accuracy
-- Macro F1
-- Classification report
-- Confusion matrix
+Training MLP_A...
+MLP_A | Val Accuracy: 0.8016 | Val Macro F1: 0.6648 | Best Epoch: 18
 
-See:
-figures/model1_confusion_matrix.png
+Training MLP_B...
+MLP_B | Val Accuracy: 0.8175 | Val Macro F1: 0.6889 | Best Epoch: 30
+
+Training MLP_C...
+MLP_C | Val Accuracy: 0.8016 | Val Macro F1: 0.6845 | Best Epoch: 27
+
+Training MLP_D...
+MLP_D | Val Accuracy: 0.8016 | Val Macro F1: 0.7004 | Best Epoch: 19
+
+Training MLP_E...
+MLP_E | Val Accuracy: 0.7857 | Val Macro F1: 0.6139 | Best Epoch: 42
+
+Training MLP_F...
+MLP_F | Val Accuracy: 0.7778 | Val Macro F1: 0.6226 | Best Epoch: 16
+
+Training MLP_G...
+MLP_G | Val Accuracy: 0.7857 | Val Macro F1: 0.6758 | Best Epoch: 28
+
+Training MLP_H...
+MLP_H | Val Accuracy: 0.7619 | Val Macro F1: 0.6849 | Best Epoch: 34
+
+===== Selected MLP =====
+Configuration: MLP_D
+Hidden layers: [512, 128]
+Dropout: 0.1
+Learning rate: 0.0005
+Weight decay: 0.0001
+Batch size: 32
+Class weights: False
+Validation Accuracy: 0.8016
+Validation Macro F1: 0.7004
+Best Epoch: 19
+
+===== Final Test Results =====
+Test Accuracy: 0.7891
+Macro F1: 0.5880
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.73      0.90      0.81        21
+          13       0.00      0.00      0.00         2
+         169       0.33      0.50      0.40         2
+           3       1.00      0.72      0.84        18
+           4       0.20      0.25      0.22         4
+          7l       0.67      0.80      0.73         5
+           9       0.83      0.62      0.71         8
+       other       0.50      0.50      0.50         4
+        pT25       0.78      0.78      0.78         9
+         pT3       0.89      0.89      0.89        55
+
+   micro avg       0.80      0.79      0.79       128
+   macro avg       0.59      0.60      0.59       128
+weighted avg       0.80      0.79      0.79       128
+
+
+Confusion matrix saved to:
+/Users/rebecca/Desktop/github/figures/model1_confusion_matrix.png
+
+Selected model saved to:
+/Users/rebecca/Desktop/github/model1/best_model1_new.pt

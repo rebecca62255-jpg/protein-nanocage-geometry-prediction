@@ -1,85 +1,27 @@
-# ============================================================
 # macOS
-# ============================================================
 .DS_Store
-**/.DS_Store
 
-
-# ============================================================
-# Python
-# ============================================================
+# Python cache
 __pycache__/
-*.py[cod]
+*.pyc
 *.pyo
-*.pyd
-.pytest_cache/
-.ipynb_checkpoints/
 
+# R / RStudio
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
 
-# ============================================================
-# Virtual environments
-# ============================================================
+# Python environments
+.venv/
 venv/
 env/
-.env/
-.venv/
 
-
-# ============================================================
-# IDE / editor files
-# ============================================================
-.vscode/
-.idea/
-
-
-# ============================================================
-# Large raw / processed datasets
-# These files can be regenerated using data_processing scripts.
-# ============================================================
-data/
-
-viperdb_entries.csv
-viperdb_filtered_3.5A.csv
-
-pdb_files/
-pdb_files_all/
-
-sequences.fasta
-sequences_nr.fasta
-*.clstr
-
-esm_embeddings.h5
-esm_residue_embeddings.h5
-
-dataset_split.json
-feature_matrix.csv
-interface_features.csv
-
-graph_dataset.json
-graph_dataset_chain.json
-graph_dataset_residue.json
-
-
-# ============================================================
-# Trained model checkpoints
-# ============================================================
+# Model checkpoints
 *.pt
-*.pth
-*.ckpt
+outputs/
 
-
-# ============================================================
-# Temporary / log files
-# ============================================================
-*.log
-*.out
-*.err
-slurm-*.out
-
-
-# ============================================================
-# Temporary files
-# ============================================================
-*.tmp
-*.temp
-*~.Rhistory
+# Large generated datasets
+data/pdb_files_all/
+data/esm_residue_embs/
+data/graph_dataset_residue.json

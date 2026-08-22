@@ -1,20 +1,27 @@
 """
-Build the final feature matrix.
+Build the final feature matrix for downstream modelling.
 
 Combines:
     - 1280-dimensional ESM2 embeddings
-    - dataset split labels
+    - train / validation / test split labels
     - T-number
     - outer diameter
-    - optional interface features
+
+Inputs:
+    data/esm_embeddings.h5
+    data/dataset_split.json
+    data/viperdb_filtered_3.5A.csv
 
 Output:
     data/feature_matrix.csv
 
-Note:
-    Interface features are included when interface_features.csv
-    is available. They are not required by the final Model 1 or
-    Model 2 implementations.
+Final columns:
+    seq_id
+    pdb_id
+    split
+    t_number
+    outer_diameter
+    emb_0 ... emb_1279
 """
 
 import csv
@@ -31,13 +38,8 @@ import h5py
 ROOT = Path(__file__).resolve().parents[1]
 
 EMBEDDINGS_H5 = ROOT / "data" / "esm_embeddings.h5"
-
-INTERFACE_CSV = ROOT / "data" / "interface_features.csv"
-
 VIPERDB_CSV = ROOT / "data" / "viperdb_filtered_3.5A.csv"
-
 SPLIT_JSON = ROOT / "data" / "dataset_split.json"
-
 OUTPUT_CSV = ROOT / "data" / "feature_matrix.csv"
 
 
@@ -47,16 +49,21 @@ OUTPUT_CSV = ROOT / "data" / "feature_matrix.csv"
 
 print("Loading dataset split...")
 
-with open(SPLIT_JSON) as f:
+with SPLIT_JSON.open(encoding="utf-8") as f:
     split = json.load(f)
 
 
-# Map each sequence ID to its dataset split
 id_to_split = {}
 
-for split_name, ids in split.items():
+for split_name, seq_ids in split.items():
 
-    for seq_id in ids:
+    for seq_id in seq_ids:
+
+        if seq_id in id_to_split:
+            raise ValueError(
+                f"Sequence ID appears in multiple splits: {seq_id}"
+            )
+
         id_to_split[seq_id] = split_name
 
 
@@ -67,57 +74,7 @@ print(
 
 
 # ============================================================
-# 3. Load optional interface features
-# ============================================================
-
-interface = {}
-
-
-if INTERFACE_CSV.exists():
-
-    print("Loading interface features...")
-
-    with open(INTERFACE_CSV) as f:
-
-        reader = csv.DictReader(f)
-
-        for row in reader:
-
-            pdb_id = (
-                row["pdb_id"]
-                .strip()
-                .lower()
-            )
-
-            interface[pdb_id] = {
-
-                "contact_residues":
-                    row["contact_residues"],
-
-                "rotation_angle_deg":
-                    row["rotation_angle_deg"],
-
-                "bsa_approx":
-                    row["bsa_approx"]
-            }
-
-
-    print(
-        f"Loaded interface features for "
-        f"{len(interface)} PDB entries"
-    )
-
-
-else:
-
-    print(
-        "interface_features.csv not found. "
-        "Interface feature columns will be left empty."
-    )
-
-
-# ============================================================
-# 4. Load geometry labels
+# 3. Load VIPERdb labels
 # ============================================================
 
 print("Loading VIPERdb labels...")
@@ -125,9 +82,32 @@ print("Loading VIPERdb labels...")
 labels = {}
 
 
-with open(VIPERDB_CSV) as f:
+with VIPERDB_CSV.open(encoding="utf-8") as f:
 
     reader = csv.DictReader(f)
+
+    required_columns = {
+        "pdb_id",
+        "t_number",
+        "outer_diameter",
+    }
+
+    if reader.fieldnames is None:
+        raise ValueError(
+            "VIPERdb CSV has no header."
+        )
+
+    missing_columns = (
+        required_columns
+        - set(reader.fieldnames)
+    )
+
+    if missing_columns:
+        raise ValueError(
+            "Missing required VIPERdb columns: "
+            + ", ".join(sorted(missing_columns))
+        )
+
 
     for row in reader:
 
@@ -138,12 +118,11 @@ with open(VIPERDB_CSV) as f:
         )
 
         labels[pdb_id] = {
-
             "t_number":
-                row["t_number"],
+                row["t_number"].strip(),
 
-            "outer_diameter_A":
-                row["outer_diameter_A"]
+            "outer_diameter":
+                row["outer_diameter"].strip(),
         }
 
 
@@ -154,7 +133,7 @@ print(
 
 
 # ============================================================
-# 5. Create feature matrix
+# 4. Load embeddings and build feature matrix
 # ============================================================
 
 print("Loading ESM2 embeddings...")
@@ -166,6 +145,14 @@ OUTPUT_CSV.parent.mkdir(
 )
 
 
+missing_split = []
+missing_label = []
+missing_t_number = []
+missing_outer_diameter = []
+
+rows_written = 0
+
+
 with h5py.File(
     EMBEDDINGS_H5,
     "r"
@@ -175,47 +162,33 @@ with h5py.File(
         h5f.keys()
     )
 
+
     print(
-        f"Found {len(seq_ids)} sequence embeddings"
+        f"Found {len(seq_ids)} "
+        f"sequence embeddings"
     )
 
 
-    rows_written = 0
-    skipped = 0
+    emb_cols = [
+        f"emb_{i}"
+        for i in range(1280)
+    ]
 
 
-    with open(
-        OUTPUT_CSV,
+    fieldnames = [
+        "seq_id",
+        "pdb_id",
+        "split",
+        "t_number",
+        "outer_diameter",
+    ] + emb_cols
+
+
+    with OUTPUT_CSV.open(
         "w",
-        newline=""
+        newline="",
+        encoding="utf-8"
     ) as out:
-
-
-        # ----------------------------------------------------
-        # Define output columns
-        # ----------------------------------------------------
-
-        emb_cols = [
-            f"emb_{i}"
-            for i in range(1280)
-        ]
-
-
-        fieldnames = [
-
-            "seq_id",
-            "pdb_id",
-            "split",
-
-            "contact_residues",
-            "rotation_angle_deg",
-            "bsa_approx",
-
-            "t_number",
-            "outer_diameter_A"
-
-        ] + emb_cols
-
 
         writer = csv.DictWriter(
             out,
@@ -225,48 +198,95 @@ with h5py.File(
         writer.writeheader()
 
 
-        # ----------------------------------------------------
-        # Combine features and labels
-        # ----------------------------------------------------
-
         for seq_id in seq_ids:
 
+            # ------------------------------------------------
+            # Map sequence ID back to PDB ID
+            # Example: 3jaz_D -> 3jaz
+            # ------------------------------------------------
 
             pdb_id = (
                 seq_id
-                .split("_")[0]
+                .split("_", 1)[0]
                 .lower()
             )
 
 
-            # Sequence must belong to one of the
-            # train / validation / test splits.
-            if seq_id not in id_to_split:
+            # ------------------------------------------------
+            # Check dataset split
+            # ------------------------------------------------
 
-                skipped += 1
+            split_name = id_to_split.get(
+                seq_id
+            )
+
+            if split_name is None:
+                missing_split.append(
+                    seq_id
+                )
                 continue
 
 
-            # ESM2 embedding
-            emb = h5f[seq_id][:]
+            # ------------------------------------------------
+            # Check VIPERdb labels
+            # ------------------------------------------------
 
-
-            # Optional interface features
-            iface = interface.get(
-                pdb_id,
-                {}
-            )
-
-
-            # Geometry labels
             lab = labels.get(
-                pdb_id,
-                {}
+                pdb_id
             )
 
+            if lab is None:
+                missing_label.append(
+                    seq_id
+                )
+                continue
+
+
+            t_number = lab[
+                "t_number"
+            ]
+
+            outer_diameter = lab[
+                "outer_diameter"
+            ]
+
+
+            if not t_number:
+                missing_t_number.append(
+                    seq_id
+                )
+                continue
+
+
+            if not outer_diameter:
+                missing_outer_diameter.append(
+                    seq_id
+                )
+                continue
+
+
+            # ------------------------------------------------
+            # Load ESM2 embedding
+            # ------------------------------------------------
+
+            emb = h5f[
+                seq_id
+            ][:]
+
+
+            if len(emb) != 1280:
+                raise ValueError(
+                    f"{seq_id} has embedding "
+                    f"dimension {len(emb)}, "
+                    f"expected 1280."
+                )
+
+
+            # ------------------------------------------------
+            # Build output row
+            # ------------------------------------------------
 
             row = {
-
                 "seq_id":
                     seq_id,
 
@@ -274,64 +294,137 @@ with h5py.File(
                     pdb_id,
 
                 "split":
-                    id_to_split[seq_id],
-
-                "contact_residues":
-                    iface.get(
-                        "contact_residues",
-                        ""
-                    ),
-
-                "rotation_angle_deg":
-                    iface.get(
-                        "rotation_angle_deg",
-                        ""
-                    ),
-
-                "bsa_approx":
-                    iface.get(
-                        "bsa_approx",
-                        ""
-                    ),
+                    split_name,
 
                 "t_number":
-                    lab.get(
-                        "t_number",
-                        ""
-                    ),
+                    t_number,
 
-                "outer_diameter_A":
-                    lab.get(
-                        "outer_diameter_A",
-                        ""
-                    )
+                "outer_diameter":
+                    outer_diameter,
             }
 
 
-            # Add 1280 ESM2 dimensions
-            for i, val in enumerate(emb):
+            for i, value in enumerate(
+                emb
+            ):
 
-                row[f"emb_{i}"] = round(
-                    float(val),
+                row[
+                    f"emb_{i}"
+                ] = round(
+                    float(value),
                     6
                 )
 
 
-            writer.writerow(row)
+            writer.writerow(
+                row
+            )
 
             rows_written += 1
 
 
 # ============================================================
-# 6. Summary
+# 5. Validation summary
 # ============================================================
 
+print()
+print("Feature matrix validation")
+print("-------------------------")
+
 print(
-    f"Finished. Wrote {rows_written} rows "
-    f"and skipped {skipped} sequences."
+    f"Embeddings found: "
+    f"{len(seq_ids)}"
 )
 
 print(
-    f"Feature matrix saved to:\n"
-    f"{OUTPUT_CSV}"
+    f"Split IDs: "
+    f"{len(id_to_split)}"
+)
+
+print(
+    f"Rows written: "
+    f"{rows_written}"
+)
+
+print(
+    f"Missing split: "
+    f"{len(missing_split)}"
+)
+
+print(
+    f"Missing PDB labels: "
+    f"{len(missing_label)}"
+)
+
+print(
+    f"Missing T-number: "
+    f"{len(missing_t_number)}"
+)
+
+print(
+    f"Missing outer diameter: "
+    f"{len(missing_outer_diameter)}"
+)
+
+
+# ============================================================
+# 6. Strict consistency checks
+# ============================================================
+
+if missing_split:
+    print(
+        "Example missing split IDs:",
+        missing_split[:5]
+    )
+
+
+if missing_label:
+    print(
+        "Example missing label IDs:",
+        missing_label[:5]
+    )
+
+
+if missing_t_number:
+    print(
+        "Example missing T-number IDs:",
+        missing_t_number[:5]
+    )
+
+
+if missing_outer_diameter:
+    print(
+        "Example missing outer diameter IDs:",
+        missing_outer_diameter[:5]
+    )
+
+
+if (
+    rows_written
+    != len(seq_ids)
+):
+
+    print()
+    print(
+        "WARNING: Not all embeddings "
+        "were written to the feature matrix."
+    )
+
+else:
+
+    print()
+    print(
+        "All embeddings were mapped "
+        "successfully."
+    )
+
+
+print()
+
+print(
+    "Feature matrix saved to:"
+)
+
+print(
+    OUTPUT_CSV
 )

@@ -1,3 +1,5 @@
+requests
+beautifulsoup4
 numpy
 h5py
 biopython
@@ -7,3 +9,4 @@ matplotlib
 torch
 torch-geometric
 fair-esm
+xgboost

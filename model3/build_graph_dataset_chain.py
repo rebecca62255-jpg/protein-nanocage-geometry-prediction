@@ -88,8 +88,8 @@ with open(FEATURE_MATRIX) as f:
                 "t_number":
                     row["t_number"].strip(),
 
-                "outer_diameter_A":
-                    row["outer_diameter_A"].strip(),
+                "outer_diameter":
+                    row["outer_diameter"].strip(),
 
                 "split":
                     row["split"].strip()
@@ -108,7 +108,7 @@ with open(SPLIT_FILE) as f:
 
 
 # These sets are retained as a reference to the original
-# cluster-based dataset split.
+# representative-sequence dataset split.
 
 train_ids = set(
     split_data["train"]
@@ -370,8 +370,8 @@ for pdb_id, info in pdb_info.items():
         "t_number":
             info["t_number"],
 
-        "outer_diameter_A":
-            info["outer_diameter_A"],
+        "outer_diameter":
+            info["outer_diameter"],
 
         "split":
             split

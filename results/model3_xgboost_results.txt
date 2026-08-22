@@ -1,0 +1,28 @@
+Loading graph dataset...
+Classes merged into 'other': {'13', '16', '19d', 'pT27', '2', 'pT25', '7d'}
+Number of classes: 7
+Classes: [np.str_('1'), np.str_('3'), np.str_('4'), np.str_('7l'), np.str_('9'), np.str_('other'), np.str_('pT3')]
+Train: 257, Val: 50, Test: 51
+Feature dimension: 1280
+
+Training XGBoost...
+
+===== Test Results =====
+Test Accuracy: 0.8627
+Macro F1: 0.7275
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       1.00      0.33      0.50         3
+           3       1.00      0.91      0.95        11
+           4       1.00      0.50      0.67         2
+          7l       0.67      1.00      0.80         2
+           9       0.67      0.67      0.67         3
+       other       0.43      0.75      0.55         4
+         pT3       0.96      0.96      0.96        26
+
+    accuracy                           0.86        51
+   macro avg       0.82      0.73      0.73        51
+weighted avg       0.90      0.86      0.86        51
+

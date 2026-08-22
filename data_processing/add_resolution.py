@@ -3,10 +3,10 @@ Add structural resolution information to VIPERdb entries
 and filter structures by resolution.
 
 Input:
-    data_processing/viperdb_entries.csv
+    data/viperdb_entries.csv
 
 Outputs:
-    data_processing/viperdb_entries.csv
+    data/viperdb_entries.csv
         - original entries with an added resolution column
 
     data/viperdb_filtered_3.5A.csv
@@ -29,11 +29,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-CSV_PATH = (
-    ROOT /
-    "data_processing" /
-    "viperdb_entries.csv"
-)
+CSV_PATH = ROOT / "data" / "viperdb_entries.csv"
 
 FILTERED_OUTPUT = (
     ROOT /

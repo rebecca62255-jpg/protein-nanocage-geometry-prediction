@@ -1,11 +1,19 @@
 """
-Split the dataset by CD-HIT clusters.
+Split CD-HIT representative sequences into
+training, validation, and test sets.
+
+Input:
+    data/sequences_nr.fasta.clstr
+
+Output:
+    data/dataset_split.json
+
+CD-HIT was performed at 90% sequence identity.
+Only the representative sequence from each cluster is used
+for downstream ESM2 embedding and modelling.
 
 Train / Validation / Test = 70% / 15% / 15%
-
-Sequences belonging to the same CD-HIT cluster are kept
-in the same dataset split to reduce sequence similarity
-between training, validation, and test sets.
+Random seed = 42 for reproducibility.
 """
 
 import json
@@ -20,159 +28,146 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 CLSTR_FILE = ROOT / "data" / "sequences_nr.fasta.clstr"
-OUTPUT = ROOT / "data" / "dataset_split.json"
+OUTPUT_FILE = ROOT / "data" / "dataset_split.json"
 
 
 # ============================================================
-# 2. Reproducibility
+# 2. Settings
 # ============================================================
 
 SEED = 42
 
-random.seed(SEED)
+TRAIN_RATIO = 0.70
+VAL_RATIO = 0.15
+TEST_RATIO = 0.15
 
 
 # ============================================================
-# 3. Read CD-HIT clusters
+# 3. Read CD-HIT representative sequences
 # ============================================================
 
 print("Loading CD-HIT clusters...")
 
-clusters = []
-current_cluster = []
+representatives = []
 
 
-with open(CLSTR_FILE) as f:
+with CLSTR_FILE.open() as f:
 
     for line in f:
 
         line = line.strip()
 
-        # Start of a new cluster
-        if line.startswith(">Cluster"):
+        # Representative sequence is marked with *
+        if line.endswith("*") and ">" in line:
 
-            if current_cluster:
-                clusters.append(current_cluster)
+            seq_id = (
+                line.split(">")[1]
+                .split("...")[0]
+            )
 
-            current_cluster = []
-
-        else:
-
-            # Extract sequence ID
-            if ">" in line:
-
-                seq_id = (
-                    line.split(">")[1]
-                    .split("...")[0]
-                )
-
-                current_cluster.append(seq_id)
-
-
-    # Add the final cluster
-    if current_cluster:
-        clusters.append(current_cluster)
+            representatives.append(seq_id)
 
 
 print(
-    f"Found {len(clusters)} clusters"
+    f"Found {len(representatives)} "
+    f"CD-HIT representative sequences"
+)
+
+
+if not representatives:
+
+    raise RuntimeError(
+        "No representative sequences were found "
+        "in the CD-HIT cluster file."
+    )
+
+
+# ============================================================
+# 4. Shuffle reproducibly
+# ============================================================
+
+random.seed(SEED)
+
+random.shuffle(
+    representatives
 )
 
 
 # ============================================================
-# 4. Shuffle clusters
+# 5. Split representatives
 # ============================================================
 
-random.shuffle(clusters)
-
-
-# ============================================================
-# 5. Split clusters
-# ============================================================
-
-n = len(clusters)
+total = len(representatives)
 
 n_train = int(
-    n * 0.70
+    total * TRAIN_RATIO
 )
 
 n_val = int(
-    n * 0.15
+    total * VAL_RATIO
 )
 
 
-train_clusters = (
-    clusters[:n_train]
+train_ids = (
+    representatives[:n_train]
 )
 
-val_clusters = (
-    clusters[n_train:n_train + n_val]
+validation_ids = (
+    representatives[
+        n_train:
+        n_train + n_val
+    ]
 )
 
-test_clusters = (
-    clusters[n_train + n_val:]
-)
-
-
-# ============================================================
-# 6. Expand clusters into sequence IDs
-# ============================================================
-
-train_ids = [
-    sid
-    for cluster in train_clusters
-    for sid in cluster
-]
-
-val_ids = [
-    sid
-    for cluster in val_clusters
-    for sid in cluster
-]
-
-test_ids = [
-    sid
-    for cluster in test_clusters
-    for sid in cluster
-]
-
-
-print(
-    f"Train: {len(train_ids)} sequences "
-    f"({len(train_clusters)} clusters)"
-)
-
-print(
-    f"Validation: {len(val_ids)} sequences "
-    f"({len(val_clusters)} clusters)"
-)
-
-print(
-    f"Test: {len(test_ids)} sequences "
-    f"({len(test_clusters)} clusters)"
+test_ids = (
+    representatives[
+        n_train + n_val:
+    ]
 )
 
 
 # ============================================================
-# 7. Save dataset split
+# 6. Verify no overlap
 # ============================================================
 
-OUTPUT.parent.mkdir(
+train_set = set(train_ids)
+val_set = set(validation_ids)
+test_set = set(test_ids)
+
+
+assert train_set.isdisjoint(val_set)
+assert train_set.isdisjoint(test_set)
+assert val_set.isdisjoint(test_set)
+
+
+assert (
+    len(train_ids)
+    + len(validation_ids)
+    + len(test_ids)
+    == total
+)
+
+
+# ============================================================
+# 7. Save split
+# ============================================================
+
+split_data = {
+    "train": train_ids,
+    "validation": validation_ids,
+    "test": test_ids,
+}
+
+
+OUTPUT_FILE.parent.mkdir(
     parents=True,
     exist_ok=True
 )
 
 
-split_data = {
-    "train": train_ids,
-    "validation": val_ids,
-    "test": test_ids
-}
-
-
-with open(
-    OUTPUT,
-    "w"
+with OUTPUT_FILE.open(
+    "w",
+    encoding="utf-8"
 ) as f:
 
     json.dump(
@@ -182,7 +177,51 @@ with open(
     )
 
 
+# ============================================================
+# 8. Summary
+# ============================================================
+
+def percentage(n):
+    return 100 * n / total
+
+
+print()
+
 print(
-    f"Finished. Dataset split saved to:\n"
-    f"{OUTPUT}"
+    f"Train: {len(train_ids)} "
+    f"({percentage(len(train_ids)):.1f}%)"
+)
+
+print(
+    f"Validation: {len(validation_ids)} "
+    f"({percentage(len(validation_ids)):.1f}%)"
+)
+
+print(
+    f"Test: {len(test_ids)} "
+    f"({percentage(len(test_ids)):.1f}%)"
+)
+
+print()
+
+print(
+    f"Total: {total}"
+)
+
+print(
+    "Overlap check: PASSED"
+)
+
+print(
+    f"Random seed: {SEED}"
+)
+
+print()
+
+print(
+    "Dataset split saved to:"
+)
+
+print(
+    OUTPUT_FILE
 )

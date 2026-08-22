@@ -1,0 +1,28 @@
+Loading data...
+Train: 590, Val: 126, Test: 128
+Classes merged into 'other': {'pT27', '2', '27', '19d', '7d'}
+Number of classes: 11
+Classes: [np.str_('1'), np.str_('13'), np.str_('16'), np.str_('169'), np.str_('3'), np.str_('4'), np.str_('7l'), np.str_('9'), np.str_('other'), np.str_('pT25'), np.str_('pT3')]
+
+===== Test Results =====
+Test Accuracy: 0.7891
+Macro F1: 0.5837
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.78      0.86      0.82        21
+          13       1.00      0.50      0.67         2
+         169       0.00      0.00      0.00         2
+           3       0.93      0.72      0.81        18
+           4       0.25      0.25      0.25         4
+          7l       0.57      0.80      0.67         5
+           9       0.75      0.38      0.50         8
+       other       0.60      0.75      0.67         4
+        pT25       0.67      0.44      0.53         9
+         pT3       0.87      0.98      0.92        55
+
+   micro avg       0.80      0.79      0.80       128
+   macro avg       0.64      0.57      0.58       128
+weighted avg       0.79      0.79      0.78       128
+

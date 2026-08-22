@@ -1,0 +1,1177 @@
+pdb_id,name,t_number,outer_diameter,num_subunits,chain_ids,resolution
+1rb8,&Phi;-X 174 DNA binding protein J,1,342,60,,3.5
+4v4m,1.45 ANGSTROM STRUCTURE OF STNV COAT PROTEIN,1,194,60,,1.45
+5uf6,2.8 ELECTRON MICROSCOPY STRUCTURE OF ADENO-ASSOCIATED VIRUS-DJ BOUND BY HEPARANOID PENTASACCHARIDE,1,294,60,,2.8
+3jci,2.9 Angstrom Resolution Cryo-EM 3-D Reconstruction of Close-packed PCV2 Virus-like Particles,1,204,60,,2.9
+7xr2,3.1 ANGSTROM CRYOEM ICOSAHEDRAL RECONSTRUCTION OF MUD CRAB REOVIRUS,13,714,780,,3.1
+3izx,3.1 Angstrom cryoEM structure of cytoplasmic polyhedrosis virus,13,614,780,,3.1
+8piu,60-meric complex of dihydrolipoamide acetyltransferase (E2) of the human pyruvate dehydrogenase complex,1,242,60,,2.9
+8e8l,9H2 Fab-poliovirus 1 complex,pT3,384,60,,3.13
+8e8s,9H2 FAB-POLIOVIRUS 2 COMPLEX,pT3,380,60,,2.73
+8e8z,9H2 Fab-Sabin poliovirus 1 complex,pT3,376,60,,3.15
+8e8y,9H2 FAB-SABIN POLIOVIRUS 2 COMPLEX,pT3,382,60,,2.5
+8e8r,9H2 FAB-SABIN POLIOVIRUS 3 COMPLEX,pT3,378,60,,2.66
+8e8x,9H2 FAB-SABIN POLIOVIRUS 3 COMPLEX,pT3,382,60,,2.91
+4pdw,A BENZONITRILE ANALOGUE INHIBITS RHINOVIRUS REPLICATION,pT3,320,60,,3.0
+5hpn,A CIRCULARLY PERMUTED PDUA FORMING AN ICOSAHEDRAL CAGE,1,132,60,,2.51
+3j4u,A new topology of the HK97-like fold revealed in Bordetella bacteriophage: non-covalent chainmail se,7l,676,420,,3.5
+8g1r,A Vibrio cholerae viral satellite enables efficient horizontal transfer by using an external scaffold to assemble hijacked coat proteins into small capsids,4,470,240,,3.4
+6jcq,AAV1 in complex with AAVR,1,308,60,,3.3
+6jcr,AAV1 in neutral condition at 3.07 Ang,1,288,60,,3.07
+8fq4,AAV1 VP3 Only Capsid,1,290,60,,2.27
+9dc7,AAV5 at 80 Degree Celsius,1,280,60,,3.29
+6jcs,AAV5 in complex with AAVR,1,294,60,,3.18
+6jct,AAV5 in neutral condition at 3.18 Ang,1,278,60,,3.18
+6ubm,"AAV8 Baculovirus-Sf9 produced, empty capsid",1,300,60,,3.3
+9rrs,AAV8 capsid in complex with Rep40 and ADP,1,296,60,,1.88
+6u20,"AAV8 human HEK293-produced, empty capsid",1,300,60,,3.3
+6pwa,"AAV8 human HEK293-produced, full capsid",1,300,60,,3.3
+9dc3,AAV8 in complex with the AAVX affinity ligand,1,304,60,,2.31
+7rl1,AAVrh.10-7x capsid,1,292,60,,2.71
+8eu6,Acheta domesticus segmented densovirus high buoyancy fraction 1 (HB1) empty capsid structure,1,256,60,,3.0
+8eu5,Acheta domesticus segmented densovirus high buoyancy fraction 2 empty capsid structure,1,256,60,,3.1
+8eu7,Acheta domesticus segmented densovirus VP-ORF1 virus-like particle,1,252,60,,3.3
+8erk,"Acheta domesticus segmented densovirus, high buoyancy (HB) capsid, a mixed population of empty and immature full particles",1,240,60,,2.5
+8er8,"ACHETA DOMESTICUS SEGMENTED DENSOVIRUS, MATURE VIRION CAPSID STRUCT",1,250,60,,2.3
+7dn2,ACIDIC STABLE CAPSID STRUCTURE OF HELICOBACTER PYLORI BACTERIOPHAGE KHP30,9,758,540,,2.7
+8dna,Acidipropionibacterium acidipropionici encapsulin in a closed state at pH 3.0,1,244,60,,2.77
+8dn9,Acidipropionibacterium acidipropionici encapsulin in a closed state at pH 7.5,1,244,60,,2.9
+8dnl,ACIDIPROPIONIBACTERIUM ACIDIPROPIONICI ENCAPSULIN IN AN OPEN STATE AT PH 7.5,1,250,60,,3.32
+8t6r,Acinetobacter baumannii 118362 family 2A cargo-loaded encapsulin shell,1,258,60,,1.78
+8twc,Acinetobacter phage AP205 T=3 VLP,3,298,180,,3.0
+8tw2,Acinetobacter phage AP205 T=4 VLP,4,340,240,,3.39
+6s2c,Acquired functional capsid structures in metazoan totivirus-like dsRNA virus.,2,446,120,,3.2
+1lp3,Adeno-Associated Virus,1,294,60,,3.0
+7kfr,ADENO-ASSOCIATED VIRUS (AAV-DJ) - CRYO-EM STRUCTURE AT 1.56 ANGSTROM RESOLUTION,1,294,60,,1.56
+6ih9,Adeno-Associated Virus 2 at 2.8 ang,1,292,60,,2.8
+6ihb,Adeno-Associated Virus 2 in complex with AAVR,1,308,60,,2.84
+9vi4,"Adeno-Associated Virus 6-M2, AAV6-M2",1,296,60,,1.8
+9dc2,Adeno-associated virus 8 capsid,1,296,60,,2.41
+9o0e,ADENO-ASSOCIATED VIRUS 9 VARIANT 496-AAA-498,1,278,60,,2.4
+9nzz,Adeno-associated virus 9 variant AAV9.AAA.VQVGRTS,1,280,60,,1.84
+9o0f,ADENO-ASSOCIATED VIRUS 9 VARIANT AAV9.NVG7,1,290,60,,2.66
+7ti4,"Adeno-associated Virus Go.1 at 2.9 Angstroms resolution, AAVGo.1 AAV-G",1,278,60,,2.93
+7ti5,"Adeno-associated virus Go.1 in Complex With Its Cellular Receptor AAVR at 2.4 Angstroms Resolution, AAVGo.1 AAVR",1,290,60,,2.4
+7kp3,"Adeno-associated virus serotype 5 at 2.1 Angstroms resolution, AAV5",1,278,60,,2.1
+7kpn,"Adeno-associated virus serotype 5 in complex with the cellular receptor AAVR at 2.5 Angstroms resolution, AAV5 AAVR",1,292,60,,2.5
+7wjx,Adeno-associated virus serotype 9 in complex with AAVR,1,310,60,,3.23
+7jot,Adeno-associated virus strain AAV7 capsid icosahedral structure,1,296,60,,2.7
+6u95,Adeno-associated virus strain AAVhu.37 capsid icosahedral structure,1,296,60,,2.56
+7rwt,Adeno-associated virus type 2,1,296,60,,2.43
+9swa,ADENOVIRUS DODECAHEDRON,1,292,60,,2.2
+9h28,ALTERNATIVE CONFORMATION LGTV WITH TBEV PRME,3,492,180,,3.22
+6adm,ANTHRAX TOXIN RECEPTOR 1-BOUND FULL PARTICLES OF SENECA VALL IN ACIDIC CONDITIONS,pT3,400,60,,2.84
+6adl,ANTHRAX TOXIN RECEPTOR 1-BOUND SPENT PARTICLES OF SENECA VALLEY VIRUS IN ACIDIC CONDITIONS,pT3,404,60,,3.08
+6adr,ANTHRAX TOXIN RECEPTOR 1-BOUND THE SENECA VALLEY VIRUS IN NE CONDITIONS,pT3,400,60,,3.38
+9ryn,AQUIFEX AEOLICUS LUMAZINE SYNTHASE 12-PENTAMER CAGE,1,164,60,,1.71
+9ryi,AQUIFEX AEOLICUS LUMAZINE SYNTHASE 12-PENTAMER CAGE IN COMPLEX WITH I-SYMMETRY-MASKED RIBOFLAVIN SYNTHASE,1,164,60,,1.71
+9ryw,AQUIFEX AEOLICUS LUMAZINE SYNTHASE I125A MUTANT 12-PENTAMER CAGE,1,164,60,,1.71
+9ryu,AQUIFEX AEOLICUS LUMAZINE SYNTHASE L121A MUTANT 12-PENTAMER CAGE,1,164,60,,1.71
+9ryp,AQUIFEX AEOLICUS LUMAZINE SYNTHASE R29A MUTANT 12-PENTAMER CAGE,1,164,60,,1.71
+7a4j,Aquifex aeolicus lumazine synthase-derived nucleocapsid variant NC-4,4,326,240,,3.04
+6ouc,ASYMMETRIC FOCSUED RECONSTRUCTION OF HUMAN NOROVIRUS GII.2 S MOUNTAIN VIRUS STRAIN VLP ASYMMETRIC UNIT IN T=1 SYMMETRY,1,294,60,,2.8
+5vly,Asymmetric unit for the coat proteins of phage Qbeta,3,292,180,,3.3
+9roz,Asymmetric unit of bacteriophage 812 prohead II with minor capsid proteins with partial occupancy,16,1044,960,,3.2
+9row,Asymmetric unit of bacteriophage 812 prohead II without minor capsid proteins,16,1034,960,,3.1
+9s9b,ASYMMETRIC UNIT OF BACTERIOPHAGE LUZ19 HEAD COMPUTED IN I4 SYMMETRY,7l,678,420,,3.06
+8vb0,Asymmetric unit of bacteriophage PhiM1 mature capsid,7l,690,420,,3.04
+3iyl,Atomic CryoEM Structure of a Nonenveloped Virus Suggests How Membrane Penetration Protein is Primed,13,560,780,,3.3
+3jaz,ATOMIC MODEL OF CYTOPLASMIC POLYHEDROSIS VIRUS WITH ATP,13,614,780,,3.1
+3jb0,ATOMIC MODEL OF CYTOPLASMIC POLYHEDROSIS VIRUS WITH GTP,13,614,780,,2.9
+3jb1,ATOMIC MODEL OF CYTOPLASMIC POLYHEDROSIS VIRUS WITH SAM,13,616,780,,3.1
+3jb2,ATOMIC MODEL OF CYTOPLASMIC POLYHEDROSIS VIRUS WITH SAM AND GTP,13,614,780,,3.1
+3jb3,"ATOMIC MODEL OF CYTOPLASMIC POLYHEDROSIS VIRUS WITH SAM, GTP",13,616,780,,3.1
+3jay,ATOMIC MODEL OF TRANSCRIBING CYTOPLASMIC POLYHEDROSIS VIRUS,13,616,780,,3.0
+6hy0,"Atomic models of P1, P4 C-terminal fragment and P8 fitted in the bacteriophage phi6 nucleocapsid reconstructed with icosahedral symmetry",13,580,780,,3.5
+6b9q,Atomic Resolution Structure of the Oncolytic Parvov LuIII by Electron Microscopy and 3D Image Recons,1,286,60,,3.17
+6bwx,Atomic Resolution Structures of Human Bufaviruses D by Cryo-Electron Microscopy.,1,282,60,,2.84
+6bx1,Atomic Resolution Structures of Human Bufaviruses D by Cryo-Electron Microscopy.,1,284,60,,3.25
+6cbe,"Atomic structure of a rationally engineered gene de vector, AAV2.5.",1,296,60,,2.78
+6ct0,Atomic Structure of the E2 Inner Core of Human Pyruvate Dehydrogenase Complex,1,242,60,,3.1
+6b1t,Atomic Structures of Minor Proteins VI and VII in t Adenovirus.,pT25,920,780,,3.2
+8tex,Avian Adeno-associated virus - empty capsid,1,290,60,,2.54
+8tey,Avian Adeno-associated virus - empty capsid,1,290,60,,3.06
+1wcd,"Avian Infectious bursal disease virus, sub-viral particle",1,272,60,,3.0
+1s58,B19 Parvovirus Capsid,1,272,60,,3.5
+7ns0,Bacilladnavirus capsid structure,3,360,180,,2.4
+1m06,Bacteriophage &alpha;3,1,342,60,,3.5
+2bpa,Bacteriophage &Phi;-X 174,1,342,60,,3.0
+1fr5,Bacteriophage FR (4 Residue Deletion FG Loop),3,286,180,,3.5
+1frs,Bacteriophage FR (FR),3,286,180,,3.5
+1gff,Bacteriophage G4,1,342,60,,3.0
+1gav,Bacteriophage GA Protein Capsid (GA),3,288,180,,3.4
+1ohg,Bacteriophage HK97 Mature Empty Capsid,7l,658,420,,3.45
+8em6,Bacteriophage HRP29 Procapsid Icosohedral Reconstruction,7l,592,420,,3.5
+8rkn,Bacteriophage JBD30 capsid,7l,674,420,,2.57
+8rko,Bacteriophage JBD30 empty particle capsid,7l,674,420,,2.58
+2ms2,Bacteriophage MS2 (MS2),3,288,180,,2.8
+1aq4,Bacteriophage MS2 Mutant (T45A)/RNA Operator,3,288,180,,3.0
+1aq3,Bacteriophage MS2 Mutant (T59S)/RNA Operator,3,288,180,,2.8
+1mva,Bacteriophage MS2 Mutant T45A,3,288,180,,3.0
+1mvb,Bacteriophage MS2 Mutant T59S,3,288,180,,3.0
+1mst,"Bacteriophage MS2, Mutant E76D",3,288,180,,2.6
+1bms,"Bacteriophage MS2, Mutant P78N",3,288,180,,2.7
+1zdh,Bacteriophage MS2/19 nt. MS2 RNA Fragment,3,288,180,,2.7
+1zdi,Bacteriophage MS2/19 nt. MS2 RNA Fragment,3,288,180,,2.7
+1zdk,Bacteriophage MS2/23 nt. MS2 RNA Fragment,3,288,180,,2.86
+1zdj,Bacteriophage MS2/8 nt. MS2 RNA Fragment,3,288,180,,2.9
+5msf,Bacteriophage MS2/RNA Aptamer F5,3,288,180,,2.8
+6msf,Bacteriophage MS2/RNA Aptamer F6,3,288,180,,2.8
+7msf,Bacteriophage MS2/RNA Aptamer F7,3,288,180,,2.8
+1e7x,Bacteriophage MS2/RNA Hairpin (2One-5),3,288,180,,2.38
+1he6,Bacteriophage MS2/RNA Hairpin (Ade-5),3,288,180,,2.65
+1kuo,Bacteriophage MS2/RNA Hairpin (C-10),3,288,180,,2.7
+1gkv,Bacteriophage MS2/RNA Hairpin (C-7),3,288,180,,3.3
+1gkw,Bacteriophage MS2/RNA Hairpin (G-10),3,288,180,,2.56
+1h8j,Bacteriophage MS2/RNA Hairpin (G-5),3,288,180,,2.8
+5uu5,Bacteriophage P22 mature virion capsid protein,7l,686,420,,3.3
+7tje,BACTERIOPHAGE Q BETA CAPSID PROTEIN A38K,1,178,60,,2.8
+7tjd,BACTERIOPHAGE Q BETA CAPSID PROTEIN IN T1 SYMMETRY,1,178,60,,3.5
+1qbe,Bacteriophage Q&#946; Capsid (QB),3,294,180,,3.5
+9c3a,Bacteriophage Sf14 Capsid Empty Icosahedral reconstruction,9,828,540,,3.1
+9c2d,Bacteriophage Sf14 Capsid Icosahedral reconstruction,9,828,540,,3.2
+5vf3,Bacteriophage T4 isometric capsid,13,918,780,,3.3
+6rpo,bat circovirus without DNA VLP,1,206,60,,2.39
+6wfu,BatAAV-10HB - empty particles,1,284,60,,3.03
+6wft,BatAAV-10HB - genome-containing particles,1,282,60,,3.03
+1pgl,"BEAN POD MOTTLE VIRUS (BPMV), MIDDLE COMPONENT",pT3,320,60,,2.8
+1pgw,"BEAN POD MOTTLE VIRUS (BPMV), TOP COMPONENT",pT3,320,60,,2.9
+6p4l,Bile salts alter the mouse norovirus capsid conformation; possible implications for cell attachment and immune evasion.,3,334,180,,3.1
+6esb,BK POLYOMAVIRUS + 20 MM GT1B OLIGOSACCHARIDE,7d,500,360,,3.4
+2bbv,Black Beetle Virus (BBV),3,344,180,,2.8
+2btv,Bluetongue Virus,13,706,780,,3.5
+6t40,BOVINE ENTEROVIRUS F3 IN COMPLEX WITH A CYSTEINYLGLYCINE DIPEPTIDE,pT3,314,60,,1.67
+6t4c,BOVINE ENTEROVIRUS F3 IN COMPLEX WITH GLUTATHIONE,pT3,314,60,,1.8
+6t48,BOVINE ENTEROVIRUS F3 IN COMPLEX WITH GLUTATHIONE AND A CYSTEINYLGLYCINE DIPEPTIDE,pT3,314,60,,2.17
+1bev,Bovine Enterovirus VG-5-27,pT3,316,60,,3.0
+7bcv,Brevibacterium linens encapsulin structure,1,244,60,,2.28
+1js9,Brome Mosaic Virus,3,284,180,,3.4
+9cws,Bufavirus 1 at pH 2.6,1,282,60,,2.73
+9cv9,Bufavirus 1 at pH 4.0,1,284,60,,3.2
+9cv0,Bufavirus 1 at pH 7.4,1,282,60,,2.84
+9cuz,Bufavirus 1 complexed with 6SLN,1,282,60,,2.16
+1c8d,Canine Panleukopenia Virus,1,288,60,,3.0
+1p5w,Canine Parvovirus,1,284,60,,3.3
+1p5y,Canine Parvovirus,1,284,60,,3.2
+2cas,Canine Parvovirus,1,286,60,,3.0
+7m3n,Canine parvovirus and Fab14 asymmetric reconstruction,1,360,60,,2.4
+7m3l,Canine parvovirus and Fab14 at partial occupancy,1,358,60,,3.2
+7m3m,Canine parvovirus and Fab14 at partial occupancy,1,286,60,,2.26
+7m3o,Canine parvovirus asymmetric map,1,286,60,,2.4
+3jcx,Canine Parvovirus complexed with Fab E,1,354,60,,2.9
+4dpv,Canine Parvovirus Strain D,1,284,60,,2.9
+1c8h,Canine Parvovirus Strain D (pH 5.5),1,284,60,,3.5
+1ijs,"Canine Parvovirus Strain D, Mutant A300D",1,286,60,,3.25
+9e80,CANINE PARVOVIRUS SUBTYPE 2A EMPTY CAPSID IN COMPLEX WITH FAB FRAGMENTS OF MAB 2C5,1,282,60,,1.81
+9e7z,CANINE PARVOVIRUS SUBTYPE 2A EMPTY CAPSID IN COMPLEX WITH FAB FRAGMENTS OF MAB 3G6,1,284,60,,2.02
+9e60,CANINE PARVOVIRUS SUBTYPE 2A EMPTY CAPSID IN COMPLEX WITH FAB FRAGMENTS OF MAB 7C8,1,334,60,,2.65
+3j7w,Capsid Expansion Mechanism Of Bacteriophage T7 Revealed By Multi-State Atomic Models Derived From Cr,7l,664,420,,3.5
+8rkc,Capsid of bacteriophage JBD30 decorated with minor capsid protein trimers computed in I4 symmetry,7l,654,420,,2.95
+8ho3,Capsid of DT57C bacteriophage in the full state,13,934,780,,2.9
+9gs0,Capsid of full Haloferax tailed virus 1 without turret head protein gp,7d,656,360,,2.37
+30ys,Capsid of the Oenococcus oeni phage OE33PA,7l,670,420,,2.8
+9s3s,"Capsid structure of Chaetoceros lorenzianus DNA virus (ClorDNAV), a CRESS-DNA bacilladnavirus",3,358,180,,2.2
+8r0g,Capsid structure of Giardiavirus (GLV) CAT strain,2,468,120,,2.6
+8r0f,Capsid structure of Giardiavirus (GLV) HP strain,2,468,120,,2.14
+7dod,CAPSID STRUCTURE OF HUMAN SAPOVIRUS,3,414,180,,2.9
+8egt,Capsid structure of Staphylococcus phage Andhra,4,500,240,,3.5
+8i4l,Capsid structure of the Cyanophage P-SCSP1u,7l,674,420,,3.23
+8pe4,Capsid structure of the L-A helper virus from native viral communities,2,442,120,,3.21
+9nek,Capsid structure of the Syngnathus scovelli chapparvovirus virus-like particle,1,248,60,,2.93
+9b9q,Cargo-loaded Myxococcus xanthus EncA encapsulin engineered pore mutant with T=3 icosahedral symmetry,3,370,180,,3.14
+9bc8,Cargo-loaded Myxococcus xanthus EncA encapsulin engineered pore mutant with T=4 icosahedral symmetry,4,418,240,,3.46
+1opo,Carnation Mottle Virus,3,354,180,,3.2
+2w4y,CAULOBACTER BACTERIOPHAGE 5 - VIRUS-LIKE PARTICLE,3,286,180,,2.9
+8b38,Chaetoceros socialis forma radians RNA virus 1 full capsid atomic model,pT3,348,60,,3.0
+8cxp,Characterisation of a Seneca Valley Virus Thermostable Mutant,pT3,328,60,,2.47
+8qbx,Chimeric Adenovirus-derived dodecamer,1,268,60,,2.2
+7kv8,CHIMERIC FLAVIVIRUS BETWEEN BINJARI VIRUS AND DENGUE VIRUS SEROTYPE-2,3,468,180,,2.5
+7kv9,CHIMERIC FLAVIVIRUS BETWEEN BINJARI VIRUS AND WEST NILE (KUNJIN) VIRUS,3,474,180,,2.9
+9g3p,Circularly permuted lumazine synthase 12-pentamer spherical cage,1,172,60,,2.08
+1ng0,Cocksfoot Mottle Virus,3,320,180,,2.7
+8hbj,cocktail of FMDV (A/TUR/14/98) in complex with M678F and M688F,pT3,378,60,,2.9
+9fjc,COMPACT CVB1-VLP (TWEEN80),pT3,332,60,,2.15
+6o9r,"Comparative Analysis of the Capsid Structures of AA AAVrh.39, and AAV8.",1,292,60,,2.75
+6v12,"Comparative Analysis of the Capsid Structures of AA AAVrh.39, and AAV8.",1,296,60,,3.08
+6v1g,"Comparative Analysis of the Capsid Structures of AA AAVrh.39, and AAV8.",1,292,60,,2.98
+6v1t,"Comparative Analysis of the Capsid Structures of AA AAVrh.39, and AAV8.",1,292,60,,3.39
+7xxa,Complex of Echo 18 and FcRn at pH7.4,pT3,334,60,,3.09
+8b8r,COMPLEX OF ECHOVIRUS 11 WITH ITS ATTACHING RECEPTOR DECAY-ACCELERATING FACTOR (CD55),pT3,398,60,,3.1
+8y0r,Complex of FMDV A/WH/CHA/09 and inter-serotype broadly neutralizing antibodies pOA-2,pT3,374,60,,2.52
+9mpz,Complex of FMDV Asia1/JS/05 and porcine-derived neutralizing monoclonal antibody PAS12,pT3,370,60,,2.14
+9mq0,Complex of FMDV Asia1/JS/05 and porcine-derived neutralizing monoclonal antibody PAS5,pT3,362,60,,2.17
+8y0q,Complex of FMDV O/18074 and inter-serotype broadly neutralizing antibodies pOA-2,pT3,374,60,,2.44
+9wph,Complex of FMDV O/18074 and porcine-derived neutralizing monoclonal antibody pO18-10,pT3,380,60,,2.27
+8c38,CONTRACTED COWPEA CHLOROTIC MOTTLE VIRUS,3,284,180,,1.64
+9gaz,Contracted phiCD508 capsid,7l,708,420,,3.28
+1ny7,COWPEA MOSAIC VIRUS (CPMV),pT3,318,60,,3.0
+1d4m,Coxsackievirus A9,pT3,332,60,,2.9
+9fp5,COXSACKIEVIRUS A9 BOUND WITH CL213.,pT3,336,60,,2.5
+9exi,COXSACKIEVIRUS A9 BOUND WITH COMPOUND 14 (CL275),pT3,336,60,,2.31
+9fo2,COXSACKIEVIRUS A9 BOUND WITH COMPOUND 15 (CL278),pT3,338,60,,2.58
+9fa9,COXSACKIEVIRUS A9 BOUND WITH COMPOUND 16 (CL298),pT3,338,60,,2.75
+9fcz,COXSACKIEVIRUS A9 BOUND WITH COMPOUND 17 (CL301),pT3,336,60,,2.53
+9fgn,COXSACKIEVIRUS A9 BOUND WITH COMPOUND 18 (CL304),pT3,336,60,,2.64
+9fo5,COXSACKIEVIRUS A9 BOUND WITH COMPOUND 19 (CL313),pT3,336,60,,2.69
+8s7j,COXSACKIEVIRUS A9 BOUND WITH COMPOUND 20 (CL300),pT3,338,60,,2.26
+7vy5,COXSACKIEVIRUS B3 (VP3-234Q) INCUBATION WITH CD55 AT PH7.4,pT3,348,60,,3.15
+7vxl,Coxsackievirus B3 A-particle at pH7.4 (VP3-234Q),pT3,348,60,,3.3
+7vyl,COXSACKIEVIRUS B3 AT PH5.5 (VP3-234Q) INCUBATION WITH COXSACKIEVIRUS AND ADENOVIRUS RECEPTOR FOR 20MIN,pT3,342,60,,2.79
+7w14,Coxsackievirus B3 at pH7.4 (VP3-234E) incubation with coxsackievirus and adenovirus receptor for 20min,pT3,360,60,,2.2
+7vyk,COXSACKIEVIRUS B3 AT PH7.4 (VP3-234Q) INCUBATION WITH COXSACKIEVIRUS AND ADENOVIRUS RECEPTOR FOR 10MIN,pT3,360,60,,2.79
+7vxz,COXSACKIEVIRUS B3 AT PH7.4 (VP3-234Q) INCUBATION WITH COXSACKIEVIRUS AND ADENOVIRUS RECEPTOR FOR 20MIN,pT3,360,60,,3.19
+1cov,Coxsackievirus B3 Coat Protein,pT3,330,60,,3.5
+7w17,COXSACKIEVIRUS B3 FULL PARTICLE AT PH7.4 (VP3-234E),pT3,338,60,,2.5
+7vy0,COXSACKIEVIRUS B3 FULL PARTICLE AT PH7.4 (VP3-234N),pT3,336,60,,2.7
+7vxh,COXSACKIEVIRUS B3 FULL PARTICLE AT PH7.4 (VP3-234Q),pT3,336,60,,2.95
+6zcl,COXSACKIEVIRUS B3 IN COMPLEX WITH CAPSID BINDER COMPOUND 17,pT3,334,60,,2.8
+7vy6,COXSACKIEVIRUS B3(VP3-234N) INCUBATE WITH CD55 AT PH7.4,pT3,348,60,,3.02
+6zck,COXSACKIEVIRUS B4 IN COMPLEX WITH CAPSID BINDER COMPOUND 48,pT3,330,60,,2.7
+6zms,COXSACKIEVIRUS B4 STRAIN E2,pT3,332,60,,3.4
+7c9y,COXSACKIEVIRUS B5 (CVB5) F-PARTICLE,pT3,330,60,,3.5
+9i90,CP of empty RHDV virion,3,430,180,,3.2
+9i3e,CP OF RHDV MUTANT - 29N,1,200,60,,3.0
+9i3h,CP of RHDV mutant - N15,3,438,180,,2.5
+9i9d,CP of RHDV virion (full particle),3,430,180,,3.3
+9i8r,CP of RHDV VLP (VP1),3,432,180,,3.3
+9e89,CPV2A CAPSID COMPLEXED WITH SCFV2,1,342,60,,3.5
+1b35,Cricket Paralysis Virus,pT3,334,60,,2.4
+5foj,Cryo electron microscopy structure of Grapevine Fanleaf Virus complex with Nanobody,pT3,366,60,,2.8
+7ryj,Cryo EM analysis reveals inherent flexibility of authentic murine papillomavirus capsids,7d,596,360,,3.3
+7thr,Cryo-electron microscopy of Adeno-associated virus serotype 4 at 2.2 A,1,282,60,,2.21
+6qcc,Cryo-EM Atomic Structure of Broad Bean Stain Virus (BBSV),pT3,318,60,,3.22
+5wte,CRYO-EM STRUCTURE FOR HEPATITIS A VIRUS FULL PARTICLE,pT3,316,60,,3.4
+8r6x,Cryo-EM structure of a coxsackievirus A6 virus-like particle,pT3,350,60,,3.15
+9lgj,Cryo-EM structure of a designed AAV2-based vector,1,294,60,,2.58
+8jre,Cryo-EM structure of a designed AAV8-based vector,1,294,60,,2.08
+5zap,Cryo-EM structure of a herpesvirus capsid at 3.1 an,16,1296,960,,3.1
+7c4w,Cryo-EM structure of A particle Coxsackievirus A10 at pH 5.5,pT3,334,60,,3.4
+9jjh,Cryo-EM structure of a T=1 VLP of RHDV GI.2 with N-terminal 1-37 residues truncated,1,206,60,,2.4
+9jjj,Cryo-EM structure of a T=3 VLP of RHDV GI.2,3,422,180,,2.45
+7kq5,CRYO-EM STRUCTURE OF A THERMOSTABLE ENCAPSULIN FROM T. MARITIMA,1,240,60,,2.0
+7na6,Cryo-EM structure of AAV True Type,1,292,60,,3.35
+6nz0,CRYO-EM STRUCTURE OF AAV-2 IN COMPLEX WITH AAVR PKD DOMAINS,1,312,60,,2.4
+7ud4,Cryo-EM structure of AAV-PHP.eB,1,288,60,,2.24
+9p4l,Cryo-EM structure of AAV.CAP-B10,1,292,60,,2.22
+9p4q,Cryo-EM structure of AAV.CAP-B10 complexed to AAVR-PKD2,1,324,60,,2.2
+9p4m,Cryo-EM structure of AAV9-B10,1,292,60,,3.05
+9p4p,Cryo-EM structure of AAV9-X1,1,300,60,,3.09
+9p4r,Cryo-EM structure of AAV9-X1.1,1,302,60,,2.51
+9p4n,Cryo-EM structure of AAV9-X1.1 complexed to AAVR-PKD2,1,324,60,,2.18
+7rk9,Cryo-EM Structure of Adeno-Associated Virus Serotype 1 with i gineered Peptide Domain PHP.B (AAV1-PHP.B),1,288,60,,2.32
+7rk8,Cryo-EM Structure of Adeno-Associated Virus Serotype 9 with Engineered,1,292,60,,2.27
+9gw1,CRYO-EM STRUCTURE OF ALPHA-CARBOXYSOME T=4 MINI-SHELL CONTAINING CTD ONLY MUTANT OF CSOSCA,4,250,240,,3.1
+7wc2,"CRYO-EM STRUCTURE OF ALPHAVIRUS, GETAH VIRUS",4,700,240,,3.5
+7fd2,"CRYO-EM STRUCTURE OF AN ALPHAVIRUS, GETAH VIRUS",4,682,240,,2.81
+6imm,"CRYO-EM STRUCTURE OF AN ALPHAVIRUS, SINDBIS VIRUS",4,678,240,,3.5
+7chk,Cryo-EM Structure of Apple Latent Spherical Virus (ALSV),pT3,318,60,,2.87
+8phh,Cryo-EM structure of Atkinsonella Hypoxylon Virus-like particles.,2,412,120,,2.5
+9kmg,CRYO-EM STRUCTURE OF BACTERIOPHAGE FCWL1 CAPSID,7l,714,420,,3.1
+9lbm,Cryo-EM structure of bacteriophage phiXacJX1 capsid,7l,682,420,,3.5
+5l35,CRYO-EM STRUCTURE OF BACTERIOPHAGE SF6 AT 2.9 ANGSTROM RESOLUTION,7l,690,420,,2.89
+6scl,Cryo-EM Structure of Barley Yellow Dwarf Virus VLP,3,302,180,,3.0
+7pe2,Cryo-EM structure of BMV-derived VLP expressed in E. coli (eVLP),3,292,180,,3.2
+7pe1,Cryo-EM structure of BMV-derived VLP expressed in E. coli and assembled in the presence of tRNA (tVLP),3,292,180,,3.0
+8yvi,Cryo-EM structure of carboxysomal midi-shell: icosahedral assembly from CsoS4A/4B/1A/1B/1C/1D and CsoS2 C-terminal co-expression (T = 13),13d,446,780,,2.93
+8yvd,Cryo-EM structure of carboxysomal midi-shell: icosahedral assembly from CsoS4A/4B/1A/1B/1C/1D and CsoS2 C-terminal co-expression (T = 16),16,494,960,,2.75
+8yve,cryo-EM structure of carboxysomal midi-shell: icosahedral assembly from CsoS4A/4B/1A/1B/1C/1D and CsoS2 C-terminal co-expression (T = 9),9,370,540,,2.3
+9ly8,Cryo-EM structure of carboxysomal midi-shell: T=9 shell under C1 symmetry,9,370,540,,2.77
+8yvc,Cryo-EM structure of carboxysomal midi-shell:icosahedral assembly from CsoS4A/4B/1A/1B/1C/1D and CsoS2 C-terminal co-expression (T = 19),19d,538,1140,,3.04
+9f0h,"CRYO-EM STRUCTURE OF CARBOXYSOMAL MINI-SHELL ICOSAHEDRAL ASSEMBLY FROM CO-EXPRESSION OF CSOS1C, CSOS4A, AND CSOS2-C (T = 9)",9,374,540,,1.8
+8b11,CRYO-EM STRUCTURE OF CARBOXYSOMAL MINI-SHELL: ICOSAHEDRAL ASSEMBLY FROM CSOS4A/1A AND CSOS2 CO-EXPRESSION (T = 4),4,248,240,,2.52
+8b12,CRYO-EM STRUCTURE OF CARBOXYSOMAL MINI-SHELL: ICOSAHEDRAL ASSEMBLY FROM CSOS4A/1A AND CSOS2 CO-EXPRESSION (T = 9),9,372,540,,1.86
+8b0y,CRYO-EM STRUCTURE OF CARBOXYSOMAL MINI-SHELL: ICOSAHEDRAL ASSEMBLY FROM CSOS4A/1A CO-EXPRESSION (T = 3),3,216,180,,2.79
+7yrf,CRYO-EM STRUCTURE OF COMPACT CA16 EMPTY PARTICLE IN COMPLEX WITH A NEUTRALIZING ANTIBODY 8C4,pT3,442,60,,2.91
+7yrh,CRYO-EM STRUCTURE OF COMPACT COXSACKIEVIRUS A16 EMPTY PARTICLE IN COMPLEX WITH A NEUTRALIZING ANTIBODY 9B5,pT3,450,60,,3.35
+8x99,Cryo-EM structure of coxsackievirus A16 A-particle in complex with Fab h1A6.2,pT3,328,60,,3.38
+8x9a,Cryo-EM structure of coxsackievirus A16 empty particle in complex with Fab h1A6.2,pT3,330,60,,3.36
+7yms,Cryo-EM structure of Coxsackievirus A16 in complex with a neutralizing antibody 9B5,pT3,468,60,,2.9
+7qvx,Cryo-EM structure of coxsackievirus A6 altered particle,pT3,332,60,,2.5
+7qvy,Cryo-EM structure of coxsackievirus A6 empty particle,pT3,332,60,,2.82
+7qw9,CRYO-EM STRUCTURE OF COXSACKIEVIRUS A6 MATURE VIRION,pT3,318,60,,2.68
+7x37,Cryo-EM structure of Coxsackievirus B1 A particle in complex with nAb 2E6 (CVB1-A:2E6),pT3,394,60,,3.31
+7x35,Cryo-EM structure of Coxsackievirus B1 A-particle in complex with nAb 8A10 (CVB1-A:8A10),pT3,398,60,,3.19
+7x3y,Cryo-EM structure of Coxsackievirus B1 empty particle in complex with (CVB1-E:9A3),pT3,392,60,,3.32
+7dpf,Cryo-EM structure of Coxsackievirus B1 mature virion,pT3,336,60,,3.2
+7x2o,CRYO-EM STRUCTURE OF COXSACKIEVIRUS B1 MATURE VIRION IN COMPLEX WITH NAB 2E6 (CVB1-M:2E6),pT3,386,60,,3.15
+7dq7,CRYO-EM STRUCTURE OF COXSACKIEVIRUS B1 MATURE VIRION IN COMPLEX WITH NAB 5F5,pT3,386,60,,3.2
+7x40,CRYO-EM STRUCTURE OF COXSACKIEVIRUS B1 MATURE VIRION IN COMPLEX WITH NAB 8A10 (CLASSIFIED FROM CVB1 MATURE VIRION IN COMPLEX WITH 8A10 AND 2E6),pT3,386,60,,3.02
+7x49,CRYO-EM STRUCTURE OF COXSACKIEVIRUS B1 MATURE VIRION IN COMPLEX WITH NAB 8A10 (CLASSIFIED FROM CVB1 MATURE VIRION IN COMPLEX WITH 8A10 AND 9A3),pT3,386,60,,3.13
+7x4m,"CRYO-EM STRUCTURE OF COXSACKIEVIRUS B1 MATURE VIRION IN COMPLEX WITH NAB 8A10 (CLASSIFIED FROM CVB1 MATURE VIRION IN COMPLEX WITH 8A10, 2E6 AND 9A3)",pT3,388,60,,3.34
+7x3d,CRYO-EM STRUCTURE OF COXSACKIEVIRUS B1 MATURE VIRION IN COMPLEX WITH NAB 9A3 (CVB1-M:9A3),pT3,382,60,,3.48
+7x3c,CRYO-EM STRUCTURE OF COXSACKIEVIRUS B1 MUTURE VIRION IN COMPLEX WITH NABS 8A10 AND 5F5 (CVB1-M:8A10:5F5),pT3,384,60,,3.03
+7x2i,Cryo-EM structure of Coxsackievirus B1 pre-A particle in complex with nAb 2E6 (CVB1-pre-A:2E6),pT3,388,60,,3.29
+7x2w,Cryo-EM structure of Coxsackievirus B1 pre-A particle in complex with nAb 8A10 (CVB1-pre-A:8A10),pT3,388,60,,3.24
+7x3e,Cryo-EM structure of Coxsackievirus B1 pre-A-particle in complex with nAb 9A3 (CVB1-pre-A:9A3),pT3,384,60,,3.44
+6iij,CRYO-EM STRUCTURE OF CV-A10 MATURE VIRION,pT3,318,60,,2.84
+6iio,Cryo-EM structure of CV-A10 native empty particle,pT3,328,60,,3.12
+6akt,Cryo-EM structure of CVA10 A-particle,pT3,336,60,,2.8
+6aku,Cryo-EM structure of CVA10 empty particle,pT3,336,60,,2.7
+6aks,CRYO-EM STRUCTURE OF CVA10 MATURE VIRUS,pT3,324,60,,3.0
+5yhq,Cryo-EM Structure of CVA6 VLP,pT3,336,60,,3.0
+7cth,CRYO-EM STRUCTURE OF DENGUE VIRUS SEROTYPE 2 IN COMPLEX WITH THE SCFV FRAGMENT OF THE BROADLY NEUTRALIZING ANTIBODY EDE1 C10,3,522,180,,3.5
+8y3j,CRYO-EM STRUCTURE OF DENGUE VIRUS SEROTYPE 2 STRAIN D2Y98P-PP1 AT 4 DEG C,3,470,180,,3.2
+8y3k,CRYO-EM STRUCTURE OF DENGUE VIRUS SEROTYPE 2 STRAIN D2Y98P-PP1 IN COMPLEX WITH HUMAN ANTIBODY 2D22 FAB AT 37 DEG C,3,540,180,,2.8
+8y3l,CRYO-EM STRUCTURE OF DENGUE VIRUS SEROTYPE 2 STRAIN D2Y98P-PP1 IN COMPLEX WITH HUMAN ANTIBODY C10 FAB AT 37 DEG C,3,522,180,,2.9
+8y3g,CRYO-EM STRUCTURE OF DENGUE VIRUS SEROTYPE 2 STRAIN D2Y98P-PP1 N153Q MUTANT AT 4 DEG C,3,470,180,,2.7
+8y3h,CRYO-EM STRUCTURE OF DENGUE VIRUS SEROTYPE 2 STRAIN D2Y98P-PP1 N153Q MUTANT IN COMPLEX WITH HUMAN ANTIBODY 2D22 FAB AT 37 DEG C,3,542,180,,2.8
+8y3i,CRYO-EM STRUCTURE OF DENGUE VIRUS SEROTYPE 2 STRAIN D2Y98P-PP1 N153Q MUTANT IN COMPLEX WITH HUMAN ANTIBODY C10 FAB AT 37 DEG C,3,522,180,,2.9
+7eq9,Cryo-EM structure of designed protein nanoparticle TIP60 (Truncated Icosahedral Protein composed of 60-mer fusion proteins),1,218,60,,3.3
+9k7y,Cryo-EM structure of designed zinc-induced icosahedron Cage-i53-Zn1-HE,1,246,60,,3.43
+9k7z,Cryo-EM structure of designed zinc-induced icosahedron Cage-i53-Zn1-HE,1,230,60,,2.65
+9k87,Cryo-EM structure of designed zinc-induced icosahedron Cage-i53-Zn1-HE,1,222,60,,3.18
+9k89,Cryo-EM structure of designed zinc-induced icosahedron Cage-i53-Zn1-HE,1,234,60,,3.17
+8yf9,CRYO-EM STRUCTURE OF DRAGON GROUPER NERVOUS NECROSIS VIRION AT PH6.5 (3.12A),3,312,180,,3.12
+8yf7,CRYO-EM STRUCTURE OF DRAGON GROUPER NERVOUS NECROSIS VIRUS-LIKE PARTICLE AT PH6.5 (2.82A),3,310,180,,2.82
+8yf6,CRYO-EM STRUCTURE OF DRAGON GROUPER NERVOUS NECROSIS VIRUS-LIKE PARTICLE AT PH8.0 (3.23A),3,312,180,,3.23
+6lb1,Cryo-EM structure of echovirus 11 A-particle at pH 5.5,pT3,334,60,,2.58
+6lap,Cryo-EM structure of echovirus 11 A-particle at pH 7.4,pT3,334,60,,2.49
+6lao,CRYO-EM STRUCTURE OF ECHOVIRUS 11 COMPLEXED WITH ITS ATTACHING RECEPTOR CD55 AT PH 5.5,pT3,316,60,,2.64
+6la5,CRYO-EM STRUCTURE OF ECHOVIRUS 11 COMPLEXED WITH ITS ATTACHING RECEPTOR CD55 AT PH 7.4,pT3,354,60,,2.86
+6la7,Cryo-EM structure of echovirus 11 complexed with its uncoating receptor FcRn at pH 5.5,pT3,414,60,,2.82
+6la6,Cryo-EM structure of echovirus 11 complexed with its uncoating receptor FcRn at pH 7.4,pT3,412,60,,2.39
+6lbq,Cryo-EM structure of echovirus 11 empty particle at pH 5.5,pT3,334,60,,2.6
+6lbo,Cryo-EM structure of echovirus 11 empty particle at pH 7.4,pT3,334,60,,3.18
+6ilk,CRYO-EM STRUCTURE OF ECHOVIRUS 6 COMPLEXED WITH ITS ATTACHME RECEPTOR CD55 AT PH 7.4,pT3,348,60,,3.0
+6ilm,CRYO-EM STRUCTURE OF ECHOVIRUS 6 COMPLEXED WITH ITS UNCOATIN FCRN AT PH 7.4,pT3,416,60,,3.4
+8fz0,Cryo-EM Structure of empty AAV2 capsid,1,300,60,,2.94
+7c4z,Cryo-EM structure of empty Coxsackievirus A10 at pH 5.5,pT3,324,60,,3.3
+7c4y,Cryo-EM structure of empty Coxsackievirus A10 at pH 7.4,pT3,334,60,,3.5
+6ilo,Cryo-EM structure of empty Echovirus 6 particle at PH 7.4,pT3,334,60,,3.2
+7p1t,Cryo-EM structure of encapsulin from Mycobacterium tuberculosis,1,244,60,,2.29
+6wkv,Cryo-EM structure of engineered variant of the Encapsulin from Thermotoga maritima (TmE),1,244,60,,2.99
+8x96,Cryo-EM structure of enterovirus A71 A-particle in complex with Fab h1A6.2,pT3,340,60,,2.89
+8ytb,Cryo-EM structure of enterovirus A71 empty particle,pT3,342,60,,2.96
+8x97,Cryo-EM structure of enterovirus A71 empty particle in complex with Fab h1A6.2,pT3,342,60,,2.98
+8ytj,CRYO-EM STRUCTURE OF ENTEROVIRUS A71 MATURE VIRION,pT3,326,60,,3.07
+9m7v,CRYO-EM STRUCTURE OF ENTEROVIRUS A71 MATURE VIRION IN COMPLEX WITH FAB CT11F9,pT3,382,60,,3.04
+9c8g,Cryo-EM Structure of EV-D68 A2 Inactivated Virus Particle,pT3,312,60,,2.64
+9c8f,Cryo-EM Structure of EV-D68 B3 A-Particle,pT3,320,60,,2.86
+9c8i,Cryo-EM Structure of EV-D68 B3 Inactivated Virus Particle,pT3,314,60,,2.73
+9c3j,Cryo-EM structure of EV-D68 B3 Virus-like particle,pT3,344,60,,2.42
+9c4a,Cryo-EM Structure of EV-D68 Vaccine Candidate - A2 Subclade Virus-like Particle,pT3,338,60,,2.43
+7yv2,Cryo-EM structure of expanded coxsackievirus A16 empty particle after incubation with 8C4 antibody,pT3,332,60,,3.36
+6la4,CRYO-EM STRUCTURE OF FULL ECHOVIRUS 11 PARTICLE AT PH 5.5,pT3,338,60,,2.34
+6la3,CRYO-EM STRUCTURE OF FULL ECHOVIRUS 11 PARTICLE AT PH 7.4,pT3,338,60,,2.32
+6iln,CRYO-EM STRUCTURE OF FULL ECHOVIRUS 6 PARTICLE AT PH 5.5,pT3,336,60,,3.4
+6ilp,CRYO-EM STRUCTURE OF FULL ECHOVIRUS 6 PARTICLE AT PH 7.4,pT3,336,60,,2.9
+8fyw,Cryo-EM Structure of genome containing AAV2,1,300,60,,2.84
+6jja,CRYO-EM STRUCTURE OF GIANT FRESHWATER PRAWN MACROBRACHIUM RO EXTRA SMALL VIRUS (XSV) VLP,1,178,60,,2.91
+6jjd,CRYO-EM STRUCTURE OF GIANT FRESHWATER PRAWN MACROBRACHIUM RO NODAVIRUS (MRNV) FULL VLP,3,322,180,,3.21
+6jjc,CRYO-EM STRUCTURE OF GIANT FRESHWATER PRAWN MACROBRACHIUM RO NODAVIRUS (MRNV) SEMI-EMPTY VLP,3,320,180,,2.92
+9gvc,CRYO-EM STRUCTURE OF HALOTHIOBACILLUS NEAPOLITANUS ALPHA-CARBOXYSOME T=4 MINI-SHELL CONTAINING CTD TRUNCATED MUTANT OF CSOSCA,4,248,240,,1.82
+7k5w,Cryo-EM structure of heterologous protein complex loaded Thermotoga maritima encapsulin capsid,1,242,60,,2.87
+7tah,Cryo-EM structure of Human Enterovirus D68 US/MO/14-18947 strain in complex with inhibitor 11526091 (no/low occupancy-no inhibitor modeled),pT3,328,60,,2.3
+7taj,Cryo-EM structure of Human Enterovirus D68 US/MO/14-18947 strain in complex with inhibitor 11526093 (no/low occupancy-no inhibitor modeled),pT3,328,60,,2.0
+7t9p,Cryo-EM structure of Human Enterovirus D68 US/MO/14-18947 strain native virion,pT3,328,60,,2.0
+7taf,CRYO-EM STRUCTURE OF HUMAN ENTEROVIRUS D68 US/MO/14-18947 STRAIN VIRION IN COMPLEX WITH INHIBITOR 11526092,pT3,328,60,,2.0
+7tag,CRYO-EM STRUCTURE OF HUMAN ENTEROVIRUS D68 US/MO/14-18947 STRAIN VIRION IN COMPLEX WITH PLECONARIL,pT3,332,60,,2.7
+9mwz,CRYO-EM STRUCTURE OF HUMAN ENTEROVIRUS D68 USA/IL/14-18952,pT3,342,60,,2.0
+9mxc,CRYO-EM STRUCTURE OF HUMAN ENTEROVIRUS D68 USA/IL/14-18952 IN COMPLEX WITH FC-MFSD6(L3),pT3,340,60,,2.1
+9d8w,Cryo-EM structure of Human Enterovirus D94 A-particle,pT3,334,60,,2.6
+9d8x,Cryo-EM structure of Human Enterovirus D94 empty particle,pT3,336,60,,2.9
+9d9s,CRYO-EM STRUCTURE OF HUMAN ENTEROVIRUS D94 FULL PARTICLE,pT3,332,60,,2.9
+23sf,Cryo-EM structure of icosahedrally averaged bacteriophage RAN69 capsid,7l,676,420,,3.4
+8f25,CRYO-EM STRUCTURE OF LUMAZINE SYNTHASE NANOPARTICLE LINKED TO VP8* ANTIGEN,1,162,60,,2.6
+7bzo,CRYO-EM STRUCTURE OF MATURE COXSACKIEVIRUS A10 AT PH 5.5,pT3,316,60,,3.2
+7bzn,CRYO-EM STRUCTURE OF MATURE COXSACKIEVIRUS A10 AT PH 7.4,pT3,316,60,,3.1
+7bzu,CRYO-EM STRUCTURE OF MATURE COXSACKIEVIRUS A10 IN COMPLEX WI PH 5.5,pT3,394,60,,3.0
+7bzt,CRYO-EM STRUCTURE OF MATURE COXSACKIEVIRUS A10 IN COMPLEX WI PH 7.4,pT3,394,60,,3.0
+6zqu,CRYO-EM STRUCTURE OF MATURE DENGUE VIRUS 2 AT 3.1 ANGSTROM RESOLUTION,3,458,180,,3.1
+6zqv,CRYO-EM STRUCTURE OF MATURE SPONDWENI VIRUS,3,482,180,,2.6
+6izl,Cryo-EM structure of Mud crab tombus-like virus at 3.3 Angstroms resolution,3,330,180,,3.3
+6iuk,Cryo-EM structure of Murine Norovirus capsid,3,414,180,,3.5
+8zdh,Cryo-EM structure of Mycobacteriophage Douge genome-packed capsid (gp8 and gp113),9,790,540,,3.2
+7phm,Cryo-EM structure of Mycobacterium tuberculosis encapsulin,1,242,60,,2.2
+8vjo,Cryo-EM structure of Myxococcus xanthus EncA encapsulin shell loaded with EncD cargo,3,372,180,,2.4
+7ncr,Cryo-EM structure of Pepper cryptic virus 1 VLP,2,380,120,,2.9
+9p4o,CRYO-EM STRUCTURE OF PHP.EB.24,1,290,60,,2.05
+6sco,Cryo-EM Structure of Potato Leaf Roll Virus VLP,3,308,180,,3.3
+8w5h,Cryo-EM structure of Qb-Ab10,3,350,180,,2.8
+8w5l,Cryo-EM structure of Qb-Ab16,3,350,180,,2.8
+8w5n,Cryo-EM structure of Qb-Ab21,3,350,180,,3.1
+8w5r,Cryo-EM structure of Qb-Ab53,3,356,180,,3.1
+8w5w,Cryo-EM structure of Qb-Ab8,3,352,180,,3.3
+9jjg,Cryo-EM structure of RHDV GI.2 virion,3,430,180,,2.46
+6sk7,CRYO-EM STRUCTURE OF RHINOVIRUS-A89,pT3,318,60,,2.9
+6sk6,CRYO-EM STRUCTURE OF RHINOVIRUS-B5,pT3,322,60,,3.2
+6ab6,Cryo-EM structure of T=3 Penaeus vannamei nodavirus,3,372,180,,3.5
+9oh5,Cryo-EM structure of the assembled MS2 CPM58 VLP,pT3,290,60,,2.62
+9gyi,Cryo-EM structure of the capsid-forming phage-inducible chromosomal island (cf-PICI) EcCI2,4,478,240,,3.24
+6u0r,Cryo-EM structure of the chimeric vector AAV2.7m8,1,296,60,,2.91
+6u0v,Cryo-EM structure of the chimeric vector AAV2.7m8,1,296,60,,3.02
+8pys,Cryo-EM structure of the DyP peroxidase-loaded encapsulin nanocompartment from Mycobacterium tuberculosis with icosahedral symmetry imposed,1,242,60,,2.7
+7boj,Cryo-EM structure of the encapsulin shell from Mycobacterium smegmatis,1,242,60,,2.5
+8ika,Cryo-EM structure of the encapsulin shell from Mycobacterium tuberculo,1,244,60,,2.75
+9zcw,CRYO-EM STRUCTURE OF THE ENGINEERED VECTOR AAV2.ATX002,1,294,60,,1.9
+9ksl,Cryo-EM structure of the family 2A encapsulin from Mycolicibacterium smegmatis,1,260,60,,1.81
+8jg5,Cryo-EM structure of the GI.4 Chiba VLP complexed with the CV-1A1 Fv-clasp,3,502,180,,3.04
+6mzy,Cryo-EM structure of the HO BMC shell: Icosahedral reconstruction of the compacted subpopulation,9,410,540,,3.3
+9eg4,Cryo-EM structure of the icosahedral capsid of LME-1 phage,7l,636,420,,2.1
+9ez8,Cryo-EM structure of the icosahedral lumazine synthase from Vicia faba.,1,158,60,,2.7
+8wol,Cryo-EM structure of the Mmp1 encapasulin from Mycobacterium smegmatis,1,260,60,,2.6
+7xpa,Cryo-EM structure of the T=3 lake sinai virus 2 virus-like capsid at pH 7.5,3,448,180,,3.33
+7xpf,Cryo-EM structure of the T=3 lake sinai virus 2 virus-like capsid at pH 8.5,3,448,180,,3.13
+7xgz,Cryo-EM structure of the T=4 lake sinai virus 2 virus-like capsid at pH 7.5,4,498,240,,3.24
+7xpe,Cryo-EM structure of the T=4 lake sinai virus 2 virus-like capsid at pH 8.5,4,496,240,,3.32
+8v7x,Cryo-EM structure of TTMV-LY1 anellovirus virus-like particle,1,332,60,,2.8
+8vgr,CRYO-EM STRUCTURE OF TULANE VIRUS 9-6-17 VARIANT CAPSID PROTEIN VP1 5 12-18,3,410,180,,3.2
+9cve,CRYO-EM STRUCTURE OF TULANE VIRUS 9-6-17 VARIANT CAPSID PROTEIN VP1 5 12-18,3,408,180,,3.18
+9cvf,CRYO-EM STRUCTURE OF TULANE VIRUS 9-6-17 VARIANT CAPSID PROTEIN VP1 9 14-18,3,418,180,,3.0
+8vjs,CRYO-EM STRUCTURE OF TULANE VIRUS 9-6-17 VARIANT CAPSID PROTEIN VP1 9 14-18 WITHOUT DTT TREATMENT,3,420,180,,2.73
+8vjr,"CRYO-EM STRUCTURE OF TULANE VIRUS 9-6-17 VARIANT CAPSID PROTEIN VP1 9 14-18, DTT-TREATED",3,420,180,,2.63
+9cvg,"CRYO-EM STRUCTURE OF TULANE VIRUS 9-6-17 VARIANT CAPSID PROTEIN VP1 9 14-18, DTT-TREATED",3,418,180,,2.08
+7thx,CRYO-EM STRUCTURE OF W6 POSSUM ENTEROVIRUS,pT3,324,60,,2.96
+9rch,Cryo-EM structure of Yadonushi Virus 1,2,544,120,,2.2
+9js7,cryoEM of antibody complexed with mature Zika virus,3,532,180,,2.84
+9nau,CRYOEM STRUCTURE OF CAPSID FROM HUMAN ASTROVIRUS 1 IN COMPLEX WITH HUMAN NEONATAL FC RECEPTOR,3,344,180,,2.77
+9tkm,CRYOEM STRUCTURE OF COXSACKIEVIRUS B1 VIRUS-LIKE PARTICLE WITH VP4 DELETION,pT3,342,60,,2.7
+9fna,CRYOEM STRUCTURE OF ENCAPSULIN::TDNFSB WITH AN OPEN PORE STATE,1,246,60,,2.22
+5ned,CRYOEM STRUCTURE OF FOOT AND MOUTH DISEASE VIRUS O PANASIA,pT3,304,60,,3.1
+5nej,CRYOEM STRUCTURE OF FOOT AND MOUTH DISEASE VIRUS O1 MANISA,pT3,304,60,,3.1
+3j2v,CryoEM structure of HBV core,4,346,240,,3.5
+7ozk,CRYOEM STRUCTURE OF HUMAN ENTEROVIRUS 70 IN COMPLEX WITH PLECONARIL,pT3,330,60,,2.31
+7ozl,CRYOEM STRUCTURE OF HUMAN ENTEROVIRUS 70 IN COMPLEX WITH WIN51711,pT3,332,60,,2.74
+7opx,CRYOEM STRUCTURE OF HUMAN ENTEROVIRUS 70 NATIVE VIRION,pT3,330,60,,2.63
+6cs4,CryoEM structure of human enterovirus D68 A-particle (pH 5.5 and 33 degrees Celsius),pT3,324,60,,2.73
+6cs6,CryoEM structure of human enterovirus D68 A-particle (pH 5.5 and room temperature),pT3,324,60,,3.25
+6crs,CryoEM structure of human enterovirus D68 A-particle (pH 7.2 and 4 degrees Celsius),pT3,318,60,,3.24
+6crp,CryoEM structure of human enterovirus D68 abortive product 1 (pH 7.2 and 4 degrees Celsius),pT3,324,60,,3.24
+6cs5,CryoEM structure of human enterovirus D68 abortive product 2 (pH 7.2 and 4 degrees Celsius),pT3,324,60,,3.24
+6cv4,CryoEM structure of human enterovirus D68 emptied particle (after incubation with low molecular weight heparin),pT3,330,60,,3.03
+6csh,CryoEM structure of human enterovirus D68 emptied particle (pH 5.5 and 33 degrees Celsius),pT3,324,60,,2.9
+6cru,CryoEM structure of human enterovirus D68 emptied particle (pH 7.2 and 4 degrees Celsius),pT3,322,60,,3.32
+6mzi,"CryoEM structure of human enterovirus D68 expanded 1 particle (pH 6.5, 4 degrees Celsius, 3 min)",pT3,324,60,,3.46
+6cs3,CryoEM structure of human enterovirus D68 expanded 1 particle (pH 7.2 and 4 degrees Celsius),pT3,320,60,,3.31
+6csg,CryoEM structure of human enterovirus D68 full native virion,pT3,324,60,,2.17
+6crr,CryoEM structure of human enterovirus D68 full native virion (pH 7.2 and 4 degrees Celsius),pT3,320,60,,3.24
+6cv1,CRYOEM STRUCTURE OF HUMAN ENTEROVIRUS D68 FULL PARTICLE (AFT INCUBATION WITH HEPARIN-DERIVED HEXASACCHARIDE),pT3,326,60,,2.76
+6cv5,CRYOEM STRUCTURE OF HUMAN ENTEROVIRUS D68 FULL PARTICLE (AFT INCUBATION WITH LOW MOLECULAR WEIGHT HEPARIN),pT3,326,60,,2.79
+6cv2,CryoEM structure of human enterovirus D68 full virion,pT3,324,60,,2.86
+6cvb,CRYOEM STRUCTURE OF HUMAN ENTEROVIRUS D68 IN COMPLEX WITH 6-ACETYLLACTOSAMINE,pT3,322,60,,2.43
+6zml,CryoEM Structure of Merkel Cell Polyomavirus Virus-like Particle,7d,506,360,,3.4
+6rtk,CryoEM structure of modified Turnip Yellows Virus devoid of minor capsid protein readthrough domain,3,302,180,,3.47
+9q8j,CryoEM structure of modified Turnip Yellows Virus devoid of minor capsid protein readthrough domain,3,304,180,,3.47
+6iic,CryoEM structure of Mud Crab Dicistrovirus,pT3,332,60,,3.3
+12ze,CryoEM structure of Papaya Meleira Virus (PMeV) particles purified directly from Carica papaya latex,2,492,120,,2.6
+5w3m,"CRYOEM STRUCTURE OF RHINOVIRUS B14 IN COMPLEX WITH C5 FAB (33 Deg C, MOLAR RATIO 1:1, FULL CAPSID)",pT3,368,60,,2.26
+5w3e,"Cryoem Structure Of Rhinovirus B14 In Complex With C5 Fab (33 Deg C, Molar Ratio 1:3, Full Particle)",pT3,364,60,,2.53
+5w3o,"CryoEM structure of rhinovirus B14 in complex with C5 Fab (33 degC, molar ratio 1:3, empty particle)",pT3,374,60,,3.01
+5w3l,"Cryoem Structure Of Rhinovirus B14 In Complex With C5 Fab (4 Deg C, Molar Ratio 1:3, Full Particle)",pT3,364,60,,2.71
+9fx1,CRYOEM STRUCTURE OF RV-A89,pT3,316,60,,1.76
+9fx9,CRYOEM STRUCTURE OF RV-A89,pT3,324,60,,1.96
+6x8t,CryoEM structure of the apo-SrpI encapasulin complex from Synechococcus elongatus PCC 7942,1,256,60,,2.9
+5k0u,CRYOEM STRUCTURE OF THE FULL VIRION OF A HUMAN RHINOVIRUS C,pT3,334,60,,2.79
+6x8m,CryoEM structure of the holo-SrpI encapsulin complex from Synechococcus elongatus PCC 7942,1,254,60,,2.2
+5jzg,CryoEM structure of the native empty particle of a human rhinovirus C,pT3,338,60,,3.16
+1ihm,CRYSTAL STRUCTURE ANALYSIS OF NORWALK VIRUS CAPSID,3,400,180,,3.4
+3m8l,Crystal Structure Analysis of the Feline Calicivirus Capsid Protein,3,416,180,,3.4
+5fmo,CRYSTAL STRUCTURE AND PROTEOMICS ANALYSIS OF EMPTY VIRUS LIKE PARTICLES OF COWPEA MOSAIC VIRUS,pT3,318,60,,2.3
+2x5i,CRYSTAL STRUCTURE ECHOVIRUS 7,pT3,330,60,,3.1
+5j36,CRYSTAL STRUCTURE OF 60-MER BFDV CAPSID PROTEIN,1,204,60,,2.55
+5j37,CRYSTAL STRUCTURE OF 60-MER BFDV CAPSID PROTEIN IN COMPLEX WITH SINGLE STRANDED DNA,1,204,60,,2.3
+4qyk,CRYSTAL STRUCTURE OF A CANINE PARVOVIRUS VARIANT,1,284,60,,3.5
+1u1y,CRYSTAL STRUCTURE OF A COMPLEX BETWEEN WT BACTERIOPHAGE MS2 COAT PROTEIN AND AN F5 APTAMER RNA STEMLOOP WITH 2AMINOPURINE SUBSTITUTED AT THE-10 POSITION,3,288,180,,2.85
+4rr3,CRYSTAL STRUCTURE OF A RECOMBINANT EV71 VIRUS PARTICLE,pT3,334,60,,3.1
+4mgu,CRYSTAL STRUCTURE OF ACHETA DOMESTICUS DENSOVIRUS,1,274,60,,3.5
+3kic,CRYSTAL STRUCTURE OF ADENO-ASSOCIATED VIRUS SEROTYPE 3B,1,290,60,,2.6
+3kie,CRYSTAL STRUCTURE OF ADENO-ASSOCIATED VIRUS SEROTYPE 3B,1,292,60,,3.0
+2vf9,CRYSTAL STRUCTURE OF BACTERIOPHAGE PRR1,3,288,180,,3.5
+3p0s,Crystal structure of Bombyx mori densovirus 1 capsid,1,262,60,,3.1
+5osn,CRYSTAL STRUCTURE OF BOVINE ENTEROVIRUS 2 DETERMINED WITH SERIAL FEMTOSECOND X-RAY CRYSTALLOGRAPHY,pT3,316,60,,2.3
+9scw,Crystal structure of Coxsackie B1 virus-like particle delta-palxa,pT3,328,60,,3.2
+5c4w,CRYSTAL STRUCTURE OF COXSACKIEVIRUS A16,pT3,318,60,,2.65
+4q4v,CRYSTAL STRUCTURE OF COXSACKIEVIRUS A24V,pT3,326,60,,2.9
+4q4x,CRYSTAL STRUCTURE OF COXSACKIEVIRUS A24V SOAKED WITH 6p-SIAL (6SL),pT3,326,60,,1.65
+4q4y,CRYSTAL STRUCTURE OF COXSACKIEVIRUS A24V SOAKED WITH DISIALY TETRAOSE (DSLNT),pT3,326,60,,1.88
+4llf,CRYSTAL STRUCTURE OF CUCUMBER NECROSIS VIRUS,3,354,180,,2.89
+5im4,CRYSTAL STRUCTURE OF DESIGNED TWO-COMPONENT SELF-ASSEMBLING ICOSAHEDRAL CAGE I52-32,1,262,60,,3.5
+5cfd,CRYSTAL STRUCTURE OF DTT TREATED HUMAN CARDIOVIRUS SAFV-3,pT3,320,60,,2.5
+5c9a,CRYSTAL STRUCTURE OF EMPTY COXSACKIEVIRUS A16 PARTICLE,pT3,318,60,,2.7
+4qpg,CRYSTAL STRUCTURE OF EMPTY HEPATITIS A VIRUS,pT3,314,60,,3.5
+6i9g,CRYSTAL STRUCTURE OF ENCAPSULIN FROM MYCOLICIBACTERIUM HASSI,1,240,60,,2.5
+2q23,Crystal structure of Flock House N363T mutant,3,344,180,,3.2
+4gh4,CRYSTAL STRUCTURE OF FOOT AND MOUTH DISEASE VIRUS A22 SEROTY,pT3,302,60,,3.0
+5ne4,CRYSTAL STRUCTURE OF FOOT AND MOUTH DISEASE VIRUS O PANASIA,pT3,304,60,,2.3
+3vbo,CRYSTAL STRUCTURE OF FORMALDEHYDE TREATED EMPTY HUMAN ENTERO PARTICLE (CRYO AT 100K),pT3,334,60,,2.88
+3vbf,CRYSTAL STRUCTURE OF FORMALDEHYDE TREATED HUMAN ENTEROVIRUS GROUP I23),pT3,318,60,,2.6
+3vbh,CRYSTAL STRUCTURE OF FORMALDEHYDE TREATED HUMAN ENTEROVIRUS GROUP R32),pT3,318,60,,2.3
+3s6p,CRYSTAL STRUCTURE OF HELICOVERPA ARMIGERA STUNT VIRUS,4,438,240,,2.5
+4qpi,CRYSTAL STRUCTURE OF HEPATITIS A VIRUS,pT3,312,60,,3.01
+5cfc,CRYSTAL STRUCTURE OF HUMAN CARDIOVIRUS SAFV-3,pT3,318,60,,2.5
+4jgz,CRYSTAL STRUCTURE OF HUMAN COXSACKIEVIRUS A16 UNCOATING INTE (SPACE GROUP I222),pT3,332,60,,3.0
+4jgy,CRYSTAL STRUCTURE OF HUMAN COXSACKIEVIRUS A16 UNCOATING INTE (SPACE GROUP P4232),pT3,332,60,,3.0
+7oj7,Crystal structure of human coxsackievirus A24v in complex with a pentavalent N-acetylneuraminic acid conjugate,pT3,324,60,,1.78
+6tsd,Crystal structure of human coxsackievirus A24v in complex with pentavalent inhibitor ME0752,pT3,324,60,,1.81
+3vbs,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS 71,pT3,318,60,,3.0
+4cdq,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS 71 IN COMPLEX WITH TH UNCOATING INHIBITOR GPP2,pT3,320,60,,2.65
+4cew,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS 71 IN COMPLEX WITH THE UNCOATING INHIBITOR ALD,pT3,318,60,,2.75
+4cdx,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS 71 IN COMPLEX WITH THE UNCOATING INHIBITOR GPP12,pT3,318,60,,2.8
+4cdu,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS 71 IN COMPLEX WITH THE UNCOATING INHIBITOR GPP3,pT3,320,60,,2.8
+4cdw,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS 71 IN COMPLEX WITH THE UNCOATING INHIBITOR GPP4,pT3,318,60,,2.8
+4cey,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS 71 IN COMPLEX WITH THE UNCOATING INHIBITOR NLD,pT3,318,60,,2.75
+4wm8,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS D68,pT3,314,60,,2.0
+5bnp,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS D68 IN COMPLEX WITH 3-PRIME SLN,pT3,326,60,,2.15
+5bnn,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS D68 IN COMPLEX WITH 6-PRIME SL,pT3,324,60,,2.32
+5bno,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS D68 IN COMPLEX WITH 6-PRIME SLN,pT3,324,60,,2.15
+4wm7,CRYSTAL STRUCTURE OF HUMAN ENTEROVIRUS D68 IN COMPLEX WITH P,pT3,318,60,,2.32
+5zju,CRYSTAL STRUCTURE OF IN VITRO EXPRESSED AND ASSEMBLED PCV2 V PARTICLE,1,204,60,,2.8
+2df7,CRYSTAL STRUCTURE OF INFECTIOUS BURSAL DISEASE VIRUS VP2 SUB PARTICLE,1,272,60,,2.6
+4v7g,Crystal Structure of Lumazine Synthase from Bacillus Anthracis,1,160,60,,3.5
+4nwv,CRYSTAL STRUCTURE OF ORSAY VIRUS-LIKE PARTICLE,3,368,180,,3.25
+4z92,CRYSTAL STRUCTURE OF PARECHOVIRUS-1 VIRION,pT3,306,60,,3.1
+3es5,Crystal Structure of Partitivirus (PsV-F),2,376,120,,3.3
+3n7x,Crystal structure of Penaeus stylirostris densovirus capsid,1,246,60,,2.5
+2xpj,CRYSTAL STRUCTURE OF PHYSALIS MOTTLE VIRUS WITH INTACT ORDERED RNA,3,314,180,,3.4
+5c8c,CRYSTAL STRUCTURE OF RECOMBINANT COXSACKIEVIRUS A16 CAPSID,pT3,318,60,,2.5
+5ddj,CRYSTAL STRUCTURE OF RECOMBINANT FOOT AND MOUTH DISEASE VIRUS O1M S2093Y EMPTY CAPSID,pT3,302,60,,3.5
+4iv1,CRYSTAL STRUCTURE OF RECOMBINANT FOOT-AND-MOUTH-DISEASE VIRU EMPTY CAPSID,pT3,302,60,,2.1
+4iv3,CRYSTAL STRUCTURE OF RECOMBINANT FOOT-AND-MOUTH-DISEASE VIRU H2093C EMPTY CAPSID,pT3,302,60,,2.9
+5d8a,CRYSTAL STRUCTURE OF RECOMBINANT FOOT-AND-MOUTH-DISEASE VIRUS A22-H2093F EMPTY CAPSID,pT3,302,60,,2.4
+2izw,CRYSTAL STRUCTURE OF RYEGRASS MOTTLE VIRUS,3,312,180,,2.9
+5j98,CRYSTAL STRUCTURE OF SLOW BEE PARALYSIS VIRUS AT 2.6A RESOLUTION,pT3,374,60,,2.6
+5j96,CRYSTAL STRUCTURE OF SLOW BEE PARALYSIS VIRUS AT 3.4A RESOLUTION,pT3,388,60,,3.41
+4ftb,CRYSTAL STRUCTURE OF THE AUTHENTIC FLOCK HOUSE VIRUS PARTICL,3,342,180,,2.7
+4v46,Crystal structure of the BAFF-BAFF-R complex,1,202,60,,3.3
+4fte,Crystal structure of the D75N mutant capsid of Flock House virus,3,342,180,,3.5
+3hag,Crystal structure of the Hepatitis E Virus-like Particle,1,276,60,,3.5
+4fts,CRYSTAL STRUCTURE OF THE N363T MUTANT OF THE FLOCK HOUSE VIR,3,342,180,,3.2
+4rqp,CRYSTAL STRUCTURE OF THE NATUALLY OCCURRING EMPTY PARTICLE O CLINICAL C4 STRAIN EV71,pT3,324,60,,3.15
+9rp8,CRYSTAL STRUCTURE OF THE T=1 ICOSAHEDRAL CAPSID OF TURNIP CRINKLE VIRUS P38,1,228,60,,2.89
+4fsj,CRYSTAL STRUCTURE OF THE VIRUS LIKE PARTICLE OF FLOCK HOUSE,3,342,180,,3.5
+7k6v,Crystal Structure of Virus-like Particles of GII.4 Norovirus Houston virus (HOV),3,412,180,,3.0
+rcmv,CRYSTAL STRUCTURE RED CLOVER MOTTLE VIRUS,pT3,310,60,,2.4
+5bkl,Crystallographic structure of the cubic crystal form of STMV (77.9 degree rotation) grown from NaCl,1,172,60,,2.94
+7sqy,CSDaV GFP mutant,3,310,180,,3.4
+7sqz,CSDaV wild-type,3,310,180,,3.1
+6mrl,CUCUMBER LEAF SPOT VIRUS,3,352,180,,3.2
+1f15,Cucumber Mosaic Virus (CMV),3,302,180,,3.2
+8skg,CUS-3 Mature Virus Capsid,7l,676,420,,2.8
+7wl3,CVB5 expended empty particle,pT3,342,60,,2.95
+7xb2,CVB5-intermediate altered particle containing VP1/VP2/VP3 and RNA genome,pT3,344,60,,2.81
+7f38,Cyanophage A-1(L) capsid asymmetric unit,9,748,540,,3.35
+9jwb,CYANOPHAGE A4 CAPSID ASYMMETRIC UNIT,7l,678,420,,2.8
+7eel,Cyanophage Pam1 capsid asymmetric unit,7l,696,420,,3.26
+9osb,D3 PROHEAD 1,9,614,540,,3.5
+9oth,D3 PROHEAD 1,9,614,540,,3.5
+3fbm,D431N Mutant VP2 Protein of Infectious Bursal Disease Virus; Derived T=1 Particles,1,272,60,,3.1
+9mve,DENGUE VIRUS SEROTYPE-3 (DENV3) COMPLEX WITH DC-SIGN CRD AT 4C,3,568,180,,3.4
+7v3g,DENV2_NGC_FAB_C10 28DEGREES (2FAB:3E),3,544,180,,3.3
+1ddl,Desmodium Yellow Mottle Virus (DYMV),3,318,180,,2.7
+6ygi,DUCK HEPATITIS B VIRUS CAPSID MUTANT R124E_DELTA78-122,4,372,240,,3.0
+6zlo,E2 core of the fungal Pyruvate dehydrogenase complex,1,242,60,,2.9
+7cmk,E30 E-particle in complex with 6C5,pT3,428,60,,3.4
+7c81,E30 F-PARTICLE IN COMPLEX WITH 6C5,pT3,430,60,,3.1
+7c9v,E30 F-PARTICLE IN COMPLEX WITH FCRN,pT3,408,60,,3.3
+7xxg,ECHO 18 AT PH5.5,pT3,340,60,,3.37
+7xxj,ECHO 18 INCUBATED WITH FCRN AT PH5.5,pT3,314,60,,3.33
+6rjf,ECHOVIRUS 1 INTACT PARTICLE,pT3,330,60,,3.5
+1h8t,Echovirus 11 (Strain 207),pT3,332,60,,2.9
+6hbh,Echovirus 18 A-particle,pT3,328,60,,3.36
+6hbj,Echovirus 18 empty particle,pT3,326,60,,3.16
+6hbg,ECHOVIRUS 18 NATIVE PARTICLE,pT3,314,60,,3.16
+7c9x,ECHOVIRUS 3 F-PARTICLE,pT3,330,60,,3.4
+7c9t,Echovirus 30 A-particle,pT3,344,60,,2.9
+7c9u,Echovirus 30 E-particle,pT3,336,60,,3.4
+7c9s,ECHOVIRUS 30 F-PARTICLE,pT3,332,60,,2.9
+7eah,Echovirus3 empty expanded particle,pT3,346,60,,3.1
+5a33,Electron cryo-microscopy of Cowpea Mosaic Virus (CPMV) empty virus like particle (eVLP),pT3,316,60,,3.04
+5a32,Electron cryo-microscopy of Cowpea Mosaic Virus containing RNA-1 (CPMVb),pT3,316,60,,3.44
+9ffg,Empty capsid of Rhodobacter microvirus Ebor computed with I4 symmetry,1,306,60,,3.3
+7qwx,Empty capsid of Saccharomyces cerevisiae virus L-BCLa,2,444,120,,2.9
+9j1w,Endogenous dihydrolipoamide acetyltransferase (E2) core of pyruvate,1,236,60,,3.2
+8rvj,Engineered Encapsulin P3P4,4,432,240,,3.1
+6wds,Enterovirus D68 in complex with human monoclonal antibody EV68-159,pT3,380,60,,2.9
+6wdt,Enterovirus D68 in complex with human monoclonal antibody EV68-228,pT3,378,60,,3.1
+7rwl,Envelope-associated Adeno-associated virus serotype 2,1,294,60,,3.14
+7z5d,Equilibrium Dynamics of a Biomolecular Complex Analyzed at Single-amino Acid Resolution by Cryo-electron Microscopy,1,286,60,,3.42
+2ws9,EQUINE RHINITIS A VIRUS AT LOW PH,pT3,318,60,,3.0
+9e5e,Escherichia coli DyP peroxidase-loaded encapsulin shell,1,256,60,,2.17
+9rii,EV-A71 (GENOTYPE B2) IN COMPLEX WITH 34-1-6D FAB,pT3,380,60,,3.0
+9rik,EV-A71 (GENOTYPE B5) IN COMPLEX WITH 16-2-2D FAB,pT3,370,60,,3.4
+9rim,EV-A71 (GENOTYPE B5) IN COMPLEX WITH 16-3-4D FAB,pT3,382,60,,3.0
+9rip,EV-A71 (GENOTYPE B5) IN COMPLEX WITH 17-2-12A FAB,pT3,366,60,,3.1
+9rio,EV-A71 (GENOTYPE B5) IN COMPLEX WITH 17-2-2B FAB,pT3,388,60,,3.4
+9riq,EV-A71 (GENOTYPE C4) IN COMPLEX WITH 16-2-11B FAB,pT3,386,60,,3.3
+9rir,EV-A71 (GENOTYPE C4) IN COMPLEX WITH 16-3-10B FAB,pT3,384,60,,3.3
+6uh6,EV-A71 STRAIN 11316 COMPLEXED WITH MADAL COMPOUND 22,pT3,318,60,,2.98
+6uh7,EV-A71 STRAIN 11316 COMPLEXED WITH MADAL COMPOUND 30,pT3,318,60,,2.87
+7ebz,EV-D68 in complex with 2H12 Fab (state S1),pT3,368,60,,3.09
+7ec5,EV-D68 in complex with 8F12 Fab,pT3,362,60,,2.89
+9pi8,EV-D68 in complex with G12 Fc,pT3,354,60,,2.11
+9pi7,EV-D68 in complex with G12 VHH,pT3,354,60,,2.05
+9b18,EV-D68 IN COMPLEX WITH INHIBITOR JUN11-53-7,pT3,326,60,,2.3
+9b19,EV-D68 IN COMPLEX WITH INHIBITOR JUN11-54-1,pT3,326,60,,2.3
+9b1a,EV-D68 IN COMPLEX WITH INHIBITOR JUN11-69-5,pT3,326,60,,2.3
+9b1b,EV-D68 IN COMPLEX WITH INHIBITOR JUN11-78-7,pT3,326,60,,2.3
+9f5s,EVA71 E096A NATIVE PARTICLE,pT3,310,60,,2.5
+9f6a,EVA71 E096A NATIVE PARTICLE,pT3,310,60,,2.7
+8aw6,Expanded Coxsackievirus A9 after 0.01% faf-BSA treatment,pT3,342,60,,3.5
+8axx,Expanded Coxsackievirus A9 after treatment with endosomal ionic buffer,pT3,342,60,,3.3
+9fjd,Expanded CVB1-VLP (Tween80),pT3,344,60,,2.15
+9fje,Expanded formalin inactivated CVB1,pT3,344,60,,3.01
+6hu4,F97L Hepatitis B core protein capsid,4,350,240,,2.64
+6s44,Faba bean necrotic stunt virus (FBNSV),1,184,60,,3.19
+8roq,"FAdV-C4 Aviadenovirus structure, strain KR5",pT25,916,780,,3.4
+6gsh,FELINE CALICIVIRUS STRAIN F9,3,418,180,,3.0
+1c8e,Feline Panleukopenia Virus,1,284,60,,3.0
+1c8f,Feline Panleukopenia Virus,1,284,60,,3.0
+1c8g,Feline Panleukopenia Virus,1,286,60,,3.0
+1fpv,Feline Panleukopenia Virus,1,286,60,,3.3
+2q25,Flock House Virus Coat protein D75N mutant,3,344,180,,3.5
+8hbi,FMDV (A/TUR/14/98) in complex with M688F,pT3,372,60,,2.9
+7dst,FMDV capsid in complex with M170 Nab,pT3,354,60,,3.1
+1qqp,Foot and Mouth Disease Virus,pT3,304,60,,1.9
+1bbt,Foot and Mouth Disease Virus (FMDV),pT3,304,60,,2.6
+1fod,Foot and Mouth Disease Virus (Reduced),pT3,304,60,,2.6
+7d3r,FOOT AND MOUTH DISEASE VIRUS A/WH/CHA/09-BOUND THE SINGLE CHAIN FRAGME ANTIBODY R50,pT3,402,60,,3.49
+1fmd,Foot and Mouth Disease Virus Type C-S8C1,pT3,302,60,,3.5
+1zbe,Foot-and Mouth Disease Virus Serotype A1061,pT3,304,60,,3.0
+1zba,Foot-and-Mouth Disease virus serotype A1061 complexed with oligosaccharide receptor.,pT3,304,60,,2.0
+8a9u,Full AAV3B-VP1KO virion,1,288,60,,3.1
+8des,Gokushovirus EC6098,1,306,60,,2.6
+9me0,Goose Parvovirus Capsid,1,280,60,,2.43
+8eck,GORDONIA PHAGE COZZ,7l,666,420,,2.6
+8eb4,GORDONIA PHAGE ZIKO,9,756,540,,2.6
+7lnk,Gorilla Bocavirus 1 Capsid,1,280,60,,2.76
+9naw,H-1 Parvovirus VLP,1,290,60,,2.59
+9nbg,H-1 Parvovirus VLP - Glycan [s(Lex)2],1,290,60,,2.57
+8zre,HBCAG-D4 FAB COMPLEX,4,454,240,,3.44
+8uyy,HBV Cp149 capsid protein (Preassembled capsid incubated with triton X-100),4,354,240,,3.0
+8uyx,HBV Cp149 capsid protein (Wild-type control),4,356,240,,2.7
+7abl,HBV pgRNA T=4 NCP icosahedral symmetry,4,352,240,,3.2
+8uyw,HBV T=3 3A mutant capsid from HEK-293T cells,3,326,180,,3.1
+8uyu,HBV T=3 capsid from HEK-293T cells,3,314,180,,3.3
+8uyv,HBV T=4 3A mutant capsid from HEK-293T cells,4,368,240,,2.9
+8uyt,HBV T=4 capsid from HEK-293T cells,4,356,240,,2.7
+9tbi,HEPATITIS A VIRUS IN COMPLEX WITH GD1A,pT3,316,60,,1.7
+9tbh,HEPATITIS A VIRUS IN COMPLEX WITH LDLR RECEPTOR,pT3,316,60,,1.7
+7od6,Hepatitis B core protein + GSLLGRMKGA,4,354,240,,3.0
+7od7,Hepatitis B core protein + SLLGRM,4,352,240,,2.8
+7oco,Hepatitis B core protein -low secretion phenotype L60V,4,352,240,,3.2
+7ocw,Hepatitis B core protein -low secretion phenotype P5T,4,352,240,,3.2
+7oev,Hepatitis B core protein mutant F97L with bound GSLLGRMKGA,4,354,240,,3.1
+7oew,Hepatitis B core protein mutant F97L with bound MHRSLLGRMKGA,4,352,240,,2.9
+7od8,Hepatitis B core Protein mutant L60V + GSLLGRMKGA,4,352,240,,3.0
+7oen,Hepatitis B core protein mutant P5T with bound GSLLGRMKGA,4,354,240,,3.2
+8pwo,HEPATITIS B CORE PROTEIN WITH BOUND GERANIOL,4,350,240,,2.8
+8px3,Hepatitis B core protein with bound P1dC,4,356,240,,3.0
+8px6,Hepatitis B core protein with bound SLLGRM-dimer,4,354,240,,2.5
+7od4,Hepatitis B core protein.,4,352,240,,2.8
+6tik,Hepatitis B virus core shell--virus-like particle with NadA epitope,4,342,240,,3.4
+7kzf,High resolution cryo EM analysis of HPV16 identifies minor structural protein L2 and describes capsid flexibility,7d,584,360,,3.1
+6q5u,HIGH RESOLUTION ELECTRON CRYO-MICROSCOPY STRUCTURE OF THE BACTERIOPHAGE PR772,pT25,704,780,,2.75
+6gv4,HIGH-RESOLUTION CRYO-EM OF FAB-LABELED HUMAN PARECHOVIRUS 3,pT3,354,60,,2.8
+4q4w,HIGH-RESOLUTION CRYSTAL STRUCTURE OF COXSACKIEVIRUS A24V,pT3,326,60,,1.4
+9clj,HIV-2 CA T=1 ICOSAHEDRON; ASSEMBLED VIA LIPID TEMPLATING,1,234,60,,1.98
+8cfa,HK97 Prohead II as part of a DNA packaging complex,7l,546,420,,3.06
+29ub,HRV B14 virion,pT3,320,60,,2.73
+8pnf,HRV B14 VIRION PROTEINS,pT3,322,60,,2.9
+29tx,HRV K2052A mutant,pT3,322,60,,3.25
+29ti,HRV K4058A mutant,pT3,320,60,,3.26
+7bg7,HRV14 IN COMPLEX WITH ITS RECEPTOR ICAM-1,pT3,346,60,,2.4
+7bg6,HRV14 NATIVE PARTICLE SOLVED BY CRYOEM,pT3,320,60,,2.6
+7ltm,Hum8 capsid,1,290,60,,2.49
+1x9p,Human Adenovirus 2 Penton Base,1,290,60,,3.3
+1x9t,Human Adenovirus 2 Penton Base In Complex With An Ad2 N-Terminal Fibre Peptide,1,274,60,,3.5
+9r78,Human Adenovirus D 10 Capsid Structure,pT25,950,780,,3.3
+7l0y,Human Bocavirus 1 (pH 2.6),1,280,60,,2.54
+7l0w,Human Bocavirus 1 (pH 5.5),1,278,60,,2.74
+7l0x,Human Bocavirus 2 (pH 2.6),1,280,60,,2.51
+7l0u,Human Bocavirus 2 (pH 5.5),1,282,60,,2.74
+7l0v,Human Bocavirus 2 (pH 7.4),1,282,60,,2.71
+5us7,HUMAN BOCAVIRUS 3,1,282,60,,2.8
+5us9,HUMAN BOCAVIRUS 4,1,282,60,,3.0
+4gb3,HUMAN COXSACKIEVIRUS B3 STRAIN RD COAT PROTEIN,pT3,328,60,,2.74
+6ssj,"Human endogenous retrovirus (HML2) mature capsid assembly, T=1 icosahedron",1,230,60,,2.75
+3zfe,HUMAN ENTEROVIRUS 71 IN COMPLEX WITH CAPSID BINDING INHIBITOR WIN51711,pT3,316,60,,2.7
+3zff,HUMAN ENTEROVIRUS 71 IN COMPLEX WITH CAPSID BINDING INHIBITOR WIN51711,pT3,316,60,,3.4
+3zfg,HUMAN ENTEROVIRUS 71 IN COMPLEX WITH CAPSID BINDING INHIBITOR WIN51711,pT3,316,60,,3.2
+4n53,HUMAN ENTEROVIRUS 71 UNCOATING INTERMEDIATE CAPTURED AT ATOM RESOLUTION,pT3,316,60,,3.31
+1qgt,Human Hepatitis B Viral Capsid,4,350,240,,3.3
+1dzl,Human Papilloma Virus 16 L1 Capsid,1,320,60,,3.5
+9eqw,Human Picobirnavirus CP Reassembled VLP,2,388,120,,3.25
+6z8d,Human Picobirnavirus CP VLP,2,384,120,,2.63
+6z8f,Human Picobirnavirus D45-CP VLP,2,386,120,,2.8
+6z8e,Human Picobirnavirus Ht-CP VLP,2,386,120,,2.8
+1rmu,Human Rhinovirus 14 Mutant C199Y,pT3,322,60,,3.0
+2hwc,Human Rhinovirus 14 Mutant I2170V/Win54954 Complex,pT3,322,60,,3.0
+2hwb,Human Rhinovirus 14 Mutant I2170V/Win65291 Complex,pT3,322,60,,3.0
+1ruc,Human Rhinovirus 14 Mutant N1105S/Win52035 Complex,pT3,322,60,,3.1
+1rud,Human Rhinovirus 14 Mutant N1105S/Win52035 Complex,pT3,322,60,,2.9
+1ruf,Human Rhinovirus 14 Mutant N1219A,pT3,322,60,,2.9
+1rue,Human Rhinovirus 14 Mutant N1219A/Win52035 Complex,pT3,322,60,,2.9
+1rug,Human Rhinovirus 14 Mutant N1219S/Win52035 Complex,pT3,322,60,,3.0
+1ruh,Human Rhinovirus 14 Mutant N1219S/Win52084 Complex,pT3,322,60,,3.0
+1ruj,Human Rhinovirus 14 Mutant S1223G,pT3,322,60,,3.0
+2rmu,Human Rhinovirus 14 Mutant V188L,pT3,322,60,,3.0
+1na1,Human Rhinovirus 14/Pleconaril Complex,pT3,318,60,,3.3
+1ncq,Human Rhinovirus 14/Pleconaril Complex,pT3,318,60,,2.5
+1hri,Human Rhinovirus 14/Sch38057 Complex,pT3,322,60,,3.0
+1hrv,Human Rhinovirus 14/SDZ 35-682 Complex,pT3,322,60,,3.0
+2rr1,Human Rhinovirus 14/WinI(R) Complex,pT3,322,60,,3.0
+2rs1,Human Rhinovirus 14/WinI(S) Complex,pT3,322,60,,3.0
+2rm2,Human Rhinovirus 14/WinII(SR) Complex,pT3,322,60,,3.0
+2rs3,Human Rhinovirus 14/WinIII(S) Complex,pT3,322,60,,3.0
+2r04,Human Rhinovirus 14/WinIV Complex,pT3,322,60,,3.0
+1r09,Human Rhinovirus 14/WinR61837 Complex,pT3,322,60,,2.9
+2rs5,Human Rhinovirus 14/WinV(S) Complex,pT3,322,60,,3.0
+2r06,Human Rhinovirus 14/WinVI Complex,pT3,322,60,,3.0
+2r07,Human Rhinovirus 14/WinVII Complex,pT3,322,60,,3.0
+1r08,Human Rhinovirus 14/WinVIII Complex,pT3,322,60,,3.0
+1aym,Human Rhinovirus 16,pT3,320,60,,2.15
+1ayn,Human Rhinovirus 16,pT3,320,60,,2.9
+1nd2,Human Rhinovirus 16,pT3,320,60,,2.5
+1qju,Human Rhinovirus 16/Antiviral C Complex,pT3,320,60,,2.8
+1qjx,Human Rhinovirus 16/Antiviral C Complex,pT3,320,60,,2.8
+1qjy,Human Rhinovirus 16/Antiviral C Complex,pT3,320,60,,2.8
+1k5m,Human Rhinovirus 16/HIV Type 1 V3 Loop Chimera,pT3,322,60,,2.7
+1c8m,Human Rhinovirus 16/Pleconaril Complex,pT3,320,60,,2.8
+1ncr,Human Rhinovirus 16/Pleconaril Complex,pT3,318,60,,2.7
+1nd3,Human Rhinovirus 16/Pleconaril Complex,pT3,320,60,,2.8
+1fpn,Human Rhinovirus 2,pT3,320,60,,2.6
+3dpr,HUMAN RHINOVIRUS 2 BOUND TO A CONCATAMER OF THE VLDL RECEPTO V3,pT3,346,60,,3.5
+1rhi,Human Rhinovirus 3,pT3,322,60,,3.0
+1rui,Human Rhinovirus Mutant S1223G/Win52084 Complex,pT3,322,60,,3.0
+4rhv,Human Rhinovirus Serotype 14,pT3,322,60,,3.0
+1r1a,Human Rhinovirus Serotype 1A,pT3,320,60,,3.2
+1vrh,Human Rhinovirus/SDZ 880-061 Complex,pT3,322,60,,3.0
+9ncf,Icosahedral capsid assembly of phage JohannRWettstein (Bas63),9,846,540,,3.37
+7qof,ICOSAHEDRAL CAPSID OF THE PHICRASS001 VIRION,9,884,540,,3.01
+9ouz,ICOSAHEDRAL D3 EXPANDED CAPSID,9,758,540,,3.5
+9fn9,ICOSAHEDRAL ENCAPSULIN WITH A CLOSED PORE STATE,1,244,60,,2.81
+6o3h,Icosahedral reconstruction of the thermophilic bacteriophage P74-26 capsid,7l,842,420,,2.8
+9y2z,Icosahedral symmetric structure of an expansion intermediate of Turnip Crinkle Virus (Asymmetric Trimer Unit),3,370,180,,2.87
+6voc,icosahedral symmetry reconstruction of brome mosaic virus (RNA 3+4),3,290,180,,3.1
+6iat,Icosahedrally averaged capsid of bacteriophage P68,4,494,240,,3.3
+6ib1,Icosahedrally averaged capsid of empty particle of bacteriophage P68,4,496,240,,3.5
+9c27,Infectious B19V capsid,1,276,60,,2.2
+5cvz,Investigation of RNA structure in satellite panicum mosaic virus - glutaraldehyde treated,1,170,60,,3.3
+5lwg,ISRAELI ACUTE PARALYSIS VIRUS HEATED TO 63 DEGREE - FULL PARTICLE,pT3,346,60,,3.2
+8u50,Klebsiella pneumoniae DyP peroxidase-loaded encapsulin shell,1,244,60,,2.52
+8u51,Klebsiella pneumoniae SUMO-loaded encapsulin shell,1,244,60,,2.41
+1m1c,L-A Virus,2,440,120,,3.5
+9fk0,LGTV WITH TBEV PRME,3,492,180,,3.22
+5neu,LOCALISED RECONSTRUCTION OF INTEGRIN ALPHA V BETA 6 BOUND TO FOOT AND MOUTH DISEASE VIRUS O1 MANISA,pT3,528,60,,3.1
+9naj,LuIII VLP - Glycan [3s(LN)3],1,286,60,,2.66
+9nai,LuIII VLP - Glycan [s(Lex)2],1,286,60,,2.88
+7x7m,LUMAZINE SYNTHASE FROM AQUIFEX AEOLICUS,1,164,60,,2.33
+7s2t,M. xanthus encapsulin EncA bound to EncB targeting peptide,3,384,180,,3.45
+7s4q,M. xanthus encapsulin EncA bound to EncC targeting peptide,3,384,180,,3.12
+7s21,M. xanthus encapsulin shell protein EncA with T=1 symmetry,1,238,60,,3.4
+7s20,M. xanthus encapsulin shell protein EncA with T=3 symmetry,3,380,180,,3.4
+2mev,Mengo Encephalomyocarditis Virus,pT3,326,60,,3.0
+1mec,Mengo Encephalomyocarditis Virus (pH 4.6),pT3,324,60,,3.2
+1mvm,"Mice Minute Virus (MVM), Strain I",1,286,60,,3.5
+8eco,MICROBACTERIUM PHAGE OXTOBER96,7l,660,420,,2.2
+8c9n,"MiniCoV-ADDomer, a SARS-CoV-2 epitope presenting viral like",1,286,60,,2.36
+7odw,Model of Haliangium ochraceum encapsulin from icosahedral single particle reconstruction,1,240,60,,2.5
+6wh3,Molecular biology and structure of a novel penaeid densovirus elucidate convergent parvoviral host cap evolution,1,242,60,,2.96
+7n6y,Mouse norovirus (MNV-1) capsid at pH 5.0,3,424,180,,3.3
+7n7f,Mouse norovirus (MNV-1) capsid at pH 7.5,3,330,180,,3.0
+6p4j,MOUSE NOROVIRUS COMPLEXED WITH GCDCA,3,422,180,,3.1
+6p4k,MOUSE NOROVIRUS COMPLEXED WITH TCA,3,420,180,,3.1
+7ckb,"mplified Alpha-Carboxysome, T=3",3,222,180,,3.24
+2bny,MS2 (N87A MUTANT) - RNA HAIRPIN COMPLEX,3,288,180,,3.0
+2bs1,MS2 (N87AE89K MUTANT) - QBETA RNA HAIRPIN COMPLEX,3,288,180,,2.8
+2bq5,MS2 (N87AE89K MUTANT) - RNA HAIRPIN COMPLEX,3,288,180,,2.91
+2bs0,MS2 (N87AE89K MUTANT) - VARIANT QBETA RNA HAIRPIN COMPLEX,3,288,180,,2.45
+9q1b,MS2 BACTERIOPHAGE COAT PROTEIN AFTER REASSEMBLY AS A NANOCRATE (MS2NC) WITH NO CARGO AND WITH WATERS MODELED,3,288,180,,1.74
+9q1d,MS2 BACTERIOPHAGE COAT PROTEIN WITH WATERS MODELED,3,288,180,,1.75
+2b2g,MS2 Wild-type RNA stemloop complexed with an N87S mutant MS2 capsid,3,288,180,,3.02
+9n41,MS2-pcoat Icosahedral Reconstruction,3,290,180,,2.2
+9n40,MS2-PMS2 ICOSAHEDRAL RECONSTRUCTION,3,290,180,,2.4
+2c4q,MS2-RNA HAIRPIN (2ONE -5) COMPLEX VIRUS,3,288,180,,2.38
+2c4z,MS2-RNA HAIRPIN (2SU-5-6) COMPLEX,3,288,180,,2.6
+2c4y,MS2-RNA HAIRPIN (2THIOURACIL-5) COMPLEX,3,288,180,,2.68
+2iz9,MS2-RNA HAIRPIN (4ONE-5) COMPLEX,3,288,180,,2.85
+2bu1,MS2-RNA HAIRPIN (5BRU-5) COMPLEX,3,288,180,,2.2
+2c50,MS2-RNA HAIRPIN (A-5) COMPLEX,3,288,180,,2.65
+2izm,MS2-RNA HAIRPIN (C-10) COMPLEX,3,288,180,,2.7
+2iz8,MS2-RNA HAIRPIN (C-7) COMPLEX,3,288,180,,3.3
+2izn,MS2-RNA HAIRPIN (G-10) COMPLEX,3,288,180,,2.56
+2c51,MS2-RNA HAIRPIN (G-5) COMPLEX,3,288,180,,2.8
+6thd,MULTIPLE GENOMIC RNA-COAT PROTEIN CONTACTS PLAY VITAL ROLES IN THE ASSEMBLY OF INFECTIOUS ENTEROVIRUS-E,pT3,314,60,,2.23
+6thn,MULTIPLE GENOMIC RNA-COAT PROTEIN CONTACTS PLAY VITAL ROLES IN THE ASSEMBLY OF INFECTIOUS ENTEROVIRUS-E SYMMETRY EXPANSION+2FOLD FOCUSED CLASSIFICATION,pT3,314,60,,2.6
+7eno,Mutant strain M3 of foot-and-mouth disease virus type O,pT3,308,60,,3.15
+8edu,MYCOBACTERIOPHAGE MUDDY CAPSID,7l,678,420,,2.7
+8ec2,MYCOBACTERIUM PHAGE ADEPHAGIA,9,750,540,,2.4
+8saj,Mycobacterium phage Adjutor,7l,756,420,,2.66
+8ec8,MYCOBACTERIUM PHAGE BOBI,9,738,540,,2.5
+8ecj,MYCOBACTERIUM PHAGE CAIN,9,744,540,,2.9
+8e16,MYCOBACTERIUM PHAGE CHE8,9,724,540,,2.5
+8ecn,MYCOBACTERIUM PHAGE OGOPOGO,9,742,540,,2.7
+8giu,Mycobacterium phage Patience,7l,784,420,,2.39
+9b9i,Myxococcus xanthus EncA encapsulin engineered pore mutant with T=1 icosahedral symmetry,1,234,60,,2.86
+8tk7,Myxococcus xanthus EncA protein shell with compartmentalized SNAP-tag cargo protein,3,388,180,,2.53
+9fwe,N-VelcroVax HBcAg with SUMO-Affimer inserted at N-terminus (T=3 VLP),3,308,180,,3.5
+9fwf,N-VelcroVax HBcAg with SUMO-Affimer inserted at N-terminus (T=4 VLP),4,376,240,,3.3
+9ffh,Native capsid of Rhodobacter microvirus Ebor computed with I4 symmetry,1,304,60,,3.2
+8at5,NATIVE COXSACKIEVIRUS A9,pT3,336,60,,2.9
+7bc3,Native virion of Kashmir bee virus at acidic pH,pT3,340,60,,2.9
+7bgk,Native virion of Kashmir bee virus at neutral pH,pT3,334,60,,2.8
+6qi5,Near Atomic Structure of an Atadenovirus Reveals a Capsid-Binding Motif and Intergenera Variations in Proteins,pT25,936,780,,3.4
+6ncl,Near-atomic structure of a giant virus.,169,1790,10140,,3.5
+8y6v,Near-atomic structure of icosahedrally averaged jumbo bacteriophage PhiKZ capsid,27,1412,1620,,3.5
+1nov,NODAMURA VIRUS,3,358,180,,3.5
+6rpk,non-expanded bat circovirus with DNA VLP,1,204,60,,2.84
+5mm2,nora virus structure,pT3,358,60,,2.7
+9clz,Novel designed icosahedral nanoparticle I3-A6,1,202,60,,2.5
+9cm0,Novel designed icosahedral nanoparticle I3-A7,1,214,60,,2.3
+9cm1,Novel designed icosahedral nanoparticle I3-D12,1,266,60,,3.5
+1ohf,Nudaurelia Capensis &omega; Virus,4,432,240,,2.8
+7anm,Nudaurelia capensis omega virus capsid: virus-like particles expressed in Nicotiana benthamiana,4,428,240,,2.72
+8aay,NUDAURELIA CAPENSIS OMEGA VIRUS MATURATION INTERMEDIATE CAPTURED AT PH5.6 (INSECT CELL EXPRESSED VLPS): SMALL CLASS FROM SYMMETRY EXPANSION,4,430,240,,3.39
+1al2,"P1/MAHONEY POLIOVIRUS, SINGLE SITE MUTANT V1160I",pT3,324,60,,2.9
+1f8v,Pariacoto Virus (PAV),3,350,180,,3.0
+9rvn,Penicillium chrysogenum Virus empty virions,2,412,120,,2.3
+9rvm,Penicillium chrysogenum Virus full virions,2,412,120,,2.14
+6hu7,phosphorylated F97L Hepatitis B core protein capsid,4,350,240,,2.8
+1e57,Physalis Mottle Virus,3,316,180,,3.2
+1hxs,Poliovirus (Mahoney Strain),pT3,324,60,,2.2
+6psz,"POLIOVIRUS (TYPE 1 MAHONEY), HEAT-CATALYSED 135S PARTICLE",pT3,334,60,,3.2
+6p9w,"POLIOVIRUS (TYPE 1 MAHONEY), RECEPTOR CATALYSED 135S PARTICL",pT3,336,60,,3.2
+6q0b,"POLIOVIRUS (TYPE 1 MAHONEY), RECEPTOR-CATALYSED 135S PARTICL INCUBATED WITH ANTI-VP1 MAB AT RT FOR 1 HR",pT3,436,60,,3.4
+1asj,"Poliovirus (Type 1, Mahoney Strain)",pT3,324,60,,2.9
+1ar9,"Poliovirus (Type 1, Mahoney Strain) Mutant H2142Y",pT3,324,60,,2.9
+1ar8,"Poliovirus (Type 1, Mahoney Strain) Mutant P1095S",pT3,326,60,,2.9
+1ar7,"Poliovirus (Type 1, Mahoney Strain) Mutant P1095S, H2142Y",pT3,324,60,,2.9
+1ar6,"Poliovirus (Type 1, Mahoney Strain) Mutant V1160I, P1095S",pT3,324,60,,2.9
+1po2,"Poliovirus (Type 1, Mahoney Strain)/R77975 Complex",pT3,326,60,,2.9
+1vbd,"Poliovirus (Type 1, Mahoney Strain)/R78206 Complex",pT3,326,60,,2.9
+1po1,"Poliovirus (Type 1, Mahoney Strain)/R80633 Complex",pT3,326,60,,2.9
+1vbe,"Poliovirus (Type 3, Sabin Strain) Mutant F124L, F134L/R78206 Complex",pT3,326,60,,2.8
+1vba,"Poliovirus (Type 3, Sabin Strain)/R78206 Complex",pT3,326,60,,2.9
+1piv,"Poliovirus (Type 3, Sabin Strain)/Win51711 Complex",pT3,326,60,,2.9
+1vbc,"Poliovirus (Type3, Sabin Strain)/R77975 Complex",pT3,326,60,,2.8
+1vbb,"Poliovirus (Type3, Sabin Strain)/R80633 Complex",pT3,326,60,,2.8
+6p9o,POLIOVIRUS 135S-LIKE EXPANDED PARTICLE IN COMPLEX WITH A MON ANTIBODY DIRECTED AGAINST THE N-TERMINAL EXTENSION OF CAPSI VP1,pT3,336,60,,2.9
+2plv,Poliovirus Type 1 (Mahoney Strain),pT3,326,60,,2.88
+1pov,Poliovirus Type 1 (Mahoney Strain) Empty Capsid,pT3,328,60,,2.88
+9f0k,Poliovirus type 1 (strain Mahoney) expanded conformation stabilised virus-like particle (PV1 SC6b) from a mammalian expression system,pT3,346,60,,3.0
+9ez0,Poliovirus type 1 (strain Mahoney) expanded conformation stabilised virus-like particle (PV1 SC6b) from a yeast expression system.,pT3,338,60,,3.3
+9eyy,POLIOVIRUS TYPE 1 (STRAIN MAHONEY) NATIVE CONFORMATION STABILISED VIRUS-LIKE PARTICLE (PV1 SC6B) FROM A YEAST EXPRESSION SYSTEM.,pT3,326,60,,3.3
+9f3q,POLIOVIRUS TYPE 1 (STRAIN MAHONEY) STABILISED VIRUS-LIKE PARTICLE (PV1 SC6B) IN COMPLEX WITH GPP3 AND GSH.,pT3,332,60,,2.75
+9h94,POLIOVIRUS TYPE 2 (STRAIN MEF-1) STABILISED VIRUS-LIKE PARTICLE (PV2 SC5A) FROM A YEAST EXPRESSION SYSTEM.,pT3,324,60,,2.1
+9f59,POLIOVIRUS TYPE 2 (STRAIN MEF-1) STABILISED VIRUS-LIKE PARTICLE (PV2 SC6B) FROM A MAMMALIAN EXPRESSION SYSTEM.,pT3,326,60,,2.3
+9h93,POLIOVIRUS TYPE 2 (STRAIN MEF-1) STABILISED VIRUS-LIKE PARTICLE (PV2 SC6B) FROM A YEAST EXPRESSION SYSTEM.,pT3,326,60,,2.4
+9f5p,POLIOVIRUS TYPE 2 (STRAIN MEF-1) STABILISED VIRUS-LIKE PARTICLE (PV2 SC6B) FROM AN INSECT CELL EXPRESSION SYSTEM.,pT3,328,60,,2.6
+8ayz,POLIOVIRUS TYPE 2 (STRAIN MEF-1) VIRUS-LIKE PARTICLE IN COMPLEX WITH CAPSID BINDER COMPOUND 17,pT3,324,60,,1.88
+1pvc,Poliovirus Type 3 (Sabin Strain),pT3,324,60,,2.4
+6z6w,POLIOVIRUS TYPE 3 (STRAIN SAUKETT) STABILISED VIRUS-LIKE PARTICLE (PV3 SC8) FROM A MAMMALIAN EXPRESSION SYSTEM.,pT3,316,60,,3.0
+8ayx,POLIOVIRUS TYPE 3 (STRAIN SAUKETT) STABILISED VIRUS-LIKE PARTICLE (PV3 SC8) IN COMPLEX WITH GSH AND GPP3,pT3,334,60,,2.5
+8ayy,POLIOVIRUS TYPE 3 (STRAIN SAUKETT) STABILISED VIRUS-LIKE PARTICLE (PV3 SC8) IN COMPLEX WITH GSH AND PLECONARIL,pT3,336,60,,2.6
+8anw,POLIOVIRUS TYPE 3 (STRAIN SAUKETT) STABILISED VIRUS-LIKE PARTICLE (PV3 SC8).,pT3,324,60,,2.7
+1eah,Poliovirus Type2/Sch48973 Complex,pT3,326,60,,2.9
+1k3v,Porcine Parvovirus,1,284,60,,3.5
+1al0,PROCAPSID OF BACTERIOPHAGE PHIX174,1,352,60,,3.5
+1cd3,PROCAPSID OF BACTERIOPHAGE PHIX174,1,352,60,,3.5
+8c6d,PRODUCTION OF ANTIGENICALLY STABLE ENTEROVIRUS A71 VIRUS-LIKE PARTICLES IN PICHIA PASTORIS AS A VACCINE CANDIDATE.,pT3,308,60,,2.4
+6nxe,Protease-Activatable Adeno-Associated Virus Vector Delivery to Damaged Heart Tissue.,1,324,60,,3.16
+1bmv,PROTEIN-RNA INTERACTIONS IN AN ICOSAHEDRAL VIRUS AT 3.0 ANGSTROMS RESOLUTION,pT3,320,60,,3.0
+9har,pT=3 virus-like particle of ssRNA phage ESE017 coat protein,pT3,292,60,,2.8
+9has,pT=3 virus-like particle of ssRNA phage ESO003 coat protein,pT3,286,60,,3.2
+9hau,pT=3 virus-like particle of ssRNA phage Hubei14 coat protein,pT3,284,60,,2.9
+8e2x,"PURIFICATION OF ENTEROVIRUS A71, STRAIN 4643, WT CAPSID",pT3,316,60,,3.3
+9zw4,Quasibacillus thermotolerans T=3 encapsulin pore mutant variant Letter11,3,376,180,,2.42
+9zvv,Quasibacillus thermotolerans T=4 encapsulin pore mutant variant Glass 9,4,426,240,,2.4
+9zw3,Quasibacillus thermotolerans T=4 encapsulin pore mutant variant Letter11,4,426,240,,2.4
+5mjv,Rebuild and re-refined model for Human Parechovirus 1,pT3,306,60,,3.09
+7epp,RECOMBINANT ALFALFA MOSAIC VIRUS COAT PROTEIN VIRUS-LIKE PARTICLE (RAMV-CP VLP),1,236,60,,2.4
+6mrm,RED CLOVER NECROTIC MOSAIC VIRUS,3,350,180,,2.9
+7tau,Refined capsid structure of human adenovirus D26 at 3.4 A resolution,pT25,950,780,,3.38
+9c1g,Rhesus rotavirus (consensus structure at 2.36 Angstrom resolution),multi,762,0,,2.36
+7nuq,RHINOVIRUS 14 VIRION-LIKE AT PH 6.2,pT3,320,60,,2.8
+9g0b,RHINOVIRUS A2 UNCOATING INTERMEDIATE REVEALING THE NATURAL POCKET FACTOR (PH 5.8 AND 4 DEGREES CELSIUS),pT3,330,60,,3.2
+6ppo,Rhinovirus C15 complexed with domain I of receptor CDHR3,pT3,338,60,,3.2
+6psf,Rhinovirus C15 complexed with domains I and II of receptor CDHR3,pT3,340,60,,3.5
+1uf2,Rice Dwarf Virus,13,758,780,,3.5
+1f2n,Rice Yellow Mottle Virus,3,318,180,,2.8
+2b2e,"RNA stemloop from bacteriophage MS2 complexed with an N87S,E89K mutant MS2 capsid",3,288,180,,3.15
+1zse,RNA STEMLOOP FROM BACTERIOPHAGE QBETA COMPLEXED WITH AN N87S MUTANT MS2 CAPSID,3,286,180,,3.0
+2b2d,"RNA stemloop operator from bacteriophage QBETA complexed with an N87S,E89K mutant MS2 capsid",3,288,180,,2.9
+8b4z,Rosellinia necatrix megabirnavirus 1-W779 full capsid,2,532,120,,3.2
+8olb,SA11 Rotavirus Non-tripsinized Triple Layered Particle,13,766,780,,3.4
+8olc,SA11 Rotavirus Trypsinized Triple Layered Particle,13,790,780,,3.48
+7u97,SAAV pH 4.0 capsid structure,1,278,60,,2.66
+7u96,SAAV pH 5.5 capsid structure,1,282,60,,2.14
+7u95,SAAV pH 6.0 capsid structure,1,278,60,,2.73
+7u94,SAAV pH 7.4 capsid structure,1,282,60,,3.25
+5lsf,SACBROOD HONEYBEE VIRUS,pT3,322,60,,2.1
+5oyp,Sacbrood virus of honeybee,pT3,322,60,,3.22
+6egv,Sacbrood virus of honeybee,pT3,322,60,,3.18
+8vd4,SaPI1 mature capsid structure containing DNA,4,508,240,,3.1
+8vd5,SaPI1 mature capsid structure without DNA,4,510,240,,3.2
+1stm,Satellite Panicum Mosaic Virus,1,170,60,,1.9
+4nia,SATELLITE TOBACCO MOSAIC VIRUS REFINED AT ROOM TEMPERATURE TO 1.8A RESOLUTION USING NCS RESTRAINTS,1,176,60,,1.82
+4oq8,SATELLITE TOBACCO MOSAIC VIRUS REFINED TO 1.4 A RESOLUTION USING ICOSAHEDRAL CONSTRAINTS,1,174,60,,1.45
+4oq9,SATELLITE TOBACCO MOSAIC VIRUS REFINED TO 1.4 A RESOLUTION USING NON-CRYSTALLOGRAPHIC SYMMETRY RESTRAINTS,1,174,60,,1.45
+1a34,SATELLITE TOBACCO MOSAIC VIRUS/RNA COMPLEX,1,176,60,,1.81
+2buk,Satellite Tobacco Necrosis Virus,1,196,60,,2.45
+2stv,Satellite Tobacco Necrosis Virus,1,196,60,,2.5
+4bcu,SATELLITE TOBACCO NECROSIS VIRUS (STNV) VIRUS LIKE PARTICLE IN COMPLEX WITH THE B3 APTAMER,1,196,60,,2.29
+9qve,SATELLITE TOBACCO NECROSIS VIRUS-1,1,196,60,,2.77
+9eaa,SENECA VALLEY VIRUS ALTERED PARTICLE AT ACIDIC CONDITION (A-PARTICLE[C]),pT3,340,60,,3.36
+9eab,SENECA VALLEY VIRUS ALTERED PARTICLE AT PHYSIOLOGICAL CONDITION (A-PARTICLE[P]),pT3,338,60,,3.39
+1smv,Sesbania Mosaic Virus (SMV),3,320,180,,3.0
+1vb4,Sesbania Mosaic Virus Deletion Mutant Cp-N(&delta;)36,1,192,60,,3.3
+1vak,Sesbania Mosaic Virus Deletion Mutant Cp-N(&delta;)65,1,194,60,,3.05
+1vb2,Sesbania Mosaic Virus Deletion Mutant Cp-N(&delta;)65-D146N-D149N,1,194,60,,3.4
+9ocb,Sf11 capsid Icosahedral Reconstruction,7l,694,420,,3.4
+9d82,Shigella flexneri bacteriophage B2 Icosahedral Reconstruction,9,794,540,,3.3
+1sva,Simian Virus 40,7d,494,360,,3.1
+7ckc,"Simplified Alpha-Carboxysome, T=4",4,254,240,,2.9
+9fy6,Single particle cryo-EM reconstruction of Bacillus Methanolicus encapsulin nano compartment,4,446,240,,2.82
+9ry4,SINGLE PARTICLE RECONSTRUCTION OF RHODOSPIRILLUM RUBRUM ENCAPSULIN,1,244,60,,2.0
+5lk8,SINGLE PARTICLE RECONSTRUCTION OF SLOW BEE PARALYSIS VIRUS EMPTY PARTICLE,pT3,328,60,,3.42
+5lk7,SINGLE PARTICLE RECONSTRUCTION OF SLOW BEE PARALYSIS VIRUS VIRION AT PH 5.5,pT3,322,60,,3.42
+9oea,SIPV1-5E12 COMPLEX,pT3,374,60,,2.84
+9oco,SIPV3-2E1 COMPLEX,pT3,388,60,,2.95
+4ang,SMALL RNA PHAGE PRR1 IN COMPLEX WITH AN RNA OPERATOR FRAGMEN,3,300,180,,3.5
+4sbv,Southern Bean Mosaic Virus (SBMV),3,320,180,,2.8
+28ro,SPLIT VARIANT OF AQUIFEX AEOLICUS LUMAZINE SYNTHASE-DERIVED NUCLEOCAPSID VARIANT NC-4,4,320,240,,3.1
+9bhu,STREPTOMYCES GRISEUS FAMILY 2B ENCAPSULIN SHELL,1,296,60,,2.71
+9bhv,STREPTOMYCES GRISEUS FAMILY 2B ENCAPSULIN SHELL WITH 2-METHYLISOBORNEOL SYNTHASE CARGO,1,298,60,,3.02
+9bi0,STREPTOMYCES GRISEUS FAMILY 2B ENCAPSULIN SHELL WITH 2-METHYLISOBORNEOL SYNTHASE CARGO IN 20 MM CAMP,1,298,60,,2.93
+6u3q,Structural and biophysical profiling of a human adeno-associated virus capsid isolate with neurotro properties,1,298,60,,2.46
+4qc8,Structural annotation of pathogenic bovine Parvovirus-1,1,278,60,,3.2
+8xeg,Structural basis of the recognition of adeno-associated virus by the neurological system-related receptor carbonic anhydrase IV,1,292,60,,1.76
+3ux1,STRUCTURAL CHARACTERIZATION OF ADENO-ASSOCIATED VIRUS SEROTY,1,290,60,,2.8
+6x2i,Structural Characterization of Cuta- and Tusavirus: into Protoparvoviruses Capsid Morphology.,1,280,60,,2.87
+6x2k,Structural Characterization of Cuta- and Tusavirus: into Protoparvoviruses Capsid Morphology.,1,286,60,,2.88
+4g0r,STRUCTURAL CHARACTERIZATION OF H-1 PARVOVIRUS: COMPARISON OF INFECTIOUS VIRIONS TO REPLICATION DEFEC,1,290,60,,2.7
+4gbt,STRUCTURAL CHARACTERIZATION OF H-1 PARVOVIRUS: COMPARISON OF INFECTIOUS VIRIONS TO REPLICATION DEFEC,1,288,60,,3.2
+3oah,Structural Characterization of the Dual Glycan Binding Adeno-Associated Virus Serotype 6,1,290,60,,3.0
+6ola,"Structural characterization of the PCV2d virus-like at 3.3 angstrom resolution reveals differences to P PCV2b capsids, a tetranucleotide, and an N-terminus icosahedral 3-fold axes.",1,208,60,,3.3
+1z14,Structural Determinants of Tissue Tropism and In Vivo Pathogenicity for the Parvovirus Minute Virus,1,290,60,,3.25
+1z1c,STRUCTURAL DETERMINANTS OF TISSUE TROPISM AND IN VIVO PATHOGENICITY FOR THE PARVOVIRUS MINUTE VIRUS,1,288,60,,3.5
+3ntt,STRUCTURAL INSIGHTS OF ADENO-ASSOCIATED VIRUS 5. A GENE THER FOR CYSTIC FIBROSIS,1,278,60,,3.45
+3ra2,STRUCTURAL STUDIES OF AAV8 CAPSID TRANSITIONS ASSOCIATED WIT ENDOSOMAL TRAFFICKING,1,292,60,,2.7
+3ra4,STRUCTURAL STUDIES OF AAV8 CAPSID TRANSITIONS ASSOCIATED WIT ENDOSOMAL TRAFFICKING,1,292,60,,2.7
+3ra8,STRUCTURAL STUDIES OF AAV8 CAPSID TRANSITIONS ASSOCIATED WIT ENDOSOMAL TRAFFICKING,1,294,60,,2.7
+3ra9,STRUCTURAL STUDIES OF AAV8 CAPSID TRANSITIONS ASSOCIATED WIT ENDOSOMAL TRAFFICKING,1,292,60,,2.7
+3raa,Structural studies of AAV8 capsid transitions associated with endosomal trafficking,1,292,60,,3.2
+2g8g,STRUCTURALLY MAPPING THE DIVERSE PHENOTYPE OF ADENO-ASSOCIATED VIRUS SEROTYPE 4,1,282,60,,3.2
+3zxa,STRUCTURE AND ASSEMBLY OF TURNIP CRINKLE VIRUS  I. X-RAY CRYSTALLOGRAPHIC STRUCTURE ANALYSIS AT 3.2,3,334,180,,3.2
+6shl,Structure of a marine algae virus of the order Picornavirales,pT3,338,60,,3.1
+8ed3,STRUCTURE OF A NANOPARTICLE WITH ICOSAHEDRAL SYMMETRY,1,260,60,,3.5
+8uyo,Structure of a recombinant human PNMA2 capsid,1,222,60,,3.3
+6owf,"Structure of a synthetic beta-carboxysome shell, T=3",3,216,180,,3.0
+6owg,"Structure of a synthetic beta-carboxysome shell, T=4",4,248,240,,2.6
+9j7k,Structure of AAV8 in the complex of AAV8 with its receptor,1,276,60,,2.32
+2qa0,Structure of Adeno-Associated virus serotype 8,1,290,60,,2.6
+7wqo,Structure of Adeno-associated virus serotype PHP.eB,1,290,60,,2.85
+8yt4,STRUCTURE OF AQUIFEX AEOLICUS LUMAZINE SYNTHASE BY CRYO-ELECTRON MICROSCOPY TO 1.42 ANGSTROM RESOLUTION,1,160,60,,1.42
+1dwn,STRUCTURE OF BACTERIOPHAGE PP7 FROM PSEUDOMONAS AERUGINOSA AT 3.7 A RESOLUTION,3,302,180,,3.5
+5mqc,Structure of black queen cell virus,pT3,352,60,,3.4
+6oas,Structure of canine parvovirus in complex with transferrin receptor type-1,1,290,60,,3.0
+6smg,STRUCTURE OF COXSACKIEVIRUS A10,pT3,320,60,,3.5
+8f7y,Structure of Coxsackievirus A10 frozen at -183 degree embedded in crystalline ice,pT3,316,60,,2.8
+5abj,STRUCTURE OF COXSACKIEVIRUS A16 IN COMPLEX WITH GPP3,pT3,318,60,,2.75
+5xs4,Structure of Coxsackievirus A6 (CVA6) virus A-particle,pT3,340,60,,3.1
+5xs5,Structure of Coxsackievirus A6 (CVA6) virus procapsid particle,pT3,340,60,,3.3
+9vfs,Structure of Coxsackievirus A6 Altered-particles,pT3,332,60,,2.49
+8r5y,Structure of coxsackievirus B5 capsid (mutant CVB5F.cas.genogroupB) - A particle,pT3,330,60,,2.7
+8r5z,Structure of coxsackievirus B5 capsid (mutant CVB5F.cas.genogroupB) - E particle,pT3,330,60,,2.6
+9vg1,Structure of CVA6 empty capsid complexed with 3H7 Fab,pT3,376,60,,3.26
+9vfp,Structure of CVA6 empty particle,pT3,338,60,,3.33
+6f5j,Structure of deformed wing virus carrying the GFP gene,pT3,382,60,,3.1
+5l7q,"STRUCTURE OF DEFORMED WING VIRUS, A HONEYBEE PATHOGEN",pT3,378,60,,3.44
+5l8q,"STRUCTURE OF DEFORMED WING VIRUS, A HONEYBEE PATHOGEN",pT3,378,60,,3.2
+5mv5,"STRUCTURE OF DEFORMED WING VIRUS, A HONEYBEE PATHOGEN",pT3,378,60,,3.1
+5mv6,"STRUCTURE OF DEFORMED WING VIRUS, A HONEYBEE PATHOGEN",pT3,378,60,,3.5
+9tf0,STRUCTURE OF ECHOVIRUS 18 IN COMPLEX WITH NEONATAL FC RECEPTOR,pT3,356,60,,2.26
+9tf1,"STRUCTURE OF ECHOVIRUS 18, ACTIVATED PARTICLE",pT3,324,60,,2.44
+9tf2,"STRUCTURE OF ECHOVIRUS 18, EMPTY PARTICLE",pT3,326,60,,2.86
+8bqn,Structure of empty Coxsackievirus A10 embedded in crystalline ice frozen at -140 degree,pT3,320,60,,3.1
+2fz1,Structure of Empty Head Turnip Yellow Mosaic Virus (ATC) at 100 K,3,316,180,,2.9
+9i8d,Structure of Encapsulin from Arthrobacter sp.,1,240,60,,2.9
+9i8e,Structure of Encapsulin from Dendrosporobacter quercicolus,4,430,240,,3.4
+8e01,Structure of engineered nano-cage fusion protein,1,262,60,,3.4
+6lqd,STRUCTURE OF ENTEROVIRUS 71 IN COMPLEX WITH NLD-22,pT3,322,60,,3.26
+6i2k,STRUCTURE OF EV71 COMPLEXED WITH ITS RECEPTOR SCARB2,pT3,428,60,,3.4
+6z3q,STRUCTURE OF EV71 IN COMPLEX WITH A PROTECTIVE ANTIBODY 38-1-10A FAB,pT3,382,60,,2.7
+6z3p,STRUCTURE OF EV71 IN COMPLEX WITH A PROTECTIVE ANTIBODY 38-3-11A FAB,pT3,374,60,,2.8
+8hi2,Structure of EV71 VLP frozen at -183 degree embedded in crystalline ice,pT3,324,60,,3.2
+3vdd,STRUCTURE OF HRV2 CAPSID COMPLEXED WITH ANTIVIRAL COMPOUND B,pT3,318,60,,3.2
+7vrn,Structure of infectious bursal disease virus Gt strain,13,764,780,,3.4
+9gg2,Structure of IPNV L5 capsid,13,748,780,,2.75
+3ide,STRUCTURE OF IPNV SUBVIRAL PARTICLE,1,266,60,,3.35
+8pvj,Structure of lumazine synthase determined by cryoEM at 100 keV,1,164,60,,3.0
+9vfr,STRUCTURE OF MATURE COXSACKIEVIRUS A6 VIRION COMPLEXED WITH ITS RECEPTOR KREMEN1,pT3,382,60,,2.55
+9vfq,STRUCTURE OF MATURE CVA6 VIRUS,pT3,322,60,,2.23
+9vfu,STRUCTURE OF MATURE CVA6 VIRUS COMPLEXED WITH 1F4 FAB,pT3,370,60,,2.11
+9vft,STRUCTURE OF MATURE CVA6 VIRUS COMPLEXED WITH 3H7 FAB,pT3,384,60,,2.59
+9umb,"Structure of Modified adeno-associated viral vector, AAV5-BCD",1,286,60,,2.55
+6nn3,Structure of parvovirus B19 decorated with Fab molecules from a human antibody,1,314,60,,3.22
+6dzu,Structure of Porcine Circovirus 2 at 3.2 Angstroms resolution,1,206,60,,3.3
+6e2r,Structure of Porcine Circovirus 2 at 3.2 Angstroms resolution,1,206,60,,2.8
+6e2x,Structure of Porcine Circovirus 2 at 3.2 Angstroms resolution,1,208,60,,3.5
+6e30,Structure of Porcine Circovirus 2 at 3.2 Angstroms resolution,1,208,60,,3.5
+6e32,Structure of Porcine Circovirus 2 at 3.2 Angstroms resolution,1,208,60,,3.4
+6e39,Structure of Porcine Circovirus 2 at 3.2 Angstroms resolution,1,210,60,,3.5
+6e2z,Structure of Porcine Circovirus 2 at 3.4 Angstroms resolution,1,208,60,,3.4
+5zvt,STRUCTURE OF RNA POLYMERASE COMPLEX AND GENOME WITHIN A DSRN PROVIDES INSIGHTS INTO THE MECHANISMS OF TRANSCRIPTION AND,13,794,780,,3.3
+6ads,Structure of Seneca Valley Virus in acidic conditions,pT3,328,60,,2.84
+6adt,Structure of Seneca Valley Virus in neutral condition,pT3,334,60,,3.22
+3cji,STRUCTURE OF SENECA VALLEY VIRUS-001,pT3,326,60,,2.3
+7mtw,Structure of the adeno-associated virus 9 capsid at pH 4.0,1,290,60,,2.99
+7mtp,Structure of the adeno-associated virus 9 capsid at pH 5.5,1,290,60,,2.79
+7mtg,Structure of the adeno-associated virus 9 capsid at pH 6.0,1,290,60,,2.67
+7mt0,Structure of the adeno-associated virus 9 capsid at pH 7.4,1,290,60,,2.82
+7mua,Structure of the adeno-associated virus 9 capsid at pH pH 5.5 in complex with terminal galactose,1,290,60,,2.68
+7mtz,Structure of the adeno-associated virus 9 capsid at pH pH 7.4 in complex with terminal galactose,1,288,60,,2.43
+5egc,STRUCTURE OF THE ADENO-ASSOCIATED VIRUS SEROTYPE 1 SIALIC ACID COMPLEX,1,288,60,,3.01
+9vvq,Structure of the bacteriophage E1004 capsid,7l,698,420,,3.17
+6tap,Structure of the dArc1 capsid,4,410,240,,3.5
+6dij,STRUCTURE OF THE EVA71 STRAIN 11316 CAPSID,pT3,320,60,,3.3
+6uh1,STRUCTURE OF THE EVA71 STRAIN 11316 CAPSID,pT3,318,60,,3.04
+36cr,Structure of the Evo-Phi36 bacteriophage,1,340,60,,2.9
+6h2b,STRUCTURE OF THE MACROBRACHIUM ROSENBERGII NODAVIRUS,3,398,180,,3.28
+7no0,STRUCTURE OF THE MATURE RSV CA LATTICE: T=1 CA ICOSAHEDRON,1,236,60,,3.1
+36cq,Structure of the PhiX174 bacteriophage,1,340,60,,2.76
+8rb3,Structure of the PNMA2 capsid,1,210,60,,3.2
+1a6c,STRUCTURE OF TOBACCO RINGSPOT VIRUS,pT3,316,60,,3.5
+3nap,STRUCTURE OF TRIATOMA VIRUS (TRV),pT3,336,60,,2.5
+8vg6,Structure of Tulane virus,3,408,180,,2.6
+9hc5,STRUCTURE OF TULANE VIRUS,3,410,180,,2.6
+2fz2,Structure of Turnip Yellow Mosaic Virus at 100 K,3,316,180,,2.9
+7kva,STRUCTURE OF WEST NILE VIRUS (KUNJIN),3,476,180,,3.1
+6co8,STRUCTURE OF ZIKA VIRUS AT A RESOLUTION OF 3.1 ANGSTROM,3,468,180,,3.1
+3ng9,STRUCTURE TO FUNCTION CORRELATIONS FOR ADENO-ASSOCIATED VIRU 1,1,288,60,,2.5
+5ac9,STRUCTURE-BASED ENERGETICS OF PROTEIN INTERFACES GUIDE FOOT-AND-MOUTH DISEASE VIRUS VACCINE DESIGN,pT3,302,60,,3.2
+5aca,STRUCTURE-BASED ENERGETICS OF PROTEIN INTERFACES GUIDE FOOT-AND-MOUTH DISEASE VIRUS VACCINE DESIGN,pT3,306,60,,3.5
+3shm,STRUCTURE-FUNCTION ANALYSIS OF RECEPTOR-BINDING IN ADENO-ASSOCIATED VIRUS SEROTYPE 6 (AAV-6),1,288,60,,3.02
+4v86,STRUCTURE-FUNCTION ANALYSIS OF RECEPTOR-BINDING IN ADENO-ASSOCIATED VIRUS SEROTYPE 6 (AAV-6),1,288,60,,3.0
+1cwp,STRUCTURES OF THE NATIVE AND SWOLLEN FORMS OF COWPEA CHLOROTIC MOTTLE VIRUS DETERMINED BY X-RAY CRYSTALLOGRAPHY AND CRYO-ELECTRON MICROSCOPY,3,288,180,,3.2
+6e9d,Sub-2 Angstrom Ewald Curvature Corrected Single-Par Cryo-EM,1,294,60,,1.86
+1mqt,Swine Vesicular Disease Virus,pT3,330,60,,3.3
+1oop,Swine Vesicular Disease Virus,pT3,326,60,,3.0
+6otf,SYMMETRIC RECONSTRUCTION OF HUMAN NOROVIRUS GII.2 SNOW MOUNT STRAIN VLP IN T=3 SYMMETRY,3,420,180,,3.1
+8qkm,SYMMETRIC STRUCTURE OF SATELLITE TOBACCO NECROSIS VIRUS-LIKE PARTICLE WITH PS1-5 GRNA,1,196,60,,2.39
+6hcr,Synthetic Self-assembling ADDomer Platform for High Efficient Vaccination by Genetically-encoded Multi-Display,1,294,60,,3.5
+1x36,T=1 CAPSID OF AN AMINO-TERMINAL DELETION MUTANT OF SEMV CP,1,192,60,,2.7
+4y4y,T=1 CAPSID STRUCTURE OF SEMV NDEL65CP FUSED WITH B-DOMAIN OF S. AUREUS PROTEIN SPA AT THE N-TERMINUS,1,194,60,,3.0
+4y5z,T=1 CAPSID STRUCTURE OF SEMV NDEL65CP FUSED WITH B-DOMAIN OF S. AUREUS PROTEIN SPA AT THE N-TERMINUS,1,192,60,,2.95
+8eep,T=1 PARTICLE HIV-1 CA G60A/G61P,1,240,60,,2.2
+7urt,T=1 PARTICLE HIV-1 CA G60A/G61P/M66A,1,240,60,,2.39
+8eet,T=1 PARTICLE HIV-1 CA M66A,1,236,60,,3.1
+1yc6,T=1 Particle of Brome Mosaic Virus,1,194,60,,2.9
+4rft,T=1 SUBVIRAL PARTICLE OF GROUPER NERVOUS NECROSIS VIRUS CAPS DELETION MUTANT (DELTA 1-34 and 218-338,1,190,60,,3.1
+5yl1,T=1 subviral particle of Penaeus vannamei nodavirus capsid protein deletion mutant (delta 1-37 ; 251-368),1,196,60,,3.12
+6qn1,T=4 quasi-symmetric bacterial microcompartment particle,4,254,240,,3.28
+3r0r,The 2.3 A structure of porcine circovirus 2,1,204,60,,2.35
+2gsy,THE 2.6A STRUCTURE OF INFECTIOUS BURSAL VIRUS DERIVED T=1 PARTICLES,1,272,60,,2.6
+3j26,The 3.5 A resolution structure of the Sputnik virophage by cryo-EM,pT27,822,840,,3.5
+9nrp,The AAVpo.6 capsid,1,282,60,,1.77
+7s1w,The AAVrh.10-glycan complex,1,290,60,,3.09
+8tu0,The Capsid of Canine Minute Virus,1,288,60,,2.72
+9ld7,The capsid of mature phage N4,9,816,540,,3.4
+7kmx,THE CAPSID OF MYOVIRIDAE PHAGE XM1,7l,672,420,,3.2
+8tu1,The Capsid of Porcine Bocavirus 1,1,276,60,,2.31
+8tu2,The Capsid of Rat Bocavirus,1,276,60,,2.52
+9n5x,The capsid structure of AAVpo.1,1,280,60,,1.79
+8ep2,The capsid structure of Aleutian Mink Disease Virus,1,294,60,,2.37
+8ep9,The capsid structure of Human Parvovirus 4,1,278,60,,3.12
+7rd1,The Capsid Structure of the ChAdOx1 viral vector/chimpanzee adenovirus Y25,pT25,922,780,,3.07
+9vel,THE COMPOSITE CRYO-EM STRUCTURE OF BACTERIOPHAGE SPO1 CAPSID,16,1060,960,,3.0
+6lhb,The cryo-EM structure of coxsackievirus A16 A-particle,pT3,334,60,,3.33
+6lhl,The cryo-EM structure of coxsackievirus A16 A-particle in complex with Fab 18A7,pT3,328,60,,3.07
+6lhc,The cryo-EM structure of coxsackievirus A16 empty particle,pT3,334,60,,3.43
+6lho,The cryo-EM structure of coxsackievirus A16 empty particle in complex with Fab 18A7,pT3,330,60,,3.13
+6lhp,THE CRYO-EM STRUCTURE OF COXSACKIEVIRUS A16 MATURE VIRION IN WITH FAB 14B10,pT3,382,60,,3.3
+6lhk,THE CRYO-EM STRUCTURE OF COXSACKIEVIRUS A16 MATURE VIRION IN WITH FAB 18A7,pT3,316,60,,2.65
+6lhq,THE CRYO-EM STRUCTURE OF COXSACKIEVIRUS A16 MATURE VIRION IN WITH FAB NA9D7,pT3,374,60,,3.06
+6jhs,The cryo-EM structure of HAV bound to a neutralizing antibody-F7,pT3,428,60,,3.05
+6lat,The cryo-EM structure of HEV VLP,1,276,60,,3.4
+1z7s,The crystal structure of coxsackievirus A21,pT3,322,60,,3.2
+1za7,THE CRYSTAL STRUCTURE OF SALT STABLE COWPEA CHOLOROTIC MOTTLE VIRUS AT 2.7 ANGSTROMS RESOLUTION.,3,286,180,,2.7
+4v99,THE CRYSTALLOGRAPHIC STRUCTURE OF PANICUM MOSAIC VIRUS,3,312,180,,2.9
+7l6f,The empty AAV11 capsid,1,284,60,,2.86
+7l6b,The empty AAV12 capsid,1,284,60,,2.54
+7l6i,The empty AAV13 capsid,1,286,60,,2.76
+7l5q,The empty AAV7 capsid,1,292,60,,2.96
+7l5u,The full AAV7 capsid,1,292,60,,3.16
+7l6e,The genome-containing AAV11 capsid,1,284,60,,3.15
+7l6a,The genome-containing AAV12 capsid,1,284,60,,2.67
+7l6h,The genome-containing AAV13 capsid,1,286,60,,3.0
+7f2p,The head structure of Helicobacter pylori bacteriophage KHP40,9,752,540,,3.0
+7d0k,The icosahedral capsid of Omono River virus (strain:LZ),2,450,120,,2.79
+7d0l,"The major capsid of Omono River virus (strain:LZ), protrusion-free status.",2,452,120,,2.95
+7lcg,"THE MATURE USUTU SAAR-1776, MODEL A",3,476,180,,2.42
+7lch,"THE MATURE USUTU SAAR-1776, MODEL B",3,478,180,,2.35
+6mzx,The Plasticity of Molecular Interactions Governs Ba Microcompartment Shell Assembly.,9,414,540,,3.0
+9n5l,The Red Crowned-Crane Parvovirus Capsid,1,264,60,,2.66
+9dcb,The Structure of AAV5 at 4 Degrees,1,280,60,,2.89
+9dcc,The Structure of AAV5 at 55 Degrees Celsius,1,280,60,,3.12
+4iov,"THE STRUCTURE OF AAVRH32.33, A NOVEL GENE DELIVERY VECTOR",1,286,60,,3.5
+8xb8,THE STRUCTURE OF ASFV A137R,1,194,60,,3.4
+7y7m,THE STRUCTURE OF COXSACKIEVIRUS A16 MATURE VIRION IN COMPLEX WITH FAB 8C4,pT3,464,60,,3.05
+6acy,The structure of CVA10 virus A-particle,pT3,338,60,,3.4
+6acu,THE STRUCTURE OF CVA10 VIRUS MATURE VIRION,pT3,316,60,,3.4
+6aj0,The structure of Enterovirus D68 mature virion,pT3,324,60,,3.4
+6aj9,The structure of Enterovirus D68 mature virion in complex with Fab 15C5 and 11G1,pT3,416,60,,3.5
+2wzr,THE STRUCTURE OF FOOT AND MOUTH DISEASE VIRUS SEROTYPE SAT1,pT3,310,60,,3.0
+5urf,THE STRUCTURE OF HUMAN BOCAVIRUS 1,1,282,60,,2.9
+8r8l,The structure of inactivated mature tick-borne encephalitis virus,3,488,180,,3.03
+9k3m,The structure of Microviridae PJNS001,1,352,60,,2.68
+9k3n,The structure of Microviridae PJNS001,1,350,60,,2.59
+9cgm,The Structure of Spiroplasma Virus 4,1,298,60,,2.52
+4rso,THE STRUCTURE OF THE NEUROTROPIC AAVRH.8 VIRAL VECTOR,1,288,60,,3.5
+4zor,THE STRUCTURE OF THE S37P MS2 VIRAL CAPSID ASSEMBLY.,1,176,60,,2.2
+9n5m,The Turkey Parvovirus Capsid structure,1,266,60,,2.35
+1tmf,Theiler's Murine Encephalomyelitis Virus (BeAn Strain),pT3,336,60,,3.5
+1tme,Theiler's Murine Encephalomyelitis Virus (DA Strain),pT3,320,60,,2.8
+7lij,THERMOTOGA MARITIMA ENCAPSULIN NANOCOMPARTMENT PORE MUTANT S1K,1,256,60,,2.84
+7lik,THERMOTOGA MARITIMA ENCAPSULIN NANOCOMPARTMENT PORE MUTANT S1R,1,256,60,,2.91
+7lis,THERMOTOGA MARITIMA ENCAPSULIN NANOCOMPARTMENT PORE MUTANT S5D,1,246,60,,2.96
+7lim,THERMOTOGA MARITIMA ENCAPSULIN NANOCOMPARTMENT PORE MUTANT S6E,1,256,60,,2.75
+7lit,THERMOTOGA MARITIMA ENCAPSULIN NANOCOMPARTMENT PORE MUTANT S7G,1,244,60,,2.53
+7lil,THERMOTOGA MARITIMA ENCAPSULIN NANOCOMPARTMENT PORE MUTANT SE3,1,256,60,,2.84
+7mu1,THERMOTOGA MARITIMA ENCAPSULIN SHELL,1,238,60,,3.3
+7z51,TICK-BORNE ENCEPHALITIS VIRUS KUUTSALO-14,3,492,180,,3.3
+1c8n,Tobacco Necrosis Virus (TNV),3,318,180,,2.25
+1laj,Tomato Aspermy Virus,3,300,180,,3.4
+2tbv,Tomato Bushy Stunt Virus (TBSV),3,352,180,,2.9
+8f4x,TOP-DOWN DESIGN OF PROTEIN ARCHITECTURES WITH REINFORCEMENT LEARNING,1,140,60,,3.01
+8f53,Top-down design of protein architectures with reinforcement learning,1,120,60,,2.93
+8f54,TOP-DOWN DESIGN OF PROTEIN ARCHITECTURES WITH REINFORCEMENT LEARNING,1,144,60,,2.5
+2y26,TRANSMISSION DEFECTIVE MUTANT OF GRAPEVINE FANLEAF VIRUS,pT3,306,60,,2.7
+9qvg,TURNIP CRINKLE VIRUS: VIRIONS (TCV-M),3,352,180,,3.43
+9qvh,TURNIP CRINKLE VIRUS: VIRUS-LIKE PARTICLES (TCV-P38),3,352,180,,3.47
+9qvf,TURNIP CRINKLE VIRUS: VIRUS-LIKE PARTICLES (TCV-P38+1),3,352,180,,3.13
+1auy,Turnip Yellow Mosaic Virus (TYMV),3,316,180,,3.2
+7zq8,VelcroVax tandem HBcAg with SUMO-Affimer inserted at MIR (T=4 VLP),4,342,240,,2.9
+6yf7,Virus-like particle of bacteriophage AC,3,270,180,,3.4
+6yf9,Virus-like particle of bacteriophage AVE002,3,290,180,,3.2
+6yfa,Virus-like particle of bacteriophage AVE015,3,298,180,,3.3
+6yfc,Virus-like particle of bacteriophage AVE019,3,290,180,,3.25
+6yfj,Virus-like particle of bacteriophage ESE001,3,276,180,,3.23
+6yfl,Virus-like particle of bacteriophage ESE020,3,290,180,,3.3
+6yfm,Virus-like particle of bacteriophage ESE021,3,282,180,,2.76
+6yfn,Virus-like particle of bacteriophage ESE058,3,298,180,,3.19
+6yfp,Virus-like particle of bacteriophage GQ-112,3,316,180,,3.1
+6yfo,Virus-like particle of bacteriophage GQ-907,3,284,180,,3.48
+6yfr,Virus-like particle of bacteriophage NT-391,1,184,60,,2.6
+6yfs,Virus-like particle of bacteriophage PQ-465,3,298,180,,3.5
+6yfd,Virus-like particle of Beihai levi-like virus 14,3,328,180,,3.3
+6yff,Virus-like particle of Beihai levi-like virus 21,3,278,180,,3.09
+6yft,Virus-like particle of Wenzhou levi-like virus 1,3,284,180,,3.5
+7z5e,VP2-only capsid of MVM D263A mutant,1,286,60,,3.32
+7z5f,VP2-only capsid of MVM D263A mutant,1,286,60,,3.22
+7enp,wild type of O type Foot-and-mouth disease virus,pT3,304,60,,3.4
+6htx,WT Hepatitis B core protein capsid,4,352,240,,2.66
+2vf1,X-RAY CRYSTALLOGRAPHIC STRUCTURE OF THE PICOBIRNAVIRUS CAPSID,2,382,120,,3.4
+5aoo,X-RAY STRUCTURE OF A HUMAN KOBUVIRUS: AICHI VIRUS A (AIV),pT3,320,60,,2.1
+2gh8,X-ray structure of a native calicivirus,3,416,180,,3.2
+2zah,X-ray structure of Melon necrotic spot virus,3,346,180,,2.81
+4v5t,X-RAY STRUCTURE OF THE GRAPEVINE FANLEAF VIRUS,pT3,306,60,,3.0
+3tn9,X-RAY STRUCTURE OF THE HRV2 EMPTY CAPSID (B-PARTICLE),pT3,332,60,,3.0
+9wah,Yeast-expressed polio type 1 stabilized virus-like particles,pT3,328,60,,2.43
+8zh6,Yeast-expressed polio type 2 expanded virus-like particles,pT3,344,60,,3.1
+8zb6,YEAST-EXPRESSED POLIO TYPE 2 STABILIZED VIRUS-LIKE PARTICLES,pT3,324,60,,3.1
+8t9x,ZOPHOBAS MORIO BLACK WASTING VIRUS STRAIN NJ2-MOLITOR VIRION STRUCT,1,266,60,,2.0
+8ta7,Zophobas morio black wasting virus strain OR-molitor empty capsid structure,1,264,60,,2.7
+8tje,Zophobas morio black wasting virus strain OR-molitor virion structure,1,268,60,,3.4
+8t9e,Zophobas morio black wasting virus strain UT-morio empty capsid structure,1,264,60,,2.9
+8t9c,Zophobas morio black wasting virus strain UT-morio virion structure,1,264,60,,2.7

@@ -1,11 +1,32 @@
 """
-Model 1: ESM2 embedding + MLP prediction of T-number
+Model 1: Tuned MLP for T-number prediction using ESM2 embeddings
 
 Input:
-    1280-dimensional ESM2 embedding
+    1,280-dimensional ESM2 embedding
 
 Output:
     T-number classification
+
+Preprocessing:
+    T-number classes with fewer than 10 samples in the training
+    set are merged into an "other" category. Labels are encoded
+    using training-set classes only. Input features are standardized
+    using statistics fitted on the training set only.
+
+Hyperparameter search:
+    Eight MLP configurations are evaluated using the validation set.
+    The configurations vary in hidden-layer architecture, dropout,
+    learning rate, batch size, and use of class-weighted loss.
+
+Training and model selection:
+    Each configuration is trained for up to 150 epochs with early
+    stopping (patience = 20). The best epoch for each configuration
+    is selected primarily by validation Macro F1, with validation
+    accuracy used as a tie-breaker. The final MLP configuration is
+    selected using the same criterion.
+
+Final evaluation:
+    The selected model is evaluated once on the held-out test set.
 
 Evaluation:
     Accuracy
@@ -15,6 +36,7 @@ Evaluation:
 """
 
 import csv
+import copy
 import random
 from pathlib import Path
 from collections import Counter
@@ -26,7 +48,7 @@ import matplotlib.pyplot as plt
 
 from torch.utils.data import Dataset, DataLoader
 
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.metrics import (
     accuracy_score,
     f1_score,
@@ -37,38 +59,30 @@ from sklearn.metrics import (
 from sklearn.utils.class_weight import compute_class_weight
 
 
-# ============================================================
-# 1. Reproducibility
-# ============================================================
-
 SEED = 42
 
-random.seed(SEED)
-np.random.seed(SEED)
-torch.manual_seed(SEED)
 
-if torch.cuda.is_available():
-    torch.cuda.manual_seed(SEED)
-    torch.cuda.manual_seed_all(SEED)
+def set_seed(seed=SEED):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
 
 
-# ============================================================
-# 2. File paths
-# ============================================================
+set_seed()
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
 FEATURE_MATRIX = ROOT / "data" / "feature_matrix.csv"
-MODEL_PATH = ROOT / "outputs" / "best_model1.pt"
+MODEL_PATH = Path(__file__).resolve().parent / "best_model1_new.pt"
 FIGURE_PATH = ROOT / "figures" / "model1_confusion_matrix.png"
 
-MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
 FIGURE_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-
-# ============================================================
-# 3. Load dataset
-# ============================================================
 
 print("Loading data...")
 
@@ -80,31 +94,28 @@ with open(FEATURE_MATRIX) as f:
     reader = csv.DictReader(f)
 
     for row in reader:
-
-        # Skip entries without T-number
         if not row["t_number"].strip():
             continue
 
-        # 1280-dimensional ESM2 embedding
         emb = [
             float(row[f"emb_{i}"])
             for i in range(1280)
         ]
 
-        t = row["t_number"].strip()
+        label = row["t_number"].strip()
         split = row["split"].strip()
 
         if split == "train":
             X_train.append(emb)
-            y_train.append(t)
+            y_train.append(label)
 
         elif split == "validation":
             X_val.append(emb)
-            y_val.append(t)
+            y_val.append(label)
 
         elif split == "test":
             X_test.append(emb)
-            y_test.append(t)
+            y_test.append(label)
 
 
 print(
@@ -114,17 +125,11 @@ print(
 )
 
 
-# ============================================================
-# 4. Merge rare T-number classes
-# ============================================================
-
-# Classes with fewer than 10 training samples
-# are grouped into "other".
-
 train_counts = Counter(y_train)
 
 rare = {
-    t for t, count in train_counts.items()
+    label
+    for label, count in train_counts.items()
     if count < 10
 }
 
@@ -133,8 +138,8 @@ print(f"Classes merged into 'other': {rare}")
 
 def merge_rare(labels):
     return [
-        "other" if t in rare else t
-        for t in labels
+        "other" if label in rare else label
+        for label in labels
     ]
 
 
@@ -143,17 +148,8 @@ y_val = merge_rare(y_val)
 y_test = merge_rare(y_test)
 
 
-# ============================================================
-# 5. Encode T-number labels
-# ============================================================
-
 le = LabelEncoder()
-
-le.fit(
-    y_train +
-    y_val +
-    y_test
-)
+le.fit(y_train)
 
 y_train_enc = le.transform(y_train)
 y_val_enc = le.transform(y_val)
@@ -165,44 +161,29 @@ print(f"Number of classes: {n_classes}")
 print(f"Classes: {list(le.classes_)}")
 
 
-# ============================================================
-# 6. Convert data to PyTorch tensors
-# ============================================================
+scaler = StandardScaler()
 
-X_train = torch.tensor(
-    np.array(X_train),
-    dtype=torch.float32
+X_train = scaler.fit_transform(
+    np.array(X_train, dtype=np.float32)
 )
 
-X_val = torch.tensor(
-    np.array(X_val),
-    dtype=torch.float32
+X_val = scaler.transform(
+    np.array(X_val, dtype=np.float32)
 )
 
-X_test = torch.tensor(
-    np.array(X_test),
-    dtype=torch.float32
-)
-
-y_train_t = torch.tensor(
-    y_train_enc,
-    dtype=torch.long
-)
-
-y_val_t = torch.tensor(
-    y_val_enc,
-    dtype=torch.long
-)
-
-y_test_t = torch.tensor(
-    y_test_enc,
-    dtype=torch.long
+X_test = scaler.transform(
+    np.array(X_test, dtype=np.float32)
 )
 
 
-# ============================================================
-# 7. Dataset class
-# ============================================================
+X_train = torch.tensor(X_train, dtype=torch.float32)
+X_val = torch.tensor(X_val, dtype=torch.float32)
+X_test = torch.tensor(X_test, dtype=torch.float32)
+
+y_train_t = torch.tensor(y_train_enc, dtype=torch.long)
+y_val_t = torch.tensor(y_val_enc, dtype=torch.long)
+y_test_t = torch.tensor(y_test_enc, dtype=torch.long)
+
 
 class EmbDataset(Dataset):
 
@@ -213,86 +194,52 @@ class EmbDataset(Dataset):
     def __len__(self):
         return len(self.X)
 
-    def __getitem__(self, i):
-        return self.X[i], self.y[i]
+    def __getitem__(self, index):
+        return self.X[index], self.y[index]
 
 
-# ============================================================
-# 8. DataLoaders
-# ============================================================
+train_dataset = EmbDataset(X_train, y_train_t)
+val_dataset = EmbDataset(X_val, y_val_t)
+test_dataset = EmbDataset(X_test, y_test_t)
 
-train_loader = DataLoader(
-    EmbDataset(X_train, y_train_t),
-    batch_size=64,
-    shuffle=True
-)
-
-val_loader = DataLoader(
-    EmbDataset(X_val, y_val_t),
-    batch_size=64,
-    shuffle=False
-)
-
-test_loader = DataLoader(
-    EmbDataset(X_test, y_test_t),
-    batch_size=64,
-    shuffle=False
-)
-
-
-# ============================================================
-# 9. MLP model
-# ============================================================
 
 class MLP(nn.Module):
 
-    def __init__(self, input_dim, n_classes):
-
+    def __init__(
+        self,
+        input_dim,
+        hidden_dims,
+        dropout,
+        n_classes
+    ):
         super().__init__()
 
-        self.net = nn.Sequential(
+        layers = []
+        previous_dim = input_dim
 
-            nn.Linear(input_dim, 512),
-            nn.ReLU(),
-            nn.Dropout(0.3),
+        for hidden_dim in hidden_dims:
+            layers.append(nn.Linear(previous_dim, hidden_dim))
+            layers.append(nn.ReLU())
+            layers.append(nn.Dropout(dropout))
+            previous_dim = hidden_dim
 
-            nn.Linear(512, 256),
-            nn.ReLU(),
-            nn.Dropout(0.3),
+        layers.append(nn.Linear(previous_dim, n_classes))
 
-            nn.Linear(256, n_classes)
-        )
+        self.net = nn.Sequential(*layers)
 
     def forward(self, x):
         return self.net(x)
 
 
-# ============================================================
-# 10. Device
-# ============================================================
-
-device = torch.device(
-    "cuda"
-    if torch.cuda.is_available()
-    else "cpu"
-)
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+elif hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+    device = torch.device("mps")
+else:
+    device = torch.device("cpu")
 
 print(f"Using {device}")
 
-
-# ============================================================
-# 11. Initialise model
-# ============================================================
-
-model = MLP(
-    input_dim=1280,
-    n_classes=n_classes
-).to(device)
-
-
-# ============================================================
-# 12. Class weights
-# ============================================================
 
 class_weights = compute_class_weight(
     class_weight="balanced",
@@ -306,120 +253,273 @@ class_weights_tensor = torch.tensor(
 ).to(device)
 
 
-# ============================================================
-# 13. Optimiser and loss
-# ============================================================
+CONFIGS = [
+    {
+        "name": "MLP_A",
+        "hidden_dims": [256, 128],
+        "dropout": 0.20,
+        "lr": 5e-4,
+        "weight_decay": 1e-4,
+        "batch_size": 32,
+        "class_weights": False
+    },
+    {
+        "name": "MLP_B",
+        "hidden_dims": [512, 256],
+        "dropout": 0.20,
+        "lr": 5e-4,
+        "weight_decay": 1e-4,
+        "batch_size": 32,
+        "class_weights": False
+    },
+    {
+        "name": "MLP_C",
+        "hidden_dims": [256, 128],
+        "dropout": 0.10,
+        "lr": 1e-3,
+        "weight_decay": 1e-4,
+        "batch_size": 32,
+        "class_weights": False
+    },
+    {
+        "name": "MLP_D",
+        "hidden_dims": [512, 128],
+        "dropout": 0.10,
+        "lr": 5e-4,
+        "weight_decay": 1e-4,
+        "batch_size": 32,
+        "class_weights": False
+    },
+    {
+        "name": "MLP_E",
+        "hidden_dims": [256],
+        "dropout": 0.20,
+        "lr": 5e-4,
+        "weight_decay": 1e-4,
+        "batch_size": 32,
+        "class_weights": False
+    },
+    {
+        "name": "MLP_F",
+        "hidden_dims": [128],
+        "dropout": 0.10,
+        "lr": 1e-3,
+        "weight_decay": 1e-4,
+        "batch_size": 32,
+        "class_weights": False
+    },
+    {
+        "name": "MLP_G",
+        "hidden_dims": [256, 128],
+        "dropout": 0.20,
+        "lr": 5e-4,
+        "weight_decay": 1e-4,
+        "batch_size": 32,
+        "class_weights": True
+    },
+    {
+        "name": "MLP_H",
+        "hidden_dims": [512, 256],
+        "dropout": 0.30,
+        "lr": 1e-3,
+        "weight_decay": 1e-4,
+        "batch_size": 64,
+        "class_weights": True
+    }
+]
 
-optimizer = torch.optim.Adam(
-    model.parameters(),
-    lr=1e-3
-)
 
-criterion = nn.CrossEntropyLoss(
-    weight=class_weights_tensor
-)
+def train_candidate(config):
 
+    set_seed()
 
-# ============================================================
-# 14. Training
-# ============================================================
+    train_loader = DataLoader(
+        train_dataset,
+        batch_size=config["batch_size"],
+        shuffle=True
+    )
 
-best_val_acc = 0.0
+    val_loader = DataLoader(
+        val_dataset,
+        batch_size=config["batch_size"],
+        shuffle=False
+    )
 
-for epoch in range(50):
+    model = MLP(
+        input_dim=1280,
+        hidden_dims=config["hidden_dims"],
+        dropout=config["dropout"],
+        n_classes=n_classes
+    ).to(device)
 
-    # ------------------------
-    # Training
-    # ------------------------
+    optimizer = torch.optim.Adam(
+        model.parameters(),
+        lr=config["lr"],
+        weight_decay=config["weight_decay"]
+    )
 
-    model.train()
-
-    for X_batch, y_batch in train_loader:
-
-        X_batch = X_batch.to(device)
-        y_batch = y_batch.to(device)
-
-        optimizer.zero_grad()
-
-        outputs = model(X_batch)
-
-        loss = criterion(
-            outputs,
-            y_batch
+    if config["class_weights"]:
+        criterion = nn.CrossEntropyLoss(
+            weight=class_weights_tensor
         )
+    else:
+        criterion = nn.CrossEntropyLoss()
 
-        loss.backward()
+    best_val_acc = -1.0
+    best_val_f1 = -1.0
+    best_state = None
+    best_epoch = 0
 
-        optimizer.step()
+    MAX_EPOCHS = 150
+    PATIENCE = 20
 
+    epochs_without_improvement = 0
 
-    # ------------------------
-    # Validation
-    # ------------------------
+    for epoch in range(MAX_EPOCHS):
 
-    model.eval()
+        model.train()
 
-    correct = 0
-    total = 0
-
-    with torch.no_grad():
-
-        for X_batch, y_batch in val_loader:
-
+        for X_batch, y_batch in train_loader:
             X_batch = X_batch.to(device)
             y_batch = y_batch.to(device)
 
+            optimizer.zero_grad()
+
             outputs = model(X_batch)
+            loss = criterion(outputs, y_batch)
 
-            preds = outputs.argmax(dim=1)
+            loss.backward()
+            optimizer.step()
 
-            correct += (
-                preds == y_batch
-            ).sum().item()
+        model.eval()
 
-            total += len(y_batch)
+        val_preds = []
+        val_true = []
 
+        with torch.no_grad():
 
-    val_acc = correct / total
+            for X_batch, y_batch in val_loader:
+                X_batch = X_batch.to(device)
 
+                outputs = model(X_batch)
 
-    # Save best model according to validation accuracy
-    if val_acc > best_val_acc:
+                preds = (
+                    outputs
+                    .argmax(dim=1)
+                    .cpu()
+                    .numpy()
+                )
 
-        best_val_acc = val_acc
+                val_preds.extend(preds)
+                val_true.extend(y_batch.numpy())
 
-        torch.save(
-            model.state_dict(),
-            MODEL_PATH
+        val_acc = accuracy_score(
+            val_true,
+            val_preds
         )
 
-
-    if (epoch + 1) % 10 == 0:
-
-        print(
-            f"Epoch {epoch + 1}/50 | "
-            f"Val Acc: {val_acc:.4f} | "
-            f"Best Val Acc: {best_val_acc:.4f}"
+        val_f1 = f1_score(
+            val_true,
+            val_preds,
+            average="macro",
+            zero_division=0
         )
 
+        improved = (
+            val_f1 > best_val_f1
+            or
+            (
+                val_f1 == best_val_f1
+                and
+                val_acc > best_val_acc
+            )
+        )
 
-# ============================================================
-# 15. Load best model
-# ============================================================
+        if improved:
+            best_val_acc = val_acc
+            best_val_f1 = val_f1
+            best_epoch = epoch + 1
+            best_state = copy.deepcopy(
+                model.state_dict()
+            )
+            epochs_without_improvement = 0
 
-model.load_state_dict(
-    torch.load(
-        MODEL_PATH,
-        map_location=device
+        else:
+            epochs_without_improvement += 1
+
+        if epochs_without_improvement >= PATIENCE:
+            break
+
+    model.load_state_dict(best_state)
+
+    return {
+        "model": model,
+        "val_acc": best_val_acc,
+        "val_f1": best_val_f1,
+        "best_epoch": best_epoch,
+        "config": config
+    }
+
+
+print("\n===== MLP Hyperparameter Search =====")
+
+candidate_results = []
+
+for config in CONFIGS:
+
+    print(f"\nTraining {config['name']}...")
+
+    result = train_candidate(config)
+
+    candidate_results.append(result)
+
+    print(
+        f"{config['name']} | "
+        f"Val Accuracy: {result['val_acc']:.4f} | "
+        f"Val Macro F1: {result['val_f1']:.4f} | "
+        f"Best Epoch: {result['best_epoch']}"
+    )
+
+
+best_result = max(
+    candidate_results,
+    key=lambda result: (
+        result["val_f1"],
+        result["val_acc"]
     )
 )
 
-model.eval()
+best_model = best_result["model"]
+best_config = best_result["config"]
 
 
-# ============================================================
-# 16. Test evaluation
-# ============================================================
+print("\n===== Selected MLP =====")
+
+print(f"Configuration: {best_config['name']}")
+print(f"Hidden layers: {best_config['hidden_dims']}")
+print(f"Dropout: {best_config['dropout']}")
+print(f"Learning rate: {best_config['lr']}")
+print(f"Weight decay: {best_config['weight_decay']}")
+print(f"Batch size: {best_config['batch_size']}")
+print(f"Class weights: {best_config['class_weights']}")
+print(f"Validation Accuracy: {best_result['val_acc']:.4f}")
+print(f"Validation Macro F1: {best_result['val_f1']:.4f}")
+print(f"Best Epoch: {best_result['best_epoch']}")
+
+
+torch.save(
+    best_model.state_dict(),
+    MODEL_PATH
+)
+
+
+test_loader = DataLoader(
+    test_dataset,
+    batch_size=64,
+    shuffle=False
+)
+
+best_model.eval()
 
 all_preds = []
 all_labels = []
@@ -430,7 +530,7 @@ with torch.no_grad():
 
         X_batch = X_batch.to(device)
 
-        outputs = model(X_batch)
+        outputs = best_model(X_batch)
 
         preds = (
             outputs
@@ -440,50 +540,37 @@ with torch.no_grad():
         )
 
         all_preds.extend(preds)
-
-        all_labels.extend(
-            y_batch.numpy()
-        )
+        all_labels.extend(y_batch.numpy())
 
 
-# ============================================================
-# 17. Accuracy and Macro F1
-# ============================================================
-
-acc = accuracy_score(
+test_acc = accuracy_score(
     all_labels,
     all_preds
 )
-
-macro_f1 = f1_score(
-    all_labels,
-    all_preds,
-    average="macro"
-)
-
-print("\n===== Test Results =====")
-
-print(
-    f"Test Accuracy: {acc:.4f}"
-)
-
-print(
-    f"Macro F1: {macro_f1:.4f}"
-)
-
-
-# ============================================================
-# 18. Classification report
-# ============================================================
 
 labels_in_test = sorted(
     set(all_labels)
 )
 
-target_names_in_test = [
+test_macro_f1 = f1_score(
+    all_labels,
+    all_preds,
+    labels=labels_in_test,
+    average="macro",
+    zero_division=0
+)
+
+
+print("\n===== Final Test Results =====")
+print(f"Test Accuracy: {test_acc:.4f}")
+print(f"Macro F1: {test_macro_f1:.4f}")
+
+
+target_names = [
     le.classes_[i]
     for i in labels_in_test
 ]
+
 
 print("\nClassification Report:")
 
@@ -492,15 +579,11 @@ print(
         all_labels,
         all_preds,
         labels=labels_in_test,
-        target_names=target_names_in_test,
+        target_names=target_names,
         zero_division=0
     )
 )
 
-
-# ============================================================
-# 19. Confusion matrix
-# ============================================================
 
 cm = confusion_matrix(
     all_labels,
@@ -512,6 +595,7 @@ display_labels = [
     le.classes_[i]
     for i in labels_in_test
 ]
+
 
 fig, ax = plt.subplots(
     figsize=(10, 8)
@@ -530,7 +614,7 @@ disp.plot(
 )
 
 ax.set_title(
-    "Model 1: T-number Classification"
+    "Model 1: Tuned MLP T-number Classification"
 )
 
 ax.set_xlabel(
@@ -551,7 +635,13 @@ plt.savefig(
 
 plt.close()
 
+
 print(
     f"\nConfusion matrix saved to:\n"
     f"{FIGURE_PATH}"
+)
+
+print(
+    f"\nSelected model saved to:\n"
+    f"{MODEL_PATH}"
 )
